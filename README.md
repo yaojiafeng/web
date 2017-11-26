@@ -1,6 +1,6 @@
-# HTML-5-CSS-3-JS
-Basic and common skills about html(5)、css(3) and javascript.
+# Fron-end knowledge
+Basic and common skills about html(5)、css(3) and javascript and so on.
 
-You can learn a lot of useful front-end basic knowledge.
+You can learn a lot of useful front-end basic knowledge here.
 
-Enter separately html(5) file,css(3) file and javascript file,you will get something what you want.
+Enter separately files to find what you want.
