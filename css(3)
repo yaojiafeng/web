@@ -55,16 +55,16 @@ clear: both;"是确保这个空白字符是非浮动的独立区块。
 但是，:after选择符IE 6不支持，也就是说上面的这段代码在IE 6中无效，这怎么办？
 我们添加一条IE 6的独有命令"zoom:1;"就行了，这条命令的作用是激活父元素的"hasLayout"属性，让父元素拥有自己的布局。IE 6会读取这条命令，其他浏览器则
 会直接忽略它。
-
-7.最终代码
+最终代码（常用这种方法）
 .clearfix:after {
-content: "\0020";
+content: "";
 display: block;
-height: 0;
 clear: both;
 }
 .clearfix {
 zoom: 1;
 }
+
+2.垂直水平居中
 
 
