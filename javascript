@@ -30,4 +30,12 @@ ECMAScript 中所有函数的参数都是按值传递的而不是按引用。包
  alert(person.name); //"Nicholas"
  4.1.4 检测类型
  typeof 检测基本类型中的string,number,boolean比较好，其他类型不好用。
+通常，我们并不是想知道某个值是对象，而是想知道它是什么类型的对象。为此，ECMAScript提供了instanceof 操作符，其语法如下所示：
+          result = variable instanceof constructor
+          alert(person instanceof Object); // 变量person 是Object 吗？
+          alert(colors instanceof Array); // 变量colors 是Array 吗？
+          alert(pattern instanceof RegExp); // 变量pattern 是RegExp 吗？
+4.2 执行环境及作用域  
+在Web 浏览器中，全局执行环境被认为是window 对象,因此所有全局变量和函数都是作为window 对象的属性和方法创建的.某个执行环境中的所有代码执行完
+毕后，该环境被销毁，保存在其中的所有变量和函数定义也随之销毁（全局执行环境直到应用程序退出——例如关闭网页或浏览器——时才会被销毁）。
  
