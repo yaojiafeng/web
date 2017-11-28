@@ -226,3 +226,36 @@ reverse()和sort()方法的返回值是经过排序之后的数组。
 }
 则返回0，如果第一个参数应该位于第二个之后则返回一个正数。
 5.2.6 操作方法
+
+
+
+
+
+第八章 BOM
+本章内容
+   理解window 对象——BOM的核心
+   控制窗口、框架和弹出窗口
+   利用location 对象中的页面信息
+   使用navigator 对象了解浏览器
+8.1 window 对象
+   BOM 的核心对象是window，它表示浏览器的一个实例。在浏览器中，window 对象有双重角色，它既是通过JavaScript 访问浏览器窗口的一个接口，
+又是ECMAScript 规定的Global 对象。这意味着在网页中定义的任何一个对象、变量和函数，都以window 作为其Global 对象，因此有权访问parseInt()等方法。
+8.1.1 全局作用域  
+所有在全局作用域中声明的变量、函数都会变成window 对象的属性和方法。
+全局变量不能通过delete 操作符删除，而直接在window 对象上的定义的属性可以。
+var age = 29;
+window.color = "red";
+//在IE < 9 时抛出错误，在其他所有浏览器中都返回false
+delete window.age;
+//在IE < 9 时抛出错误，在其他所有浏览器中都返回true
+delete window.color; //returns true
+alert(window.age); //29
+alert(window.color); //undefined
+使用var 语句添加的window 属性有一个名为[[Configurable]]的特性，这个特性的值被设置为false，因此这样定义的属性不可以通过delete 操作符删除。
+要记住一件事：尝试访问未声明的变量会抛出错误，但是通过查询window 对象，可以知道某个可能未声明的变量是否存在。
+//这里会抛出错误，因为oldValue 未定义
+var newValue = oldValue;
+//这里不会抛出错误，因为这是一次属性查询
+//newValue 的值是undefined
+var newValue = window.oldValue;
+8.1.2 窗口关系及框架
