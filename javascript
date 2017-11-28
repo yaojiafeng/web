@@ -176,7 +176,7 @@ join()方法只接收一个参数，即用作分隔符的字符串，然后返�
 var colors = ["red", "green", "blue"];
 alert(colors.join(",")); //red,green,blue
 alert(colors.join("||")); //red||green||blue
-5.2.3 栈方法
+5.2.3 栈方法 (数组从下标0开始从左往右走，记住这个模型，栈和队列都是基于这个模型理解和记忆）
 ECMAScript 为数组专门提供了push()和pop()方法，以便实现类似栈的行为。
 push()方法可以接收任意数量的参数，把它们逐个添加到数组末尾，并返回修改后数组的长度。而
 pop()方法则从数组末尾移除最后一项，减少数组的length 值，然后返回移除的项。
@@ -186,7 +186,7 @@ alert(count); //2
 count = colors.push("black"); // 推入另一项
 alert(count); //3
 var item = colors.pop(); // 取得最后一项
-5.2.4 队列方法
+5.2.4 队列方法 (数组从下标0开始从左往右走，记住这个模型，栈和队列都是基于这个模型理解和记忆）shift()和unshift()在左边，push()和pop()在右边。
 shift()，它能够移除数组中的第一个项并返回该项，同时将数组长度减1。结合使用shift()和push()方法，可以像使用队列一样使用数组。
 var colors = new Array(); //创建一个数组
 var count = colors.push("red", "green"); //推入两项
@@ -196,7 +196,33 @@ alert(count); //3
 var item = colors.shift(); //取得第一项
 alert(item); //"red"
 alert(colors.length); //2
-
-
-
-
+unshift()方法。顾名思义，unshift()与shift()的用途相反：它能在数组前端添加任意个项并返回新数组的长度。因此，同时使用unshift()和pop()方法，
+可以从相反的方向来模拟队列，即在数组的前端添加项，从数组末端移除项。
+var colors = new Array(); //创建一个数组
+var count = colors.unshift("red", "green"); //推入两项
+count = colors.unshift("black"); //推入另一项
+alert(count); //3
+var item = colors.pop(); //取得最后一项
+alert(item); //"green"
+alert(colors.length); //2
+5.2.5 重排序方法
+数组中已经存在两个可以直接用来重排序的方法：reverse()和sort()。
+sort()方法会调用每个数组项的toString()转型方法，然后比较得到的字符串，以确定如何排序。即使数组中的每一项都是数值，sort()方法比较的也是字符串。
+sort()方法可以接收一个比较函数作为参数，以便我们指定哪个值位于哪个值的前面。比较函数接收两个参数，如果第一个参数应该位于第二个之前则返回一个负数，
+如果两个参数相等。
+升序排序：
+function compare(value1, value2) {
+if (value1 < value2) {
+return -1;
+} else if (value1 > value2) {
+return 1;
+} else {
+return 0;
+}
+var values = [0, 1, 5, 10, 15];
+values.sort(compare);
+alert(values); //0,1,5,10,15
+reverse()和sort()方法的返回值是经过排序之后的数组。
+}
+则返回0，如果第一个参数应该位于第二个之后则返回一个正数。
+5.2.6 操作方法
