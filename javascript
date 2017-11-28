@@ -126,6 +126,57 @@ JavaScript 是一门具有自动垃圾收集机制的编程语言，开发人员
    当代码中存在循环引用现象时，“引用计数”算法就会导致问题。
    解除变量的引用不仅有助于消除循环引用现象，而且对垃圾收集也有好处。为了确保有效地回收内存，应该及时解除不再使用的全局对象、
 全局对象属性以及循环引用变量的引用。
+
+
 第五章 引用类型
+本章内容
+   使用对象
+   创建并操作数组
+   理解基本的JavaScript 类型
+   使用基本类型和基本包装类型
+引用类型的(值)对象是某个特定引用类型的实例。 
+5.1 Object 类型（创建Object 实例的方式有两种。）
+第一种是使用new 操作符后跟Object 构造函数，如下所示：
+var person = new Object();
+person.name = "Nicholas";
+person.age = 29;
+第二种是使用对象字面量表示法
+var person = {
+name : "Nicholas",
+age : 29  //最后一个变量不能有逗号
+};
+在通过对象字面量定义对象时，实际上不会调用Object 构造函数。
+访问对象属性时可以使用点表示法和方括号。
+alert(person["name"]); //"Nicholas"
+alert(person.name); //"Nicholas"
+5.2 Array 类型
+创建数组的基本方式有两种。
+第一种是使用Array 构造函数，如下面的代码所示。
+var colors = new Array();//空数组
+var colors = new Array(20);//数组长度20
+var colors = new Array("red", "blue", "green");//数组有三个值
+var colors = new Array(3); // 创建一个包含3 项的数组
+var names = new Array("Greg"); // 创建一个包含1 项，即字符串"Greg"的数组
+在使用Array 构造函数时也可以省略new 操作符
+var colors = Array(3); // 创建一个包含3 项的数组
+var names = Array("Greg"); // 创建一个包含1 项，即字符串"Greg"的数组
+第二种基本方式是使用数组字面量表示法
+var colors = ["red", "blue", "green"]; // 创建一个包含3 个字符串的数组
+var names = []; // 创建一个空数组
+var values = [1,2,]; // 不要这样！这样会创建一个包含2 或3 项的数组
+var options = [,,,,,]; // 不要这样！这样会创建一个包含5 或6 项的数组
+与对象一样，在使用数组字面量表示法时，也不会调用Array 构造函数（Firefox 3及更早版本除外）。
+5.2.1 检测数组
+var arr= new Array();
+arr instanceof Array;//true, 检测假定只有一个执行环境,当网页中包含多个框架，实际上就存在两个以上不同的全局执行环境，从而存在两个不同版本的Array构造函数。
+Array.isArray(arr);//true,这个方法的目的是最终确定某个值到底是不是数组，而不管它是在哪个全局执行环境中创建的。
+5.2.2 转换方法
+所有对象都具有toLocaleString()、toString()和valueOf()方法。
+join()方法只接收一个参数，即用作分隔符的字符串，然后返回包含所有数组项的字符串。
+var colors = ["red", "green", "blue"];
+alert(colors.join(",")); //red,green,blue
+alert(colors.join("||")); //red||green||blue
+5.2.3 栈方法
+
 
 
