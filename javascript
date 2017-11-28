@@ -177,6 +177,26 @@ var colors = ["red", "green", "blue"];
 alert(colors.join(",")); //red,green,blue
 alert(colors.join("||")); //red||green||blue
 5.2.3 栈方法
+ECMAScript 为数组专门提供了push()和pop()方法，以便实现类似栈的行为。
+push()方法可以接收任意数量的参数，把它们逐个添加到数组末尾，并返回修改后数组的长度。而
+pop()方法则从数组末尾移除最后一项，减少数组的length 值，然后返回移除的项。
+var colors = new Array(); // 创建一个数组
+var count = colors.push("red", "green"); // 推入两项
+alert(count); //2
+count = colors.push("black"); // 推入另一项
+alert(count); //3
+var item = colors.pop(); // 取得最后一项
+5.2.4 队列方法
+shift()，它能够移除数组中的第一个项并返回该项，同时将数组长度减1。结合使用shift()和push()方法，可以像使用队列一样使用数组。
+var colors = new Array(); //创建一个数组
+var count = colors.push("red", "green"); //推入两项
+alert(count); //2
+count = colors.push("black"); //推入另一项
+alert(count); //3
+var item = colors.shift(); //取得第一项
+alert(item); //"red"
+alert(colors.length); //2
+
 
 
 
