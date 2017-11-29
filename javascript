@@ -226,8 +226,15 @@ reverse()和sort()方法的返回值是经过排序之后的数组。
 }
 则返回0，如果第一个参数应该位于第二个之后则返回一个正数。
 5.2.6 操作方法
-
-
+concat()方法可以基于当前数组中的所有项创建一个新数组。
+slice()，它能够基于当前数组中的一或多个项创建一个新数组。slice()方法可以接受一或两个参数，即要返回项的起始和结束位置。
+在只有一个参数的情况下，slice()方法返回从该参数指定位置开始到当前数组末尾的所有项。如果有两个参数，该方法返回起始和结束位置之间的项,但不包括结束位置
+的项。注意，slice()方法不会影响原始数组。
+var colors = ["red", "green", "blue", "yellow", "purple"];
+var colors2 = colors.slice(1);
+var colors3 = colors.slice(1,4);
+alert(colors2); //green,blue,yellow,purple
+alert(colors3); //green,blue,yellow
 
 
 
