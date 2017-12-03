@@ -101,4 +101,15 @@ eg:IE7与IE6有着同样的bug，原因很简单，虽然图片所在div当前�
 4	</</code>DIV> 
 5	</</code>DIV>
 
+三、:after,:before
+定义和用法
+:after 选择器在被选元素的内容后面插入内容。
+请使用 content 属性来指定要插入的内容。
+在P标签内容后面加上"台词"
+p:after
+{ 
+content:"台词：";
+}
+：before用法类似。
+
 
