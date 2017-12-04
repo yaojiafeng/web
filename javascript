@@ -265,3 +265,8 @@ var newValue = oldValue;
 //newValue 的值是undefined
 var newValue = window.oldValue;
 8.1.2 窗口关系及框架
+
+
+
+第十章 DOM
+10.1
