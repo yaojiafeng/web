@@ -270,3 +270,29 @@ var newValue = window.oldValue;
 
 第十章 DOM
 10.1
+10.12 Document类型  (表示文档)
+Document节点有以下特征：
+{
+  nodeType=9
+  nodeName=#document
+  nodeValue=null
+  parentNode=null
+  ownerNode=null
+  其子节点可能是一个{
+                     DocumentType(最多一个)
+                     Element(最多一个)
+                     processingInstruction
+                     Comment
+                   }
+   内置访问子节点的属性{
+                        document.documentElement
+                        document.childNodes
+                        document.doctype
+                      }
+}
+HTMLDocument(继承Document)
+document对象(HTMLDocument的一个实例，继承Document的属性)的属性
+{
+  documnet.body
+  }
+
