@@ -41,3 +41,26 @@ tsconfig.app.json   TypeScript编译器的配置,添加第三方依赖的时候�
 tsconfig.spec.json  不用管
 test.ts             也是自动化测试用的
 typings.d.ts        不用管
+
+
+@component
+元数据属性：
+
+animations - 规定这个component的动画列表
+changeDetection - 通过这个component变更侦测策略；
+encapsulation - 通过该component设计封装策略；
+entryComponents - 一个components的列表，这个列表会动态插入进当前component的视图中。
+exportAs -名下component的实例化被导出在一个模板视图中。
+host - class属性映射到host元素上，并绑定了事件，属性；
+inputs - 当前class属性名列表，当前components输入的数据绑定。
+interpolation - 自定义改写工具，被用于当前component的视图模板上。
+moduleld - 文件中ES/CommonJS 模块的id,而当前component就定义在该模块中。
+outputs - 当前class属性名列表，对外暴露输出事件，这样其他components就可以调用。
+providers - providers列表，该列表可以用于当前component和其子component.
+queries - 将配置问题注入到当前component中。
+selector - 样式选择器，它可以在一个复杂的视图模板中识别出当前component.
+styleUrls - 运用在当前component中的一组样式表的url列表
+styles - 样式
+template - 视图模板
+viewProvider - providers列表，该列表可以用于当前component，以及其子视图。
+templateUrl - 视图模板的url链接
