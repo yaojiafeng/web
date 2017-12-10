@@ -64,3 +64,31 @@ styles - 样式
 template - 视图模板
 viewProvider - providers列表，该列表可以用于当前component，以及其子视图。
 templateUrl - 视图模板的url链接
+
+
+数据绑定（默认单向绑定）
+1,<h1>{{xxx}}</h1>//插值绑定
+2,<img [src]="imgUrl">//属性绑定
+3,button (click)="do()">提交</button>//事件绑定
+一、dom属性绑定
+插值表达式和属性绑定是同一样东西，选用一种风格就行
+html属性初始化后不能改变
+dom属性可以改变
+angular的模板绑定是通过dom属性和事件来工作的，而不是HTML属性
+
+属性绑定
+二、html属性绑定
+1,本的Html属性绑定
+语法：<td [attr.colspan]="tableColspan">C罗<td> //tableColspan的值被绑定到attr.colspan这个属性名字上。
+2,css类绑定
+3情况：
+1）<div class="aaa bbb" [class]="somethingExpression">something</div>//[class]="somethingExpression"将完全替换掉前面aaa bbb 的值
+2）<div [class.special]="isSpecial">something</div>//special是样式的名字，isSpecial为true是出现[class.special]。
+3）<div [naClass]="{aaa:isA,bbb:isB}"></div>//控制类名为aaa 和bbb的样式是否显示。
+3，样式绑定(与css类绑定类似)
+2种情况
+1)<button [style.color]="isSpecial?'red':'green'">Red</button>
+2)<div [ngStyle]="{'font-style':this.canSave?'italic':'normal'}"></div>
+
+
+
