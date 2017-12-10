@@ -79,16 +79,21 @@ angular的模板绑定是通过dom属性和事件来工作的，而不是HTML属
 属性绑定
 二、html属性绑定
 1,本的Html属性绑定
-语法：<td [attr.colspan]="tableColspan">C罗<td> //tableColspan的值被绑定到attr.colspan这个属性名字上。
+语法：<td [attr.colspan]="tableColspan">C罗<td> //tableColspan的值被绑定到attr.colspan这个属性名字上。更新到html属性，浏览器根据html属性同步到dom属性，最终渲染出来。 
 2,css类绑定
 3情况：
 1）<div class="aaa bbb" [class]="somethingExpression">something</div>//[class]="somethingExpression"将完全替换掉前面aaa bbb 的值
-2）<div [class.special]="isSpecial">something</div>//special是样式的名字，isSpecial为true是出现[class.special]。
-3）<div [naClass]="{aaa:isA,bbb:isB}"></div>//控制类名为aaa 和bbb的样式是否显示。
-3，样式绑定(与css类绑定类似)
+2）<div class="a b " [class.c]="isC">something</div>//c是一个样式类的名字，isC为true是出现[class.C]。
+3）<div [naClass]="{aaa:isA,bbb:isB}"></div>//控制类名为aaa 和bbb的样式是否显示，控制多个类名
+3，样式绑定(与css类绑定类似
 2种情况
-1)<button [style.color]="isSpecial?'red':'green'">Red</button>
-2)<div [ngStyle]="{'font-style':this.canSave?'italic':'normal'}"></div>
+1)<button [style.color]="isSpecial?'red':'green'">Red</button>//控制单一内联样式
+2)<div [ngStyle]="{'font-style':this.canSave?'italic':'normal'}"></div>//控制多个内联样式
+
+三、双向绑定
+两种方式
+1),使用事件绑定和属性绑定
+2),用ngModel指令，<input [(ngModel)]="name">{{name}}
 
 
 
