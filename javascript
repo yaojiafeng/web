@@ -267,7 +267,6 @@ var newValue = window.oldValue;
 8.1.2 窗口关系及框架
 
 
-
 第十章 DOM
 10.1
 10.12 Document类型  (表示文档)
