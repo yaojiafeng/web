@@ -16,8 +16,22 @@ ng serve
 或者
 ng new my-app
 cd my-app
-2.建立一个组件
+4.建立一个组件
 ng generate component helloworld
+5.ng generate
+命令	描述
+ng generate <type> [options]	在项目中构建新代码
+ng g <type> [options]	简写
+支持的类型	用法
+Component	    ng g component my-new-component
+Directive   	ng g directive my-new-directive
+Pipe	        ng g pipe my-new-pipe
+Service     	ng g service my-new-service
+Class	        ng g class my-new-class
+Interface	    ng g interface my-new-interface
+Enum	        ng g enum my-new-enum
+Module	      ng g module my-module
+Route	        ng g route my-route当前已禁用
 4.angular项目目录结构
 
 node_modules        第三方依赖包存放目录
