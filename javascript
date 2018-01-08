@@ -235,8 +235,6 @@ var colors3 = colors.slice(1,4);
 alert(colors2); //green,blue,yellow,purple
 alert(colors3); //green,blue,yellow
 
-
-
 第八章 BOM
 本章内容
    理解window 对象——BOM的核心
@@ -265,7 +263,6 @@ var newValue = oldValue;
 //newValue 的值是undefined
 var newValue = window.oldValue;
 8.1.2 窗口关系及框架
-
 
 第十章 DOM
 10.1
