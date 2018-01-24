@@ -20,3 +20,7 @@ npm安装应用时，安装源被墙怎么办？
 C:\Program Files (x86)\nodejs\node_modules.bin;C:\Program Files (x86)\nodejs\; 
 2.执行npm config get prefix命令查看npm的全局安装默认目录，拷贝该目录下的所有文件到另一台电脑中的对应目录下。
 (也可以使用npm config set prefix “directory” 命令设置新的目录)。
+
+
+ 跟新 npm 版本：
+    npm install npm@latest -g
