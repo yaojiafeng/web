@@ -7,6 +7,9 @@ npm instsall -g typescript
  (1) npm install -g cnpm 
   --registry=https://registry.npm.taobao.org
  (2)cnpm install -g @angular/cli
+ 卸载angular-cli:
+       npm uninstall -g angular-cli  
+       npm cache clean  
 ng -v检查ng环境
 3.创建一个项目
 ng new my-app --skip-install
