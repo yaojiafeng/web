@@ -145,8 +145,7 @@ content:"台词：";
 @media only screen and (max-width: 479px) {
     #page{ width: 300px; }#content,.div1{width: 300px;}#secondary{display:none}#access{width: 330px;} #access a {padding-right:10px;padding-left:10px}#access a img{display:none}#rss{display:none}#branding #s{display:none}#access ul ul a{width:100px}
 }
-
-1 、介绍一下标准的CSS的盒子模型？与低版本IE的盒子模型有什么不同的？
+1 、介绍一下标准的CSS的盒子模型？与低版本IE的盒子模型有什么不同的？ie8及以上为w3c标准盒子模型
 
 标准盒子模型：宽度=内容的宽度（content）+ border + padding + margin
 
@@ -162,7 +161,8 @@ border-box：IE传统盒子模型。设置元素的height/width属性指的是bo
 
 3、 CSS选择器有哪些？哪些属性可以继承？
 
-CSS选择符：id选择器(#myid)、类选择器(.myclassname)、标签选择器(div, h1, p)、相邻选择器(h1 + p)、子选择器（ul > li）、后代选择器（li a）、通配符选择器（*）、属性选择器（a[rel="external"]）、伪类选择器（a:hover, li:nth-child）
+CSS选择符：id选择器(#myid)、类选择器(.myclassname)、标签选择器(div, h1, p)、相邻选择器(h1 + p)、子选择器（ul > li）、后代选择器（li a）、
+通配符选择器（*）、属性选择器（a[rel="external"]）、伪类选择器（a:hover, li:nth-child）
 
 可继承的属性：font-size, font-family, color
 
