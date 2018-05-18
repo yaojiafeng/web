@@ -1,5 +1,14 @@
-                                          #ES6
+        #javascript知识点
+   
+      ##ES6
+问题：
+    1. es6模块化如何使用，开发环境如何打包?
+    2.class 和普通构造函数有什么区别?
+    3.promise 的基本使用和原理?
+    4.总结es6的其他功能?
 
+                                         
+                                                                                                                      
 ##Module的语法
 
 export 可输出变量、函数和(class)
@@ -14,6 +23,9 @@ export{name};
 function v1(){};
 export {v1 as v11};
 //方式四:指定模块的默认输出
+export default {
+              a:100
+              }
 export default function (){}//匿名函数
 function foo(){};//非匿名函数
 export default foo;
