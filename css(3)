@@ -144,7 +144,13 @@ content:"台词：";
 
 @media only screen and (max-width: 479px) {
     #page{ width: 300px; }#content,.div1{width: 300px;}#secondary{display:none}#access{width: 330px;} #access a {padding-right:10px;padding-left:10px}#access a img{display:none}#rss{display:none}#branding #s{display:none}#access ul ul a{width:100px}
-}
+} 
+                                           
+                                           
+                                                              #面试题
+                                                  
+                                                  
+                                                  
 1 、介绍一下标准的CSS的盒子模型？与低版本IE的盒子模型有什么不同的？ie8及以上为w3c标准盒子模型
 
 标准盒子模型：宽度=内容的宽度（content）+ border + padding + margin
