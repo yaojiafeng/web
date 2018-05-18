@@ -29,3 +29,5 @@ import {name as name1} from 'xxx';
 import *as circle from 'xxx';
 circle.area();
 circle.circumference();
+//方式四:
+import myClass from 'xxx';//export default class{};
