@@ -4,45 +4,66 @@
 <head>
     <meta charset="utf-8" />
     <title>web前端学习记录</title>
-    <style>
-        a[class~="external"] {
-            color: #f00;
-        }
+    <!--[if IE]>
+        <script>
+            (function () { 
+              if (!/*@cc_on!@*/0) return;
+              var e = "abbr,article,aside,audio,canvas,datalist,details,dialog,eventsource,figure,footer,header,hgroup,mark,menu,meter,nav,output,progress,section,time,video".split(','), i = e.length; while (i--) { document.createElement(e[i]) } })()
+        </script>
+    <![endif]-->
+    <link rel="stylesheet" href="./public/style/common.css" type="text/css">
+    <link rel="stylesheet" type="text/css" href="./public/style/index.css" />
 
-        a[class="external"] {
-            color: aqua
-        }
-    </style>
-    <style>
-        div[class|="a"] {
-            border: 2px solid #000;
-        }
-    </style>
 </head>
 
 <body>
-    <ul>
-        <li>
-            <a href="?" class="external">外部链接</a>
-        </li>
-        <li>
-            <a href="?" class="external txt">外部链接</a>
-        </li>
-        <li>
-            <a href="?" class="txt">内部链接</a>
-        </li>
-        <li>
-            <a href="?" class="external txt">外部链接</a>
-        </li>
-        <li>
-            <a href="?" class="txt">内部链接</a>
-        </li>
-    </ul>
-    <div class="a-test">1</div>
-    <div class="ai-test">2</div>
-    <div class="a">3</div>
-    <div class="a_i">4</div>
-    <div class="b-test">5</div>
+
+    <header>
+        <P>学习记录</P>
+    </header>
+    <div class="container">
+        <div class="css_content">
+            <p>css例子</p>
+            <section>
+                <p>属性选择符</p>
+                <ul>
+                    <li>
+                        <a href="?" class="external">外部链接</a>
+                    </li>
+                    <li>
+                        <a href="?" class="external txt">外部链接</a>
+                    </li>
+                    <li>
+                        <a href="?" class="txt">内部链接</a>
+                    </li>
+                    <li>
+                        <a href="?" class="external txt">外部链接</a>
+                    </li>
+                    <li>
+                        <a href="?" class="txt">内部链接</a>
+                    </li>
+                </ul>
+                <div class="a-test">1</div>
+                <div class="ai-test">2</div>
+                <div class="a">3</div>
+                <div class="a_i">4</div>
+                <div class="b-test">5</div>
+            </section>
+            <section class="hov">
+                <p>伪类选择符</p>
+                <a href="#" >link</a>
+            </section>
+
+        </div>
+        <div class="js_content">
+
+        </div>
+        <footer>
+            <p>学习记录 </p>
+        </footer>
+
+    </div>
+
     <script src="../build/bundle.js"></script>
 </body>
 

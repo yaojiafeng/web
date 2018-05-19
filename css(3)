@@ -198,48 +198,53 @@ border-box：IE传统盒子模型。设置元素的height/width属性指的是bo
 
 
 
-CSS选择符：id选择器(#myid)、类选择器(.myclassname)、标签选择器(div, h1, p)、相邻选择器(h1 + p)、子选择器（ul > li）、后代选择器（li a）、
-通配符选择器（*）、属性选择器（a[rel="external"]）、伪类选择器（a:hover, li:nth-child）
+可继承的属性:布局(visibility),
+            颜色(color,opacity不能继承),
+            字体(font,font-style,font-variant,font-weight,font-size, font-family,font-stretch,font-size-adjust), 
+            文本(text-transform,white-space,tab-size,word-break,word-wrap,overflow-wrap,text-align,text-align-last,
+                 text-justify,word-spacing,text-indent,line-height,letter-spacing,text-size-adjust,文本中的vertical-align没有继承,其他具有),
+            文本装饰(text-shadow,text-underline-position,text-decoration-skip),
+            书写模式(derection,writing-mode),
+            列表(list-style,list-style-image,,list-style-position,list-style-type),
+            表格(table-layout,border-collapse,border-spacing,empty-cells),
+            内容(quotes),
+            用户界面(cursor,zoom,pointer-events),
+            Only IE(scrollbar-3dlight-color,scrollbar-darkshadow-color,scrollbar-highlight-color,scrollbar-shadow-color,
+                    scrollbar-arrow-color,scrollbar-face-color,scrollbar-track-color,scrollbar-base-color,filter和behavior没有继承),
+            Only webkit(text-fill0-color,text-stroke,text-stroke-width,text-stroke-color，tap-highlight-color，user-drag)
 
-可继承的属性：font-size, font-family, color
+不可继承的样式:border, padding, margin, width, height...
 
-不可继承的样式：border, padding, margin, width, height
-
-优先级（就近原则）：!important > [ id > class > tag ]
-
+优先级(就近原则):!important > [ id > class > tag ]
 !important 比内联优先级高
 
 4、 CSS优先级算法如何计算？
+选择器的特殊性值表述为4个部分,用0,0,0,0表示。
+    ID选择器的特殊性值，加0,1,0,0。
+    类选择器、属性选择器或伪类，加0,0,1,0。
+    元素和伪元素，加0,0,0,1。
+    通配选择器*对特殊性没有贡献，即0,0,0,0。
+    style="" 特殊性值为1,0,0,0
+    最后比较特殊的一个标志!important（权重），它没有特殊性值，但它的优先级是最高的，为了方便记忆，可以认为它的特殊性值为1,0,0,0,0。
+    !important声明的样式优先级最高，如果冲突再进行计算。
+    如果优先级相同，则选择最后出现的样式。
+    继承得到的样式的优先级最低。
 
-元素选择符： 1
-
-class选择符： 10
-
-id选择符：100
-
-元素标签：1000
-
-➤!important声明的样式优先级最高，如果冲突再进行计算。
-
-➤如果优先级相同，则选择最后出现的样式。
-
-➤继承得到的样式的优先级最低。
-
-5 、CSS3新增伪类有那些?
-
-p:first-of-type 选择属于其父元素的首个元素
-
-p:last-of-type 选择属于其父元素的最后元素
-
-p:only-of-type 选择属于其父元素唯一的元素
-
-p:only-child 选择属于其父元素的唯一子元素
-
-p:nth-child(2) 选择属于其父元素的第二个子元素
-
-:enabled :disabled 表单控件的禁用状态。
-
-:checked 单选框或复选框被选中。
+5 、CSS3新增伪类有那些?(CSS伪类是用来添加一些选择器的特殊效果)
+    E:not(s) 匹配不含有s选择符的元素E
+    E:root   匹配E元素在文档的根元素。在HTML中，根元素永远是HTML
+    E:last-child 匹配父元素的最后一个子元素E,要使该属性生效,E元素必须是某个元素的子元素,E的父元素最高是body,即E可以是body的子元素
+                 E必须是它的兄弟元素中的最后一个元素,换言之,E必须是父元素的最后一个子元素
+    p:first-of-type 选择属于其父元素的首个元素
+    p:last-of-type 选择属于其父元素的最后元素
+    p:only-of-type 选择属于其父元素唯一的元素
+    p:only-child 选择属于其父元素的唯一子元素
+    p:nth-child(2) 选择属于其父元素的第二个子元素
+    E:enabled 
+    E:disabled 表单控件的禁用状态。
+    E:checked 单选框或复选框被选中。
+    E:target
+    E:empty
 
 6、如何居中div？如何居中一个浮动元素？如何让绝对定位的div居中？
 

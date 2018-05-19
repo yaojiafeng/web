@@ -1,0 +1,8 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+/*html5*/
+article,aside,dialog,footer,header,section,footer,nav,figure,menu{
+    display:block
+} 

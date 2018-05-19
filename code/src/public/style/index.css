@@ -1,0 +1,78 @@
+header{
+    position: fixed;
+    height: 96px;
+    width: 100%;
+    background: #c3e1ff;
+    color: #000;
+    z-index: 1;
+}
+header >p{
+     position: absolute;
+     top: 0;
+     left: 0;
+     bottom: 0;
+     right: 0;
+     margin: auto;
+     height: 20px;
+     width: 100px
+}
+.container{
+    position: relative;
+    top: 96px;
+
+}
+a[class~="external"] {
+    color: #f00;
+}
+
+a[class="external"] {
+    color: aqua
+}
+
+div[class|="a"] {
+    border: 2px solid #000;
+}
+.hov a:link{
+    color: #000
+}
+.hov a:visited{
+    color:red
+}
+.hov a:hover{
+    background:yellow
+}
+.hov a:active{
+    background:blue
+}
+
+
+
+
+
+
+
+
+.js_content{
+    height: 1500px;
+    width: 100%;
+}
+/*footer*/
+footer{
+   position: relative;
+    height: 96px;
+    width: 100%;
+    background: #c3e1ff;
+    color: #000
+}
+
+footer> p{
+    position: absolute;
+     top: 0;
+     left: 0;
+     bottom: 0;
+     right: 0;
+     margin: auto;
+     height: 20px;
+     width: 100px;
+
+}

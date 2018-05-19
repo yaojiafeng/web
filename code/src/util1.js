@@ -1,6 +1,6 @@
 export default function () {
-    alert('util1');
+    console.log('export default ');
 }
-export function add(){
-    alert('add');
+export function test(){
+    console.log('export function test(){}');
 }
