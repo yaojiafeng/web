@@ -235,96 +235,102 @@ border-box：IE传统盒子模型。设置元素的height/width属性指的是bo
     E:root   匹配E元素在文档的根元素。在HTML中，根元素永远是HTML
     E:last-child 匹配父元素的最后一个子元素E,要使该属性生效,E元素必须是某个元素的子元素,E的父元素最高是body,即E可以是body的子元素
                  E必须是它的兄弟元素中的最后一个元素,换言之,E必须是父元素的最后一个子元素
-    p:first-of-type 选择属于其父元素的首个元素
-    p:last-of-type 选择属于其父元素的最后元素
-    p:only-of-type 选择属于其父元素唯一的元素
-    p:only-child 选择属于其父元素的唯一子元素
-    p:nth-child(2) 选择属于其父元素的第二个子元素
-    E:enabled 
-    E:disabled 表单控件的禁用状态。
-    E:checked 单选框或复选框被选中。
-    E:target
-    E:empty
+    E:only-chird 匹配父元素仅有的一个子元素E,不是
+    E:nth-child(n) 匹配父元素的第n个子元素E，假设该子元素不是E，则选择符无效,可以使用odd, even实现奇偶,
+                   E:nth-child(n)会选择父元素的第n个子元素E，如果第n个子元素不是E，则是无效选择符，但n会递增
+    E:nth-last-child(n) 匹配父元素的倒数第n个子元素E，假设该子元素不是E，则选择符无效
+    E:first-of-type 匹配同类型中的第一个同级兄弟元素E,该选择符总是能命中父元素的第1个为E的子元素，不论第1个子元素是否为E
+    E:last-of-type 匹配同类型中的最后一个同级兄弟元素E,该选择符总是能命中父元素的倒数第1个为E的子元素，不论倒数第1个子元素是否为E
+    E:only-of-type 匹配同类型中的唯一的一个同级兄弟元素E,该选择符总是能命中父元素的唯一同类型子元素E，不论该元素的位置
+    E:nth-of-type(n) 匹配同类型中的第n个同级兄弟元素E,该选择符总是能命中父元素的第n个为E的子元素，不论第n个子元素是否为E
+    E:nth-last-of-type(n) 匹配同类型中的倒数第n个同级兄弟元素E,该选择符总是能命中父元素的倒数第n个为E的子元素，不论倒数第n个子元素是否为E
+    E:empty 匹配没有任何子元素(包括text节点)的元素
+    E:checked 匹配用户界面上处于选中状态的元素E(用于input type为radio与checkbox时)
+    E:enabled 匹配用户界面上处于可用状态的元素E
+    E:disabled 匹配用户界面上处于禁用状态的元素E 
+    E:target 匹配相关URL指向的E元素
+  
+6、如何实现水平居中？如何居中一个浮动元素？如何让绝对定位的div居中？
+水平居中的6中实现方式
+    1)行内元素
+      在父元素实现text-align:center
+    2)定宽块状
+      div{
+          width:960px;
+          margin: 0 auto;
+      }
+      或:
+      div{
+          position:absolute;
+          width:960px;
+          left:50%;
+          margin-left:-480px; 
+      }
+      或:
+       div{
+          position:absolute;
+          width:960px;
+          left:50%;
+          margin-left:-480px; 
+      }
+      优点:实现方法简单易懂，浏览器兼容性强；
+      缺点:扩展性差，无法自适应未知项情况
+    3)不定宽块状
+      直接把元素改为行内元素,既display:inline-block,然后就可以用text-align:center了
+      缺点:子元素之间由回车符带来的空白间距,(而且这个间距并不是所有浏览器都有),所以需要解决下inline-block带来的间距问题
+      或:浮动实现水平居中的方法
 
-6、如何居中div？如何居中一个浮动元素？如何让绝对定位的div居中？
-
-div：
-
-border: 1pxsolid red;margin: 0auto; height: 50px;width: 80px;
-浮动元素的上下左右居中：
-
-border: 1px solid red;
-float: left;position:
-
-absolute;width: 200px;
-
-height: 100px;
-
-left: 50%;
-
-top: 50%;
-
-margin: -50px 0 0 -100px;
-
-绝对定位的左右居中：
-
-border: 1px solid black;
-position: absolute;
-
-width: 200px;
-
-height: 100px;
-
-margin: 0 auto;
-
-left: 0;
-
-right: 0;
-
-还有更加优雅的居中方式就是用flexbox，我以后会做整理。
 
 7 、display有哪些值？说明他们的作用?
-
-inline（默认）--内联
-
-none--隐藏
-
-block--块显示
-
-table--表格显示
-
-list-item--项目列表
-
+inline(默认)--内联
+none  
+block  
 inline-block
+list-item  
+table  指定对象作为块元素级的表格。类同于html标签<table>(CSS2)
+inline-table 指定对象作为内联元素级的表格。类同于html标签<table>(CSS2)
+table-caption 指定对象作为表格标题。类同于html标签<caption>(CSS2)
+table-cell  指定对象作为表格单元格。类同于html标签<td>(CSS2)
+table-row  指定对象作为表格行。类同于html标签<tr>(CSS2)
+table-row-group  指定对象作为表格行组。类同于html标签<tbody>(CSS2)
+table-column  指定对象作为表格列。类同于html标签<col>(CSS2)
+table-column-group  指定对象作为表格列组显示。类同于html标签<colgroup>(CSS2)
+table-header-group  指定对象作为表格标题组。类同于html标签<thead>(CSS2)
+table-footer-group  指定对象作为表格脚注组。类同于html标签<tfoot>(CSS2)
+run-in  根据上下文决定对象是内联对象还是块级对象。(CSS3)
+box  将对象作为弹性伸缩盒显示。（伸缩盒最老版本）(CSS3)
+inline-box  将对象作为内联块级弹性伸缩盒显示。（伸缩盒最老版本）(CSS3)
+flexbox  将对象作为弹性伸缩盒显示。（伸缩盒过渡版本）(CSS3)
+inline-flexbox  将对象作为内联块级弹性伸缩盒显示。（伸缩盒过渡版本）(CSS3)
+flex  将对象作为弹性伸缩盒显示。（伸缩盒最新版本）(CSS3)
+inline-flex  将对象作为内联块级弹性伸缩盒显示。（伸缩盒最新版本）(CSS3)
 
 8、 position的值？
-
 static（默认）：按照正常文档流进行排列；
-
 relative（相对定位）：不脱离文档流，参考自身静态位置通过 top, bottom, left, right 定位；
-
 absolute(绝对定位)：参考距其最近一个不为static的父级元素通过top, bottom, left, right 定位；
-
 fixed(固定定位)：所固定的参照对像是可视窗口。
-
+center  与absolute一致,但偏移定位是以定位祖先元素的中心点为参考 (支持不高)
+page 与absolute一致。元素在分页媒体或者区域块内,元素的包含块始终是初始包含块，否则取决于每个absolute模式。(CSS3)支持不高
+sticky
 9、 CSS3有哪些新特性？
-
+    1)css3的新的选择器
+    2)@Font-face 特性
+    3)圆角
+    4)多列布局
+    5)阴影(shadow)
+    6)渐变效果
+    7)弹性盒子模型
+    8)CSS3制作特效(过渡)
+    9)媒体查询
 ➤RGBA和透明度
-
 ➤background-image background-origin(content-box/padding-box/border-box) background-size background-repeat
-
 ➤word-wrap（对长的不可分割单词换行）word-wrap：break-word
-
 ➤文字阴影：text-shadow： 5px 5px 5px #FF0000;（水平阴影，垂直阴影，模糊距离，阴影颜色）
-
 ➤font-face属性：定义自己的字体
-
 ➤圆角（边框半径）：border-radius 属性用于创建圆角
-
 ➤边框图片：border-image: url(border.png) 30 30 round
-
 ➤盒阴影：box-shadow: 10px 10px 5px #888888
-
 ➤媒体查询：定义两套css，当浏览器的尺寸变化时会采用不同的属性
 
 10、 请解释一下CSS3的flexbox（弹性盒布局模型）,以及适用场景？
@@ -402,34 +408,24 @@ _background-color:#1e0bd1;
 解决方法是改变CSS属性的排列顺序:L-V-H-A ( love hate ): a:link {} a:visited {} a:hover {} a:active {}
 
 14、 为什么要初始化CSS样式
-
 因为浏览器的兼容问题，不同浏览器对有些标签的默认值是不同的，如果没对CSS初始化往往会出现浏览器之间的页面显示差异。
 
 15、 absolute的containing block计算方式跟正常流有什么不同？
 
 无论属于哪种，都要先找到其祖先元素中最近的 position 值不为 static 的元素，然后再判断：
-
-➤若此元素为 inline 元素，则 containing block 为能够包含这个元素生成的第一个和最后一个 inline box 的 padding box (除 margin, border 外的区域) 的最小矩形；
-
+➤若此元素为 inline 元素，则 containing block 为能够包含这个元素生成的第一个和最后一个 inline box 的 padding box (除 margin, border 外的区域)
+ 的最小矩形；
 ➤否则,则由这个祖先元素的 padding box 构成。
-
 如果都找不到，则为 initial containing block。
-
 补充：
-
 ➤static(默认的)/relative：简单说就是它的父元素的内容框（即去掉padding的部分）
-
 ➤absolute: 向上找最近的定位为absolute/relative的元素
-
 ➤fixed: 它的containing block一律为根元素(html/body)
 
 16、 CSS里的visibility属性有个collapse属性值？在不同浏览器下以后什么区别？
-
 当一个元素的visibility属性被设置成collapse值后，对于一般的元素，它的表现跟hidden是一样的。
-
 ➤chrome中，使用collapse值和使用hidden没有区别。
-
-➤firefox，opera和IE，使用collapse值和使用display：none没有什么区别。
+➤firefox，opera和IE，使用collapse值和使用display:none没有什么区别。
 
 17、 display:none与visibility：hidden的区别？
 
@@ -441,7 +437,8 @@ visibility：hidden 隐藏对应元素，在文档布局中仍保留原来的空
 
 display属性规定元素应该生成的框的类型；position属性规定元素的定位类型；float属性是一种布局方式，定义元素在哪个方向浮动。
 
-类似于优先级机制：position：absolute/fixed优先级最高，有他们在时，float不起作用，display值需要调整。float 或者absolute定位的元素，只能是块元素或表格。
+类似于优先级机制：position：absolute/fixed优先级最高，有他们在时，float不起作用，display值需要调整。float 或者absolute定位的元素，
+只能是块元素或表格。
 
 19、 对BFC规范(块级格式化上下文：block formatting context)的理解？
 
@@ -571,20 +568,16 @@ Less sass
 ➤尽可能的精简规则，你可以合并不同类里的重复规则
 
 26 、浏览器是怎样解析CSS选择器的？
-
 CSS选择器的解析是从右向左解析的。若从左向右的匹配，发现不符合规则，需要进行回溯，会损失很多性能。
-
 若从右向左匹配，先找到所有的最右节点，对于每一个节点，向上寻找其父节点直到找到根元素或满足条件的匹配规则，则结束这个分支的遍历。
-
-两种匹配规则的性能差别很大，是因为从右向左的匹配在第一步就筛选掉了大量的不符合条件的最右节点（叶子节点），而从左向右的匹配规则的性能都浪费在了失败的查找上面。
-
-而在 CSS 解析完毕后，需要将解析的结果与 DOM Tree 的内容一起进行分析建立一棵 Render Tree，最终用来进行绘图。
-
-在建立 Render Tree 时（WebKit 中的「Attachment」过程），浏览器就要为每个 DOM Tree 中的元素根据 CSS 的解析结果（Style Rules）来确定生成怎样的 Render Tree。
+两种匹配规则的性能差别很大，是因为从右向左的匹配在第一步就筛选掉了大量的不符合条件的最右节点（叶子节点），而从左向右的匹配规则的性能都浪费在了失败的
+查找上面。而在 CSS 解析完毕后，需要将解析的结果与 DOM Tree 的内容一起进行分析建立一棵 Render Tree，最终用来进行绘图。在建立 Render Tree 时
+（WebKit 中的「Attachment」过程），浏览器就要为每个 DOM Tree 中的元素根据 CSS 的解析结果（Style Rules）来确定生成怎样的Render Tree。
 
 27、 在网页中的应该使用奇数还是偶数的字体？为什么呢？
 
-使用偶数字体。偶数字号相对更容易和 web 设计的其他部分构成比例关系。Windows 自带的点阵宋体（中易宋体）从 Vista 开始只提供 12、14、16 px 这三个大小的点阵，而 13、15、17 px时用的是小一号的点。（即每个字占的空间大了 1 px，但点阵没变），于是略显稀疏。
+使用偶数字体。偶数字号相对更容易和 web 设计的其他部分构成比例关系。Windows 自带的点阵宋体（中易宋体）从 Vista 开始只提供 12、14、16 px 这三个大小的
+点阵，而 13、15、17 px时用的是小一号的点。（即每个字占的空间大了 1 px，但点阵没变），于是略显稀疏。
 
 28、 margin和padding分别适合什么场景使用？
 
@@ -608,7 +601,8 @@ CSS选择器的解析是从右向左解析的。若从左向右的匹配，发�
 
 29、 元素竖向的百分比设定是相对于容器的高度吗？
 
-当按百分比设定一个元素的宽度时，它是相对于父容器的宽度计算的，但是，对于一些表示竖向距离的属性，例如 padding-top , padding-bottom , margin-top , margin-bottom 等，当按百分比设定它们时，依据的也是父容器的宽度，而不是高度。
+当按百分比设定一个元素的宽度时，它是相对于父容器的宽度计算的，但是，对于一些表示竖向距离的属性，例如 padding-top , padding-bottom , margin-top ,
+ margin-bottom 等，当按百分比设定它们时，依据的也是父容器的宽度，而不是高度。
 
 30、 全屏滚动的原理是什么？用到了CSS的哪些属性？
 
@@ -751,4 +745,5 @@ user-scalable=no"/>
 
 45 、阐述一下CSS Sprites
 
-将一个页面涉及到的所有图片都包含到一张大图中去，然后利用CSS的 background-image，background- repeat，background-position 的组合进行背景定位。利用CSS Sprites能很好地减少网页的http请求，从而大大的提高页面的性能；CSS Sprites能减少图片的字节。
+将一个页面涉及到的所有图片都包含到一张大图中去,然后利用CSS的 background-image,background- repeat,background-position 的组合进行背景定位。
+利用CSS Sprites能很好地减少网页的http请求，从而大大的提高页面的性能；CSS Sprites能减少图片的字节。
