@@ -49,6 +49,14 @@ circle.circumference();
 //方式四:
 import myClass from 'xxx';//export default class{};
 
+##vdom
+问题:
+   1.vdom是什么?为何存在vdom?
+   2.如何使用vdom?核心API是什么?
+   3.介绍一下diff算法?
+   
+
+
 
 
 

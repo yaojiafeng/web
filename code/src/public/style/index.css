@@ -113,13 +113,6 @@ div[class|="a"] {
 #ccc{
     display: table
 }
-
-
-
-.js_content{
-    height: 1500px;
-    width: 100%;
-}
 /*footer*/
 footer{
    position: relative;

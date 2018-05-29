@@ -13,6 +13,7 @@
     <![endif]-->
     <link rel="stylesheet" href="./public/style/common.css" type="text/css">
     <link rel="stylesheet" type="text/css" href="./public/style/index.css" />
+    <script src="./public/javascript/vue.js"></script>
 
 </head>
 
@@ -41,7 +42,7 @@
                 <div>
                     <p><strong>例如:</strong></p>
                     <blockquote>
-                            <pre>
+                        <pre>
                                     &lt;html&gt;
                                     
                                     &lt;head&gt;
@@ -130,8 +131,9 @@
                 </div>
             </section>
         </div>
-        <div class="js_content">
-
+        <div class="js_content" id="app">
+            {{title}}
+            <input v-model="text"> {{text}}
         </div>
         <footer>
             <p>学习记录 </p>
