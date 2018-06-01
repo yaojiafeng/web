@@ -10,13 +10,17 @@
 // } from 'rxjs/Observable';
 // import 'rxjs/add/observable/of';
 // import 'rxjs/add/operator/map';
-
+import {
+    rxjsTest
+} from './rxjs'
 
 import promise, {
     Person
-} from './es6.js';
+} from './es6';
+import '../style/test.css';
 
 promise();
+rxjsTest();
 var person = new Person();
 person.getName();
 var vm = new Vue({
@@ -26,9 +30,7 @@ var vm = new Vue({
         text: ''
     }
 })
-// var buttom = document.getElementById('app');
-// Rx.Observable.fromEvent(buttom, 'click')
-//     .subscribe(() => console.log('Clicked'))
+
 
 
 

@@ -443,66 +443,65 @@ import myClass from 'xxx';//export default class{};
 		为未来新版本的Javascript标准化做铺垫。
 
 21.如何判断一个对象是否属于某个类？
- 		  使用instanceof （待完善）
+ 	1)使用instanceof （待完善）
 	       if(a instanceof Person){
 	           alert('yes');
 	       }
+	2)Person.prototype.isPrototypeOf(p)
+    3)Object.getPrototypeOf(p)
 
 22.new操作符具体干了什么呢?
-
-			 1、创建一个空对象，并且 this 变量引用该对象，同时还继承了该函数的原型。
-	  	  	 2、属性和方法被加入到 this 引用的对象中。
-	 		 3、新创建的对象由 this 所引用，并且最后隐式的返回 this 。
-
+	1)创建一个新对象
+    2)将构造函数的作用域赋给这个新对象(this指向新对象)
+	3)执行构造函数里的代码
+	4)返回新对象
 		var obj  = {};
 		obj.__proto__ = Base.prototype;
 		Base.call(obj);
+23.用原生JavaScript的实现过什么功能吗？
+    表单验证、轮播、事件监听、弹出窗口、Ajax请求数据、canvas画图等。
 
-
--  用原生JavaScript的实现过什么功能吗？
-
-
--  Javascript中，有一个函数，执行时对象查找时，永远不会去查找原型，这个函数是？
-
-		hasOwnProperty
-
-		javaScript中hasOwnProperty函数方法是返回一个布尔值，指出一个对象是否具有指定名称的属性。此方法无法检查该对象的原型链中是否具有该属性；该属性必须是对象本身的一个成员。
+24.Javascript中，有一个函数，执行时对象查找时，永远不会去查找原型，这个函数是？
+	hasOwnProperty
+	javaScript中hasOwnProperty函数方法是返回一个布尔值，指出一个对象是否具有指定名称的
+	属性。此方法无法检查该对象的原型链中是否具有该属性；该属性必须是对象本身的一个成员。
 		使用方法：
 		object.hasOwnProperty(proName)
 		其中参数object是必选项。一个对象的实例。
 		proName是必选项。一个属性名称的字符串值。
+		如果 object 具有指定名称的属性，那么JavaScript中hasOwnProperty函数方法返回
+		 true，反之则返回 false。
 
-		如果 object 具有指定名称的属性，那么JavaScript中hasOwnProperty函数方法返回 true，反之则返回 false。
+25.JSON 的了解？
+	1)JSON(JavaScript Object Notation,javascript对象表示法) 是一种轻量级的数据交换格式。
+	是一种数据格式。语法与javascript相似,但不局限于javascript,有三种类型值：
+	    简单值:可以是除了undefined之外的基本类型值,如5,字符串要用双引号,如"yao"
+        对象:
+		    1)没变量
+			2)没分号
+			3)属性名必须加双引号
+			{
+				"name":"yao"
+			}
+		数组:[25,"yao",true],数组同样没变量和分号
+	2)解析JSON数据
+	  早期eval(jsonText);
+	  JSON.stringify(obj,[[]||function(key,value){return xxx}],[number]);
+	  JSON.parse(jsonText,[function(key,value){return xxx}]);
+    
+26.`[].forEach.call($$("*"),function(a){a.style.outline="1px solid #"+(~~(Math.random()*(1<<24))).toString(16)})` 能解释一下这段代码的意思吗？
 
--  JSON 的了解？
+27.js延迟加载的方式有哪些？
+    1) 先下载,等到整个页面都解析完再执行 <script src="test1.js" defer="defer"></script>
+	2)不让页面等待脚本下载和执行,从而异步加载页面其他内容 
+	  <script src="test1.js" async></script>  xhtml中设置async="async"
+	3)动态创建DOM
+    defer和async、动态创建DOM方式（用得最多）、按需异步载入js
 
-		JSON(JavaScript Object Notation) 是一种轻量级的数据交换格式。
-		它是基于JavaScript的一个子集。数据格式简单, 易于读写, 占用带宽小
-        如：{"age":"12", "name":"back"}
-
-        JSON字符串转换为JSON对象:
-		var obj =eval('('+ str +')');
-		var obj = str.parseJSON();
-		var obj = JSON.parse(str);
-
-		JSON对象转换为JSON字符串：
-		var last=obj.toJSONString();
-		var last=JSON.stringify(obj);
-
--  `[].forEach.call($$("*"),function(a){a.style.outline="1px solid #"+(~~(Math.random()*(1<<24))).toString(16)})` 能解释一下这段代码的意思吗？
-
-
--  js延迟加载的方式有哪些？
-
-		defer和async、动态创建DOM方式（用得最多）、按需异步载入js
-
-
--  Ajax 是什么? 如何创建一个Ajax？
-
+28.Ajax 是什么? 如何创建一个Ajax？
 		ajax的全称：Asynchronous Javascript And XML。
 		异步传输+js+xml。
 		所谓异步，在这里简单地解释就是：向服务器发送请求的时候，我们不必等待结果，而是可以同时做其他的事情，等到有了结果它自己会根据设定进行后续操作，与此同时，页面是不会发生整页刷新的，提高了用户体验。
-
 		(1)创建XMLHttpRequest对象,也就是创建一个异步调用对象
 		(2)创建一个新的HTTP请求,并指定该HTTP请求的方法、URL及验证信息
 		(3)设置响应HTTP请求状态变化的函数
