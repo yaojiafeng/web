@@ -1,7 +1,7 @@
 # 安装环境
-1.安装node.js(包含了npm)
-cmd中node -v检查node环境
-npm instsall -g typescript
+    1.安装node.js(包含了npm)
+    cmd中node -v检查node环境
+    npm instsall -g typescript
 2.安装angular-cli
   npm install -g @angular/cli
   或者利用淘宝镜像安装
