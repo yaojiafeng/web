@@ -27,82 +27,73 @@
     ng generate <type> [options]	在项目中构建新代码
     ng g <type> [options]	简写
     支持的类型	用法
-Component	    ng g component my-new-component
-Directive   	ng g directive my-new-directive
-Pipe	        ng g pipe my-new-pipe
-Service     	ng g service my-new-service
-Class	        ng g class my-new-class
-Interface	    ng g interface my-new-interface
-Enum	        ng g enum my-new-enum
-Module	      ng g module my-module
-Route	        ng g route my-route当前已禁用
-4.angular项目目录结构
-
-node_modules        第三方依赖包存放目录
-e2e                 端到端的测试目录  用来做自动测试的
-src                 应用源代码目录  
-.angular-cli.json   Angular命令行工具的配置文件。后期可能会去修改它，引一些其他的第三方的包  比如jquery等
-karma.conf.js       karma是单元测试的执行器，karma.conf.js是karma的配置文件
-package.json        这是一个标准的npm工具的配置文件，这个文件里面列出了该应用程序所使用的第三方依赖包。实际上我们在新建项目的时候，
-                    等了半天就是在下载第三方依赖包。下载完成后会放在node_modules这个目录中，后期我们可能会修改这个文件。
-protractor.conf.js  也是一个做自动化测试的配置文件
-README.md           说明文件
-tslint.json         是tslint的配置文件，用来定义TypeScript代码质量检查的规则，不用管它
-
-app目录               包含应用的组件和模块，我们要写的代码都在这个目录
-assets目录            资源目录，存储静态资源的  比如图片
-environments目录      环境配置。Angular是支持多环境开发的，我们可以在不同的环境下（开发环境，测试环境，生产环境）共用一套代码，主要用来配置环境的
-index.html          整个应用的根html，程序启动就是访问这个页面
-main.ts             整个项目的入口点，Angular通过这个文件来启动项目
-polyfills.ts        主要是用来导入一些必要库，为了让Angular能正常运行在老版本下
-styles.css          主要是放一些全局的样式
-tsconfig.app.json   TypeScript编译器的配置,添加第三方依赖的时候会修改这个文件
-tsconfig.spec.json  不用管
-test.ts             也是自动化测试用的
-typings.d.ts        不用管
-
-
-@component
-元数据属性：
-
-animations - 规定这个component的动画列表
-changeDetection - 通过这个component变更侦测策略；
-encapsulation - 通过该component设计封装策略；
-entryComponents - 一个components的列表，这个列表会动态插入进当前component的视图中。
-exportAs -名下component的实例化被导出在一个模板视图中。
-host - class属性映射到host元素上，并绑定了事件，属性；
-inputs - 当前class属性名列表，当前components输入的数据绑定。
-interpolation - 自定义改写工具，被用于当前component的视图模板上。
-moduleld - 文件中ES/CommonJS 模块的id,而当前component就定义在该模块中。
-outputs - 当前class属性名列表，对外暴露输出事件，这样其他components就可以调用。
-providers - providers列表，该列表可以用于当前component和其子component.
-queries - 将配置问题注入到当前component中。
-selector - 样式选择器，它可以在一个复杂的视图模板中识别出当前component.
-styleUrls - 运用在当前component中的一组样式表的url列表
-styles - 样式
-template - 视图模板
-viewProvider - providers列表，该列表可以用于当前component，以及其子视图。
-templateUrl - 视图模板的url链接
-
-注解（Annotation）
-任何通过Angular2 快速入门开始Angular2，都会看到这么一段代码：
-
-@Component({
-    selector: 'my-app',
-    template: '<h1>My First Angular 2 App</h1>'
-})
-export class AppComponent { }
-我们看到有一个 AppComponent 空类，同时该类包括一个 @Component 注解，假如我们移除注解那么类就变成完全没有任何意义了。@Component 告诉Angular这个类以
-什么形式与该组件连接。selector 表明连接位置，是一个CSS选择器；template 表明渲染的内容，现在是一段HTML代码。
-这看起来非常简单，但是我们需要理解几个问题：
-这些注解从哪来？JavaScript如何解析它？
-为什么是 @Component，谁来定义它？
-如果这是TypeScript特有的，那么现流行浏览器是怎么支持和解释它们？
-首先要回答第一个问题。我们需要完成上面的示例代码，定义一个组件之间需要先从Angular2框架导入 Component，例如：
-import {Component} from 'angular2/core';
-从源代码可以查看他实现定义：
-
-export class ComponentMetadata extends DirectiveMetadata { }
+    Component	    ng g component my-new-component
+    Directive   	ng g directive my-new-directive
+    Pipe	        ng g pipe my-new-pipe
+    Service     	ng g service my-new-service
+    Class	        ng g class my-new-class
+    Interface	    ng g interface my-new-interface
+    Enum	        ng g enum my-new-enum
+    Module	      ng g module my-module
+    Route	        ng g route my-route当前已禁用
+    4.angular项目目录结构
+    node_modules        第三方依赖包存放目录
+    e2e                 端到端的测试目录  用来做自动测试的
+    src                 应用源代码目录  
+    angular-cli.json   Angular命令行工具的配置文件。后期可能会去修改它，引一些其他的第三方的包  比如jquery等
+    karma.conf.js       karma是单元测试的执行器，karma.conf.js是karma的配置文件
+    package.json        这是一个标准的npm工具的配置文件，这个文件里面列出了该应用程序所使用的第三方依赖包。实际上我们在新建项目的时候，
+                        等了半天就是在下载第三方依赖包。下载完成后会放在node_modules这个目录中，后期我们可能会修改这个文件。
+    protractor.conf.js  也是一个做自动化测试的配置文件
+    README.md           说明文件
+    tslint.json         是tslint的配置文件，用来定义TypeScript代码质量检查的规则
+    app目录               包含应用的组件和模块，我们要写的代码都在这个目录
+    assets目录            资源目录，存储静态资源的  比如图片
+    environments目录  环境配置。Angular是支持多环境开发的，我们可以在不同的环境下（开发环境，测试环境，生产环境）共用一套代码，主要用来配置环境的
+    index.html          整个应用的根html，程序启动就是访问这个页面
+    main.ts             整个项目的入口点，Angular通过这个文件来启动项目
+    polyfills.ts        主要是用来导入一些必要库，为了让Angular能正常运行在老版本下
+    styles.css          主要是放一些全局的样式
+    tsconfig.app.json   TypeScript编译器的配置,添加第三方依赖的时候会修改这个文件
+    tsconfig.spec.json  
+    test.ts             也是自动化测试用的
+    typings.d.ts        
+    @component
+    元数据属性：
+    animations - 规定这个component的动画列表
+    changeDetection - 通过这个component变更侦测策略；
+    encapsulation - 通过该component设计封装策略；
+    entryComponents - 一个components的列表，这个列表会动态插入进当前component的视图中。
+    exportAs -名下component的实例化被导出在一个模板视图中。
+    host - class属性映射到host元素上，并绑定了事件，属性；
+    inputs - 当前class属性名列表，当前components输入的数据绑定。
+    interpolation - 自定义改写工具，被用于当前component的视图模板上。
+    moduleld - 文件中ES/CommonJS 模块的id,而当前component就定义在该模块中。
+    outputs - 当前class属性名列表，对外暴露输出事件，这样其他components就可以调用。
+    providers - providers列表，该列表可以用于当前component和其子component.
+    queries - 将配置问题注入到当前component中。
+    selector - 样式选择器，它可以在一个复杂的视图模板中识别出当前component.
+    styleUrls - 运用在当前component中的一组样式表的url列表
+    styles - 样式
+    template - 视图模板
+    viewProvider - providers列表，该列表可以用于当前component，以及其子视图。
+    templateUrl - 视图模板的url链接
+    注解（Annotation）
+    任何通过Angular2 快速入门开始Angular2，都会看到这么一段代码：
+    @Component({
+        selector: 'my-app',
+        template: '<h1>My First Angular 2 App</h1>'
+    })
+    export class AppComponent { }
+    我们看到有一个 AppComponent 空类，同时该类包括一个 @Component 注解，假如我们移除注解那么类就变成完全没有任何意义了。@Component 告诉Angular这个类以什么形式与该组件连接。selector 表明连接位置，是一个CSS选择器；template 表明渲染的内容，现在是一段HTML代码。
+    这看起来非常简单，但是我们需要理解几个问题：
+    这些注解从哪来？JavaScript如何解析它？
+    为什么是 @Component，谁来定义它？
+    如果这是TypeScript特有的，那么现流行浏览器是怎么支持和解释它们？
+    首先要回答第一个问题。我们需要完成上面的示例代码，定义一个组件之间需要先从Angular2框架导入 Component，例如：
+    import {Component} from 'angular2/core';
+    从源代码可以查看他实现定义：
+    export class ComponentMetadata extends DirectiveMetadata { }
 可以从源代码库中查找到所有Angular2所提供的注解的具体实现细节。这也间接回答我们第二个问题。既然定义由Angular2来做，那么怎么去解析这些带有 @ 符号的特殊
 语言呢？事实目前浏览器还不能直接支持并解析它，虽然注解有可能成为ES7标准，这还是相当长的路要走；所以我们还是需要借助解析器。
 
