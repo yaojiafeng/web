@@ -26,3 +26,4 @@ http://yaojiafeng.com
         真的吗
         
                 滚滚滚
+[我的博客](http://yaojiafeng.com)
