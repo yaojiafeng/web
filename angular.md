@@ -12,7 +12,7 @@
        npm uninstall -g angular-cli  
        npm cache clean  
     ng -v检查ng环境
-    3.创建一个项目
+ # 创建一个项目
     ng new my-app --skip-install
     cd my-app
     cnpm install
@@ -36,7 +36,7 @@
     Enum	        ng g enum my-new-enum
     Module	      ng g module my-module
     Route	        ng g route my-route当前已禁用
-    4.angular项目目录结构
+ # angular项目目录结构
     node_modules        第三方依赖包存放目录
     e2e                 端到端的测试目录  用来做自动测试的
     src                 应用源代码目录  
