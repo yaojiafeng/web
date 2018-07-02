@@ -2,31 +2,31 @@
     1.安装node.js(包含了npm)
     cmd中node -v检查node环境
     npm instsall -g typescript
-2.安装angular-cli
-  npm install -g @angular/cli
-  或者利用淘宝镜像安装
- (1) npm install -g cnpm 
-  --registry=https://registry.npm.taobao.org
- (2)cnpm install -g @angular/cli
- 卸载angular-cli:
+    2.安装angular-cli
+    npm install -g @angular/cli
+    或者利用淘宝镜像安装（最好）
+    (1) npm install -g cnpm 
+     --registry=https://registry.npm.taobao.org
+    (2)cnpm install -g @angular/cli
+    卸载angular-cli:
        npm uninstall -g angular-cli  
        npm cache clean  
-ng -v检查ng环境
-3.创建一个项目
-ng new my-app --skip-install
-cd my-app
-cnpm install
-ng serve
-或者
-ng new my-app
-cd my-app
-4.建立一个组件
-ng generate component helloworld
-5.ng generate
-命令	描述
-ng generate <type> [options]	在项目中构建新代码
-ng g <type> [options]	简写
-支持的类型	用法
+    ng -v检查ng环境
+    3.创建一个项目
+    ng new my-app --skip-install
+    cd my-app
+    cnpm install
+    ng serve
+    或者
+    ng new my-app
+    cd my-app
+    4.建立一个组件
+    ng generate component helloworld
+    5.ng generate
+    命令	描述
+    ng generate <type> [options]	在项目中构建新代码
+    ng g <type> [options]	简写
+    支持的类型	用法
 Component	    ng g component my-new-component
 Directive   	ng g directive my-new-directive
 Pipe	        ng g pipe my-new-pipe
