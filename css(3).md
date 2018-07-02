@@ -148,11 +148,11 @@ content:"台词：";
                                            
                                            
   # 面试题                                                  
-  ## 1.介绍一下标准的CSS的盒子模型？与低版本IE的盒子模型有什么不同的？
+  ### 1.介绍一下标准的CSS的盒子模型？与低版本IE的盒子模型有什么不同的？
 	ie8及以上为w3c标准盒子模型标准盒子模型：宽度=内容的宽度（content）+ border + padding + margin低版本IE盒子模型：宽度=内容宽度（content+border+padding）+ margin
-	2. box-sizing属性？
+### 2. box-sizing属性？
 	用来控制元素的盒子模型的解析模式，默认为content-box,context-box：W3C的标准盒子模型，设置元素的 height/width 属性指的是content部分的高/宽,border-box：IE传统盒子模型。设置元素的height/width属性指的是border + padding + content部分的高/宽
-	3.CSS选择器有哪些？哪些属性可以继承？
+### 3.CSS选择器有哪些？哪些属性可以继承？
 	元素选择器：通配符(*)不兼容ie6;
            id选择符(E#id);
            类选择符(E.class)ie6不支持多类选择;
