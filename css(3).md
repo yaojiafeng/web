@@ -147,10 +147,7 @@ content:"台词：";
 } 
                                            
                                            
-                                                              #面试题
-                                                  
-                                                  
-                                                  
+  # 面试题                                                  
 1 、介绍一下标准的CSS的盒子模型？与低版本IE的盒子模型有什么不同的？ie8及以上为w3c标准盒子模型
 标准盒子模型：宽度=内容的宽度（content）+ border + padding + margin
 低版本IE盒子模型：宽度=内容宽度（content+border+padding）+ margin
