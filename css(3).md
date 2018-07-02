@@ -148,21 +148,15 @@ content:"台词：";
                                            
                                            
   # 面试题                                                  
-1.介绍一下标准的CSS的盒子模型？与低版本IE的盒子模型有什么不同的？ie8及以上为w3c标准盒子模型
-标准盒子模型：宽度=内容的宽度（content）+ border + padding + margin
-低版本IE盒子模型：宽度=内容宽度（content+border+padding）+ margin
-
-1. box-sizing属性？
-用来控制元素的盒子模型的解析模式，默认为content-box
-context-box：W3C的标准盒子模型，设置元素的 height/width 属性指的是content部分的高/宽
-border-box：IE传统盒子模型。设置元素的height/width属性指的是border + padding + content部分的高/宽
-
-3、 CSS选择器有哪些？哪些属性可以继承？
-元素选择器：通配符(*)不兼容ie6;
+	1.介绍一下标准的CSS的盒子模型？与低版本IE的盒子模型有什么不同的？ie8及以上为w3c标准盒子模型标准盒子模型：宽度=内容的宽度（content）+ border + padding + margin低版本IE盒子模型：宽度=内容宽度（content+border+padding）+ margin
+	2. box-sizing属性？
+	用来控制元素的盒子模型的解析模式，默认为content-box,context-box：W3C的标准盒子模型，设置元素的 height/width 属性指的是content部分的高/宽,border-box：IE传统盒子模型。设置元素的height/width属性指的是border + padding + content部分的高/宽
+	3.CSS选择器有哪些？哪些属性可以继承？
+	元素选择器：通配符(*)不兼容ie6;
            id选择符(E#id);
            类选择符(E.class)ie6不支持多类选择;
 	   E(类型选择符，即标签名)
-关系选择器：包含选择符(E F);
+	关系选择器：包含选择符(E F);
            子选择符(E>F)不兼容ie6;
 	   相邻选择符(E+F)不兼容ie6;     
            兄弟选择符(E~F)不兼容ie6;
@@ -181,21 +175,16 @@ border-box：IE传统盒子模型。设置元素的height/width属性指的是bo
 	   <p>p5</p>,
 	   此例，如果使用p + p{color:#f00;}，那么p2, p5将会变成红色；如果使用p ~ p{color:#f00;}，那么p2,p3,p4,p5将会变成红色；
 										
-属性选择器：E[att],选择具有att属性的E元素,不兼容ie6
+	属性选择器：E[att],选择具有att属性的E元素,不兼容ie6
            E[att="val"],选择具有att属性且属性值等于val的E元素,不兼容ie6			
 	   E[att~="val"],选择具有att属性且属性值为一用空格分隔的字词列表,其中一个等于val的E元素(包含只有一个值且该值等于val的情况)不兼容ie6
 	   E[att^="val"],选择具有att属性且属性值为以val开头的字符串的E元素,不兼容ie6
 	   E[att$="val"],选择具有att属性且属性值为以val结尾的字符串的E元素,不兼容ie6
 	   E[att*="val"],选择具有att属性且属性值为包含val的字符串的E元素,不兼容ie6
 	   E[att|="val"],选择具有att属性且属性值为以val开头并用连接符"-"分隔的字符串的E元素，如果属性值仅为val，也将被选择
-伪类选择器：
-伪对象选择器：
-
-
-
-
-
-可继承的属性:布局(visibility),
+	伪类选择器：
+	伪对象选择器：
+	可继承的属性:布局(visibility),
             颜色(color,opacity不能继承),
             字体(font,font-style,font-variant,font-weight,font-size, font-family,font-stretch,font-size-adjust), 
             文本(text-transform,white-space,tab-size,word-break,word-wrap,overflow-wrap,text-align,text-align-last,
@@ -209,11 +198,9 @@ border-box：IE传统盒子模型。设置元素的height/width属性指的是bo
             Only IE(scrollbar-3dlight-color,scrollbar-darkshadow-color,scrollbar-highlight-color,scrollbar-shadow-color,
                     scrollbar-arrow-color,scrollbar-face-color,scrollbar-track-color,scrollbar-base-color,filter和behavior没有继承),
             Only webkit(text-fill0-color,text-stroke,text-stroke-width,text-stroke-color，tap-highlight-color，user-drag)
-
-不可继承的样式:border, padding, margin, width, height...
-
-优先级(就近原则):!important > [ id > class > tag ]
-!important 比内联优先级高
+	不可继承的样式:border, padding, margin, width, height...
+	优先级(就近原则):!important > [ id > class > tag ]
+	!important 比内联优先级高
 
 4、 CSS优先级算法如何计算？
 选择器的特殊性值表述为4个部分,用0,0,0,0表示。
