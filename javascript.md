@@ -128,8 +128,22 @@
 	该指针指向堆中该实体的起始地址。当解释器寻找引用值时，会首先检索其在栈中的地址，取得地址后从堆中获得实体
 
 **6.如何将字符串转化为数字，例如'12.3b'?**
+1. Number()
+	
+		var test1= new Boolean(true);
+     	var test2= new Boolean(false);
+     	var test3= new Date();
+     	var test4= new String("999");
+     	var test5= new String("999 888");
+     	document.write(Number(test1)+ "<br />");
+    	 document.write(Number(test2)+ "<br />");
+    	 document.write(Number(test3)+ "<br />");
+    	 document.write(Number(test4)+ "<br />");
+    	 document.write(Number(test5)+ "<br />");
+1. parseFloat()
 
-    * parseFloat('12.3b');
+		parseFloat('12.3b');
+1. parseInt()
 	
 7.如何将浮点数点左边的数每三位添加一个逗号，如12000000.11转化为『12,000,000.11』?
 		function commafy(num){
