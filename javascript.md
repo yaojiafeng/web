@@ -130,7 +130,9 @@
 **6.如何将字符串转化为数字，例如'12.3b'?**
 1. Number()
 	
-		var test1= new Boolean(true);
+   	当 Number() 和运算符 new 一起作为构造函数使用时，它返回一个新创建的 Number 对象。如果不用 new 运算符，把 Number() 作为一个函		数来调用，它将把自己的参数转换成一个原始的数值，并且返回这个值（如果转换失败，则返回 NaN）。
+	
+	var test1= new Boolean(true);
      	var test2= new Boolean(false);
      	var test3= new Date();
      	var test4= new String("999");
