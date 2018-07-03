@@ -1,13 +1,11 @@
-javascript知识点
-
-# ES6
-## 面试题
-问题:
-    1.es6模块化如何使用，开发环境如何打包?
-    2.class 和普通构造函数有什么区别?
-    3.promise 的基本使用和原理?
-    4.总结es6的其他功能?
-解答:
+# 面试题
+## ES6
+### 问题:
+   1.es6模块化如何使用，开发环境如何打包?
+   1.class 和普通构造函数有什么区别?
+   1.promise 的基本使用和原理?
+   1.总结es6的其他功能?
+### 解答:
     1.babel (只能编译es6语法，不能解决模块化问题)
 	   1)npm install --save-dev babel-core babel-preset-es2015 babel-preset-latest
 	   2)创建.babelrc文件
