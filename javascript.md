@@ -18,9 +18,8 @@
 	   3)配置package.json中的scripts("start":webpack)
 	   4)运行npm start
                                          			
-  	2.Module的语法
-   **export 可输出变量、函数和(class)**
-			
+     2.Module的语法
+        export 可输出变量、函数和(class)		
 	//方式一:
 	export var name='yao';
 	export function v1(){}
@@ -35,8 +34,7 @@
 	export default function (){}//匿名函数
 	function foo(){};//非匿名函数
 	export default foo;
-**import 加载模块**
-
+     import 加载模块
 	//方式一:
 	import {name} from 'xxx';
 	//方式二:
