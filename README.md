@@ -1,29 +1,8 @@
 # Fron-end knowledge (ongoing)
-Basic and common skills about html(5)、css(3) and javascript and so on.
--
-You can learn a lot of useful front-end basic knowledge here.
+        Basic and common skills about html(5)、css(3) and javascript and so on.
 
-Enter separately files to find what you want.
+        You can learn a lot of useful front-end basic knowledge here.
 
--
+        Enter separately files to find what you want.
 
-==
-
-
----
-
-
-你还
-哈哈<br/>hhh
-
-
-http://yaojiafeng.com
-
-        任地厚天高
-       
-        大大大啊大
-哈哈哈
-        真的吗
-        
-                滚滚滚
-[我的博客](http://yaojiafeng.com)
+        [我的博客](http://yaojiafeng.com)
