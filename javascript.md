@@ -72,11 +72,16 @@
         这些引用类型在运行过程中需要通过new来创建所需的实例对象。
         包含：Object、Function、Array、String、Boolean、Number、Date、RegExp、Error、EvalError、RangeError、ReferenceError、
 		     SyntaxError、TypeError、URIError
-    内置对象
+    单体内置对象
         与宿主无关，独立于宿主环境的ECMAScript实现提供的对象。
         在 ECMAScript 程序开始执行前就存在，本身就是实例化内置对象，开发者无需再去实例化。
         内置对象是本地对象的子集。
         包含：Global和Math。
+	Global对象的方法：</br>
+	isNaN(),isFinite(),parseInt(),parseFloat(),encodeURI(),encodeURIcomponent(),decodeURI(),decodeURIcomponent()...
+---
+
+   	Math
         ECMAScript5中增添了JSON这个存在于全局的内置对象。内置对象也是本地对象。
     宿主对象
         由 ECMAScript 实现的宿主环境提供的对象，包含两大类，一个是宿主提供，一个是自定义类对象。
