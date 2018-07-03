@@ -94,7 +94,7 @@
     import {Component} from 'angular2/core';
     从源代码可以查看他实现定义：
     export class ComponentMetadata extends DirectiveMetadata { }
-```可以从源代码库中查找到所有Angular2所提供的注解的具体实现细节。这也间接回答我们第二个问题。既然定义由Angular2来做，那么怎么去解析这些带有 @ 符号的特殊
+可以从源代码库中查找到所有Angular2所提供的注解的具体实现细节。这也间接回答我们第二个问题。既然定义由Angular2来做，那么怎么去解析这些带有 @ 符号的特殊
 语言呢？事实目前浏览器还不能直接支持并解析它，虽然注解有可能成为ES7标准，这还是相当长的路要走；所以我们还是需要借助解析器。
 
 解析器的选择非常多，比如有名的Babel、Traceur、TypeScript都可以来解析注解。上面代码被TypeScript解析成：
@@ -131,8 +131,7 @@ function decoratorExpression(target) {
 结论
 注解和修饰器从语法层面完全是一样的，而唯一不同的是注解我们无法过多参与控制行为能力；修饰器则不然。虽然最后都是以注解（也可以说是修饰符，因为对于ES6而
 言它已经是标准了）被编译。当然了，Angular2所提供的相应注解可以让我们更专注于业务层面开发。注解的实在太优雅了！
-
-数据绑定（默认单向绑定)
+* 数据绑定（默认单向绑定)
 1,<h1>{{xxx}}</h1>//插值绑定
 2,<img [src]="imgUrl">//属性绑定
 3,button (click)="do()">提交</button>//事件绑定
