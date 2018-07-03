@@ -57,19 +57,7 @@
    1.vdom是什么?为何存在vdom?
    2.如何使用vdom?核心API是什么?
    3.介绍一下diff算法?
-   
-
-
-
-
-
-
-
-
-
-
-
-
+  # javascript（ES5）
 
 1.介绍js的基本数据类型。
 	Undefined、Null、Boolean、Number、String、
