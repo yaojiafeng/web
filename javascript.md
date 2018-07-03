@@ -50,7 +50,7 @@
 	  circle.circumference();
 	  //方式四:
 	  import myClass from 'xxx';//export default class{};
-[详细]（https://github.com/yaojiafeng/es6tutorial/blob/gh-pages/docs/module.md）
+[详细](https://github.com/yaojiafeng/es6tutorial/blob/gh-pages/docs/module.md)
 
 ##vdom
 问题:
