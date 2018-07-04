@@ -39,24 +39,24 @@
  
  1. 查看当前远程仓库
                     
-    git remote 
-    or
-    git remote -v (show the url)
+          git remote 
+          or
+          git remote -v (show the url)
     
  1. 添加远程仓库
 
-    git remote add [shortname] [url]
+          git remote add [shortname] [url]
            
  1. 从远程仓库拉取数据
- 
-    git fetch [remote-name] [branch-name]
+    
+           git fetch [remote-name] [branch-name]
     
  1. 推送数据到远程仓库
  
-    git push [remote-name] [branch-name]
+            git push [remote-name] [branch-name]
     
  1. 查看远程仓库的详细信息
  
-    git remote show [remote-name]
+            git remote show [remote-name]
  
         
