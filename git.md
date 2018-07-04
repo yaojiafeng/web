@@ -7,6 +7,12 @@
     使用命令git add <file>，注意，可反复多次使用，添加多个文件；
     
     使用命令git commit -m <message>，完成。
+    
+    查看 **工作区** 的状态，使用git status
+    
+    查看修改的内容   git diff test.js
+    
+    
 
 
 
