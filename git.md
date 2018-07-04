@@ -4,9 +4,9 @@
     
     添加文件到Git仓库，分两步：
 
-    使用命令git add <file>，注意，可反复多次使用，添加多个文件；
+    使用命令git add <file>，注意，可反复多次使用，添加多个文件；实际上就是把文件修改添加到暂存区；
     
-    使用命令git commit -m <message>，完成。
+    使用命令git commit -m <message>，完成。实际上把暂存区的文件提交到分支
     
     查看 **工作区** 的状态，使用git status
     
