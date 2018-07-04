@@ -58,5 +58,10 @@
  1. 查看远程仓库的详细信息
  
             git remote show [remote-name]
+      
+ 1. 远程仓库的删除和重命名
+  
+        git remote rename  oldremotename  newremotename
+        git remote rm remote-name
  
         
