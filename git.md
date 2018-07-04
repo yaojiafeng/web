@@ -38,7 +38,8 @@
   # 远程仓库的使用
   
   ## 查看当前远程仓库
-    git remote  or</br>
+    git remote 
+    or
     git remote -v (show the url)
 
 
