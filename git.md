@@ -34,5 +34,11 @@
     合并某分支到当前分支：git merge <name>
 
     删除分支：git branch -d <name>
+    
+  # 远程仓库的使用
+  
+  ## 查看当前远程仓库
+    git remote  or</br>
+    git remote -v (show the url)
 
 
