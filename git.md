@@ -36,10 +36,19 @@
     删除分支：git branch -d <name>
     
   # 远程仓库的使用
-  
-  ## 查看当前远程仓库
+ 
+ 1.查看当前远程仓库
+                    
     git remote 
     or
     git remote -v (show the url)
+    
+ 1. 添加远程仓库
 
-
+         git remote add [shortname] [url]
+           
+ 1. 从远程仓库拉取数据
+ 
+        git fetch [remote-name]
+ 
+        
