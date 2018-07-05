@@ -204,43 +204,71 @@ content:"台词：";
 	优先级(就近原则):!important > [ id > class > tag ]
 	!important 比内联优先级高
 
-4、 CSS优先级算法如何计算？
-选择器的特殊性值表述为4个部分,用0,0,0,0表示。
-    ID选择器的特殊性值，加0,1,0,0。
-    类选择器、属性选择器或伪类，加0,0,1,0。
-    元素和伪元素，加0,0,0,1。
-    通配选择器*对特殊性没有贡献，即0,0,0,0。
-    style="" 特殊性值为1,0,0,0
-    最后比较特殊的一个标志!important（权重），它没有特殊性值，但它的优先级是最高的，为了方便记忆，可以认为它的特殊性值为1,0,0,0,0。
-    !important声明的样式优先级最高，如果冲突再进行计算。
-    如果优先级相同，则选择最后出现的样式。
-    继承得到的样式的优先级最低。
+### 4、CSS优先级算法如何计算？
 
-5 、CSS3新增伪类有那些?(CSS伪类是用来添加一些选择器的特殊效果)
-    E:not(s) 匹配不含有s选择符的元素E
-    E:root   匹配E元素在文档的根元素。在HTML中，根元素永远是HTML
-    E:last-child 匹配父元素的最后一个子元素E,要使该属性生效,E元素必须是某个元素的子元素,E的父元素最高是body,即E可以是body的子元素
-                 E必须是它的兄弟元素中的最后一个元素,换言之,E必须是父元素的最后一个子元素
-    E:only-chird 匹配父元素仅有的一个子元素E,不是
-    E:nth-child(n) 匹配父元素的第n个子元素E，假设该子元素不是E，则选择符无效,可以使用odd, even实现奇偶,
-                   E:nth-child(n)会选择父元素的第n个子元素E，如果第n个子元素不是E，则是无效选择符，但n会递增
-    E:nth-last-child(n) 匹配父元素的倒数第n个子元素E，假设该子元素不是E，则选择符无效
-    E:first-of-type 匹配同类型中的第一个同级兄弟元素E,该选择符总是能命中父元素的第1个为E的子元素，不论第1个子元素是否为E
-    E:last-of-type 匹配同类型中的最后一个同级兄弟元素E,该选择符总是能命中父元素的倒数第1个为E的子元素，不论倒数第1个子元素是否为E
-    E:only-of-type 匹配同类型中的唯一的一个同级兄弟元素E,该选择符总是能命中父元素的唯一同类型子元素E，不论该元素的位置
-    E:nth-of-type(n) 匹配同类型中的第n个同级兄弟元素E,该选择符总是能命中父元素的第n个为E的子元素，不论第n个子元素是否为E
-    E:nth-last-of-type(n) 匹配同类型中的倒数第n个同级兄弟元素E,该选择符总是能命中父元素的倒数第n个为E的子元素，不论倒数第n个子元素是否为E
-    E:empty 匹配没有任何子元素(包括text节点)的元素
-    E:checked 匹配用户界面上处于选中状态的元素E(用于input type为radio与checkbox时)
-    E:enabled 匹配用户界面上处于可用状态的元素E
-    E:disabled 匹配用户界面上处于禁用状态的元素E 
-    E:target 匹配相关URL指向的E元素
+	选择器的特殊性值表述为4个部分,用0,0,0,0表示。
+
+	ID选择器的特殊性值，加0,1,0,0。
   
-6、如何实现水平居中？如何居中一个浮动元素？如何让绝对定位的div居中？
-水平居中的6中实现方式
+	类选择器、属性选择器或伪类，加0,0,1,0。
+   
+	元素和伪元素，加0,0,0,1。
+    
+	通配选择器*对特殊性没有贡献，即0,0,0,0。
+    
+	style="" 特殊性值为1,0,0,0
+    
+	最后比较特殊的一个标志!important（权重），它没有特殊性值，但它的优先级是最高的，为了方便记忆，可以认为它的特殊性值为1,0,0,0,0。
+   
+	!important声明的样式优先级最高，如果冲突再进行计算。
+    
+	如果优先级相同，则选择最后出现的样式。
+    
+	继承得到的样式的优先级最低。
+
+### 5 、CSS3新增伪类有那些?(CSS伪类是用来添加一些选择器的特殊效果)
+   
+	E:not(s) 匹配不含有s选择符的元素E
+  
+	E:root   匹配E元素在文档的根元素。在HTML中，根元素永远是HTML
+   
+	E:last-child 匹配父元素的最后一个子元素E,要使该属性生效,E元素必须是某个元素的子元素,E的父元素最高是body,即E可以是body的子元素	，E必须是它的兄弟元素中的最后一个元素,换言之,E必须是父元素的最后一个子元素
+   
+	E:only-chird 匹配父元素仅有的一个子元素E,不是
+   
+	E:nth-child(n) 匹配父元素的第n个子元素E，假设该子元素不是E，则选择符无效,可以使用odd, even实现奇偶,
+                   
+	E:nth-child(n)会选择父元素的第n个子元素E，如果第n个子元素不是E，则是无效选择符，但n会递增
+    
+	E:nth-last-child(n) 匹配父元素的倒数第n个子元素E，假设该子元素不是E，则选择符无效
+   
+	E:first-of-type 匹配同类型中的第一个同级兄弟元素E,该选择符总是能命中父元素的第1个为E的子元素，不论第1个子元素是否为E
+    
+	E:last-of-type 匹配同类型中的最后一个同级兄弟元素E,该选择符总是能命中父元素的倒数第1个为E的子元素，不论倒数第1个子元素是否为E
+   
+	E:only-of-type 匹配同类型中的唯一的一个同级兄弟元素E,该选择符总是能命中父元素的唯一同类型子元素E，不论该元素的位置
+   
+	E:nth-of-type(n) 匹配同类型中的第n个同级兄弟元素E,该选择符总是能命中父元素的第n个为E的子元素，不论第n个子元素是否为E
+    
+	E:nth-last-of-type(n) 匹配同类型中的倒数第n个同级兄弟元素E,该选择符总是能命中父元素的倒数第n个为E的子元素，不论倒数第n个子元素是否为E
+   
+	E:empty 匹配没有任何子元素(包括text节点)的元素
+   
+	E:checked 匹配用户界面上处于选中状态的元素E(用于input type为radio与checkbox时)
+   
+	E:enabled 匹配用户界面上处于可用状态的元素E
+   
+	E:disabled 匹配用户界面上处于禁用状态的元素E 
+   
+	E:target 匹配相关URL指向的E元素
+  
+### 6、如何实现水平居中？如何居中一个浮动元素？如何让绝对定位的div居中？
+	水平居中的6中实现方式
     1)行内元素
       在父元素实现text-align:center
     2)定宽块状
+		
+		```css
       div{
           width:960px;
           margin: 0 auto;
@@ -259,88 +287,103 @@ content:"台词：";
           left:50%;
           margin-left:-480px; 
       }
-      优点:实现方法简单易懂，浏览器兼容性强；
-      缺点:扩展性差，无法自适应未知项情况
+			```
+		
+	优点:实现方法简单易懂，浏览器兼容性强；
+      
+	缺点:扩展性差，无法自适应未知项情况
     3)不定宽块状
       直接把元素改为行内元素,既display:inline-block,然后就可以用text-align:center了
       缺点:子元素之间由回车符带来的空白间距,(而且这个间距并不是所有浏览器都有),所以需要解决下inline-block带来的间距问题
       或:浮动实现水平居中的方法
 
 
-7 、display有哪些值？说明他们的作用?
-inline(默认)--内联
-none  
-block  
-inline-block
-list-item  
-table  指定对象作为块元素级的表格。类同于html标签<table>(CSS2)
-inline-table 指定对象作为内联元素级的表格。类同于html标签<table>(CSS2)
-table-caption 指定对象作为表格标题。类同于html标签<caption>(CSS2)
-table-cell  指定对象作为表格单元格。类同于html标签<td>(CSS2)
-table-row  指定对象作为表格行。类同于html标签<tr>(CSS2)
-table-row-group  指定对象作为表格行组。类同于html标签<tbody>(CSS2)
-table-column  指定对象作为表格列。类同于html标签<col>(CSS2)
-table-column-group  指定对象作为表格列组显示。类同于html标签<colgroup>(CSS2)
-table-header-group  指定对象作为表格标题组。类同于html标签<thead>(CSS2)
-table-footer-group  指定对象作为表格脚注组。类同于html标签<tfoot>(CSS2)
-run-in  根据上下文决定对象是内联对象还是块级对象。(CSS3)
-box  将对象作为弹性伸缩盒显示。（伸缩盒最老版本）(CSS3)
-inline-box  将对象作为内联块级弹性伸缩盒显示。（伸缩盒最老版本）(CSS3)
-flexbox  将对象作为弹性伸缩盒显示。（伸缩盒过渡版本）(CSS3)
-inline-flexbox  将对象作为内联块级弹性伸缩盒显示。（伸缩盒过渡版本）(CSS3)
-flex  将对象作为弹性伸缩盒显示。（伸缩盒最新版本）(CSS3)
-inline-flex  将对象作为内联块级弹性伸缩盒显示。（伸缩盒最新版本）(CSS3)
+### 7 、display有哪些值？说明他们的作用?
 
-8、 position的值？
-static（默认）：按照正常文档流进行排列；
-relative（相对定位）：不脱离文档流，参考自身静态位置通过 top, bottom, left, right 定位；
-absolute(绝对定位)：参考距其最近一个不为static的父级元素通过top, bottom, left, right 定位；
-fixed(固定定位)：所固定的参照对像是可视窗口。
-center  与absolute一致,但偏移定位是以定位祖先元素的中心点为参考 (支持不高)
-page 与absolute一致。元素在分页媒体或者区域块内,元素的包含块始终是初始包含块，否则取决于每个absolute模式。(CSS3)支持不高
-sticky
-9、 CSS3有哪些新特性？
-    1)css3的新的选择器
-    2)@Font-face 特性
-    3)圆角
-    4)多列布局
-    5)阴影(shadow)
-    6)渐变效果
-    7)弹性盒子模型
-    8)CSS3制作特效(过渡)
-    9)媒体查询
-➤RGBA和透明度
-➤background-image background-origin(content-box/padding-box/border-box) background-size background-repeat
-➤word-wrap（对长的不可分割单词换行）word-wrap：break-word
-➤文字阴影：text-shadow： 5px 5px 5px #FF0000;（水平阴影，垂直阴影，模糊距离，阴影颜色）
-➤font-face属性：定义自己的字体
-➤圆角（边框半径）：border-radius 属性用于创建圆角
-➤边框图片：border-image: url(border.png) 30 30 round
-➤盒阴影：box-shadow: 10px 10px 5px #888888
-➤媒体查询：定义两套css，当浏览器的尺寸变化时会采用不同的属性
+	inline(默认)--内联
+	none  
+	block  
+	inline-block
+	list-item  
+	table  指定对象作为块元素级的表格。类同于html标签<table>(CSS2)
+	inline-table 指定对象作为内联元素级的表格。类同于html标签<table>(CSS2)
+	table-caption 指定对象作为表格标题。类同于html标签<caption>(CSS2)
+	table-cell  指定对象作为表格单元格。类同于html标签<td>(CSS2)
+	table-row  指定对象作为表格行。类同于html标签<tr>(CSS2)
+	table-row-group  指定对象作为表格行组。类同于html标签<tbody>(CSS2)
+	table-column  指定对象作为表格列。类同于html标签<col>(CSS2)
+	table-column-group  指定对象作为表格列组显示。类同于html标签<colgroup>(CSS2)
+	table-header-group  指定对象作为表格标题组。类同于html标签<thead>(CSS2)
+	table-footer-group  指定对象作为表格脚注组。类同于html标签<tfoot>(CSS2)
+	run-in  根据上下文决定对象是内联对象还是块级对象。(CSS3)
+	box  将对象作为弹性伸缩盒显示。（伸缩盒最老版本）(CSS3)
+	inline-box  将对象作为内联块级弹性伸缩盒显示。（伸缩盒最老版本）(CSS3)
+	flexbox  将对象作为弹性伸缩盒显示。（伸缩盒过渡版本）(CSS3)
+	inline-flexbox  将对象作为内联块级弹性伸缩盒显示。（伸缩盒过渡版本）(CSS3)
+	flex  将对象作为弹性伸缩盒显示。（伸缩盒最新版本）(CSS3)
+	inline-flex  将对象作为内联块级弹性伸缩盒显示。（伸缩盒最新版本）(CSS3)
 
-10、 请解释一下CSS3的flexbox（弹性盒布局模型）,以及适用场景？
+### 8、 position的值？
 
-该布局模型的目的是提供一种更加高效的方式来对容器中的条目进行布局、对齐和分配空间。在传统的布局方式中，block 布局是把块在垂直方向从上到下依次排列的；
+	static（默认）：按照正常文档流进行排列；
+	relative（相对定位）：不脱离文档流，参考自身静态位置通过 top, bottom, left, right 定位；
+	absolute(绝对定位)：参考距其最近一个不为static的父级元素通过top, bottom, left, right 定位；
+	fixed(固定定位)：所固定的参照对像是可视窗口。
+	center  与absolute一致,但偏移定位是以定位祖先元素的中心点为参考 (支持不高)
+	page 与absolute一致。元素在分页媒体或者区域块内,元素的包含块始终是初始包含块，否则取决于每个absolute模式。(CSS3)支持不高
+	sticky
+	
+### 9、 CSS3有哪些新特性？
 
-而 inline 布局则是在水平方向来排列。弹性盒布局并没有这样内在的方向限制，可以由开发人员自由操作。
+	1)css3的新的选择器
+  
+	2)@Font-face 特性
+    
+	3)圆角
+    
+	4)多列布局
+   
+	5)阴影(shadow)
+    
+	6)渐变效果
+    
+	7)弹性盒子模型
+   
+	8)CSS3制作特效(过渡)
+   
+	9)媒体查询
+	➤RGBA和透明度
+	➤background-image background-origin(content-box/padding-box/border-box) background-size background-repeat
+	➤word-wrap（对长的不可分割单词换行）word-wrap：break-word
+	➤文字阴影：text-shadow： 5px 5px 5px #FF0000;（水平阴影，垂直阴影，模糊距离，阴影颜色）
+	➤font-face属性：定义自己的字体
+	➤圆角（边框半径）：border-radius 属性用于创建圆角
+	➤边框图片：border-image: url(border.png) 30 30 round
+	➤盒阴影：box-shadow: 10px 10px 5px #888888
+	➤媒体查询：定义两套css，当浏览器的尺寸变化时会采用不同的属性
 
-试用场景：弹性布局适合于移动前端开发，在Android和ios上也完美支持。
+### 10、 请解释一下CSS3的flexbox（弹性盒布局模型）,以及适用场景？
 
-11 、用纯CSS创建一个三角形的原理是什么？
+	该布局模型的目的是提供一种更加高效的方式来对容器中的条目进行布局、对齐和分配空间。在传统的布局方式中，block 布局是把块在垂直方向从上到下依次排列的；
 
-首先，需要把元素的宽度、高度设为0。然后设置边框样式。
+	而 inline 布局则是在水平方向来排列。弹性盒布局并没有这样内在的方向限制，可以由开发人员自由操作。
 
-width: 0;
-height: 0;
+	试用场景：弹性布局适合于移动前端开发，在Android和ios上也完美支持。
 
-border-top: 40px solid transparent;
+### 11 、用纯CSS创建一个三角形的原理是什么？
 
-border-left: 40px solid transparent;
+	首先，需要把元素的宽度、高度设为0。然后设置边框样式。
 
-border-right: 40px solid transparent;
+	width: 0;
+	height: 0;
 
-border-bottom: 40px solid #ff0000;
+	border-top: 40px solid transparent;
+
+	border-left: 40px solid transparent;
+
+	border-right: 40px solid transparent;
+
+	border-bottom: 40px solid #ff0000;
 
 12 、一个满屏品字布局如何设计?
 
