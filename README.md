@@ -11,7 +11,7 @@
 
 - [前言](README.md)
 - [http](https://github.com/yaojiafeng/web/blob/master/http/README.md)
-- [javascript](basics/README.md)
+- [javascript](https://github.com/yaojiafeng/web/new/master/JavaScript)
 - [ES6]()
 - [css](advanced/README.md) 
 - [html](engineering/README.md)
