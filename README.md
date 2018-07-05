@@ -10,10 +10,7 @@
 ## 目录
 
 - [前言](README.md)
-- [简介](introduction/README.md)
-  - [什么是 TypeScript](introduction/what-is-typescript.md)
-  - [安装 TypeScript](introduction/get-typescript.md)
-  - [Hello TypeScript](introduction/hello-typescript.md)
+- [http](https://github.com/yaojiafeng/web/blob/master/http/README.md)
 - [基础](basics/README.md)
   - [原始数据类型](basics/primitive-data-types.md)
   - [任意值](basics/any.md)
