@@ -4,7 +4,7 @@
 ### 1.把以下代码使用两种方法，来依次输出0到9？
 
 ```javascript
-var funcs = []
+    var funcs = []
     for (var i = 0; i < 10; i++) {
         funcs.push(function() { console.log(i) })
     }
@@ -22,13 +22,13 @@ var funcs = []
         funcs.push((function(value){
 	    return function() { 
 	       console.log(i) 
-	    }))(i))
-    }
+	    }
+	})(i))
     funcs.forEach(function(func) {
         func()
     })
     // es6
-   var funcs = []
+    var funcs = []
     for (let i = 0; i < 10; i++) {
         funcs.push(function() { console.log(i) })
     }
