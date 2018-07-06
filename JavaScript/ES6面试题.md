@@ -16,21 +16,25 @@ var funcs = []
 **答：分别使用es5的闭包和es6的let**
 
 ```javascript
-// ES5告诉我们可以利用闭包解决这个问题
+  // ES5告诉我们可以利用闭包解决这个问题
     var funcs = []
     for (var i = 0; i < 10; i++) {
-        func.push((function(value) {
-            return function() {
-                console.log(value)
-            }
-        }(i)))
+        funcs.push((function(value){
+	    return function() { 
+	       console.log(i) 
+	    }))(i))
     }
+    funcs.forEach(function(func) {
+        func()
+    })
     // es6
+   var funcs = []
     for (let i = 0; i < 10; i++) {
-        func.push(function() {
-            console.log(i)
-        })
+        funcs.push(function() { console.log(i) })
     }
+    funcs.forEach(function(func) {
+        func()
+    })
 ```
 
 ### 2.ES6的模板字符串有哪些新特性？
