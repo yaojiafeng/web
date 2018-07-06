@@ -1,5 +1,62 @@
 
-[详细](https://github.com/yaojiafeng/es6tutorial/blob/gh-pages/docs/module.md)
+[ES6详细](https://github.com/yaojiafeng/es6tutorial/blob/gh-pages/docs/module.md)
+
+### 1、把以下代码使用两种方法，来依次输出0到9？
+
+```javascript
+var funcs = []
+    for (var i = 0; i < 10; i++) {
+        funcs.push(function() { console.log(i) })
+    }
+    funcs.forEach(function(func) {
+        func()
+    })
+```
+    
+**答：分别使用es5的闭包和es6的let**
+
+```javascript
+// ES5告诉我们可以利用闭包解决这个问题
+    var funcs = []
+    for (var i = 0; i < 10; i++) {
+        func.push((function(value) {
+            return function() {
+                console.log(value)
+            }
+        }(i)))
+    }
+    // es6
+    for (let i = 0; i < 10; i++) {
+        func.push(function() {
+            console.log(i)
+        })
+    }
+```
+
+### 2
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 ### 问题:
 1. es6模块化如何使用，开发环境如何打包?
 1. class 和普通构造函数有什么区别?
