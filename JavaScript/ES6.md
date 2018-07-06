@@ -1,4 +1,5 @@
 
+[详细](https://github.com/yaojiafeng/es6tutorial/blob/gh-pages/docs/module.md)
 ### 问题:
 1. es6模块化如何使用，开发环境如何打包?
 1. class 和普通构造函数有什么区别?
