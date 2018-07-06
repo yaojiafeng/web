@@ -1,5 +1,5 @@
 
-[ES6详细](https://github.com/yaojiafeng/es6tutorial/blob/gh-pages/docs/module.md)
+[ES6详细](https://github.com/yaojiafeng/es6tutorial)
 
 ### 1.把以下代码使用两种方法，来依次输出0到9？
 
