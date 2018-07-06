@@ -1,7 +1,7 @@
 
 [ES6详细](https://github.com/yaojiafeng/es6tutorial/blob/gh-pages/docs/module.md)
 
-### 1、把以下代码使用两种方法，来依次输出0到9？
+### 1.把以下代码使用两种方法，来依次输出0到9？
 
 ```javascript
 var funcs = []
@@ -33,8 +33,20 @@ var funcs = []
     }
 ```
 
-### 2
+### 2.ES6的模板字符串有哪些新特性？
 
+***答：第一个用途，基本的字符串格式化。将表达式嵌入字符串中进行拼接。用${}来界定。***
+
+```javascript
+    //es5 
+    var name = 'lux'
+    console.log('hello' + name)
+    //es6
+    const name = 'lux'
+    console.log(`hello ${name}`) //hello lux
+```
+
+***第二个用途，在ES5时我们通过反斜杠(\)来做多行字符串或者字符串一行行拼接。ES6s反引号``` ```直接搞定。***
 
 
 
