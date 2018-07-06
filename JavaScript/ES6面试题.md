@@ -24,9 +24,11 @@
 	       console.log(i) 
 	    }
 	})(i))
+    }
     funcs.forEach(function(func) {
         func()
     })
+     
     // es6
     var funcs = []
     for (let i = 0; i < 10; i++) {
@@ -34,7 +36,7 @@
     }
     funcs.forEach(function(func) {
         func()
-    })
+    }) 
 ```
 
 ### 2.ES6的模板字符串有哪些新特性？
