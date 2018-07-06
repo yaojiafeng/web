@@ -89,6 +89,8 @@
 
 ***答：不需要function关键字来创建函数,省略return关键字,继承当前上下文的 this 关键字***
 
+[ES6函数拓展](http://es6.ruanyifeng.com/#docs/function#%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0)
+
 ### 4.以下代码依次输出内容是？
 
 ```javascript
