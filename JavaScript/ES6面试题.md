@@ -93,15 +93,11 @@ setTimeout(function() {
     console.log(5);
 ```
 
-***答：***
-
-	首先先碰到一个 setTimeout，于是会先设置一个定时，在定时结束后将传递这个函数放到任务队列里面，因此开始肯定不会输出 1 。 然后是一个 Promise，里面的函数是直接执行的，因此应该直接输出 2 3 。 然后，Promise 的 then 应当会放到当前 tick 的最后，但是还是在当前 tick 中。 因此，应当先输出 5，然后再输出 4 。 最后在到下一个 tick，就是 1 。 “2 3 5 4 1”
+***答：首先先碰到一个 setTimeout，于是会先设置一个定时，在定时结束后将传递这个函数放到任务队列里面，因此开始肯定不会输出 1 。 然后是一个 Promise，里面的函数是直接执行的，因此应该直接输出 2 3 。 然后，Promise 的 then 应当会放到当前 tick 的最后，但是还是在当前 tick 中。 因此，应当先输出 5，然后再输出 4 。 最后在到下一个 tick，就是 1 。 “2 3 5 4 1”***
 	
 ### 5.promise的原理？jquery的ajax返回的是promise对象吗？(百度面试)
 
-***答：***
-
-	jquery的ajax返回的是deferred对象，通过promise的resolve()方法将其转换为promise对象。
+***答：jquery的ajax返回的是deferred对象，通过promise的resolve()方法将其转换为promise对象。***
 
 ```javascript
   var jsPromise = Promise.resolve($.ajax('/whatever.json'));
