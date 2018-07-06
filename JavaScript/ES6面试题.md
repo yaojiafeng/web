@@ -47,7 +47,7 @@
 
 ***答：模板字符串（template string）是增强版的字符串，用反引号（\`）标识。它可以当作普通字符串使用，也可以用来定义多行字符串，或者在字符串中嵌入变量。***
 
-***（1）字符串中嵌变量 ***
+***（1）字符串中嵌变量***
 
 ```javascript
     //es5 
@@ -83,7 +83,7 @@
     //如果你带入小数, Math.floor(num) 来处理
 ```
 
-[字符串的拓展](http://es6.ruanyifeng.com/#docs/string)
+[ES6字符串的拓展](http://es6.ruanyifeng.com/#docs/string)
 
 ### 3.箭头有哪些新特点？
 
