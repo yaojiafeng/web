@@ -1,6 +1,6 @@
 [css参考手册](http://www.css88.com/book/css/)
 
-### 1.介绍一下标准的CSS的盒子模型？与低版本IE的盒子模型有什么不同的？
+### 1. 介绍一下标准的CSS的盒子模型？与低版本IE的盒子模型有什么不同的？
 	
 	ie8及以上为w3c标准盒子模型标准盒子模型：盒子宽度=内容的宽度（content）+ border + padding + margin;低版本IE盒子模型：盒子宽度=内容宽度（content+border+padding)+ margin;w3c中的内容宽度width=content;低版本ie的内容宽度width=content+border+padding。
 	
@@ -15,7 +15,7 @@
 	border-box：IE传统盒子模型。设置元素的height/width属性指的是border + padding + content部分的高/宽;
 	inherit规定应从父元素继承 box-sizing 属性的值。
 	
-### 3.CSS选择器有哪些？哪些属性可以继承？
+### 3. CSS选择器有哪些？哪些属性可以继承？
 
 ***(1)元素选择符：***
 
@@ -216,7 +216,7 @@
 	
 [css选择器](http://www.css88.com/book/css/selectors/index.htm)
 
-### 4、CSS优先级算法如何计算？
+### 4. CSS优先级算法如何计算？
 
 	选择器的特殊性值表述为4个部分,用0,0,0,0表示。
 
@@ -241,19 +241,17 @@
 	优先级(就近原则):!important > [ id > class > tag ]
 	!important 比内联优先级高
 
-### 5 、CSS3新增伪类有那些?(CSS伪类是用来添加一些选择器的特殊效果)
+### 5. CSS3新增伪类有那些?(CSS伪类是用来添加一些选择器的特殊效果)
    
 	E:not(s) 匹配不含有s选择符的元素E
   
 	E:root   匹配E元素在文档的根元素。在HTML中，根元素永远是HTML
    
-	E:last-child 匹配父元素的最后一个子元素E,要使该属性生效,E元素必须是某个元素的子元素,E的父元素最高是body,即E可以是body的子元素	，E必须是它的兄弟元素中的最后一个元素,换言之,E必须是父元素的最后一个子元素
+	E:last-child 匹配父元素的最后一个子元素E,要使该属性生效,E元素必须是某个元素的子元素,E的父元素最高是body,即E可以是body的子元素,E必须是它的兄弟元素中的最后一个元素,换言之,E必须是父元素的最后一个子元素,否则无效。
    
-	E:only-chird 匹配父元素仅有的一个子元素E,不是
+	E:only-chird 匹配父元素仅有的一个子元素E
    
-	E:nth-child(n) 匹配父元素的第n个子元素E，假设该子元素不是E，则选择符无效,可以使用odd, even实现奇偶,
-                   
-	E:nth-child(n)会选择父元素的第n个子元素E，如果第n个子元素不是E，则是无效选择符，但n会递增
+	E:nth-child(n) 匹配父元素的第n个子元素E，假设该子元素不是E，则选择符无效,可以使用odd, even实现奇偶,选择父元素的第n个子元素E，如果第n个子元素不是E，则是无效选择符，但n会递增。
     
 	E:nth-last-child(n) 匹配父元素的倒数第n个子元素E，假设该子元素不是E，则选择符无效
    
@@ -277,43 +275,55 @@
    
 	E:target 匹配相关URL指向的E元素
   
-### 6、如何实现水平居中？如何居中一个浮动元素？如何让绝对定位的div居中？
-	水平居中的6中实现方式
-    1)行内元素
-      在父元素实现text-align:center
-    2)定宽块状
+### 6. 如何实现水平居中？如何居中一个浮动元素？如何让绝对定位的div居中？
+
+***水平居中的实现方式***
+
+	1)行内元素
+	
+		在父元素实现text-align:center
 		
-		```css
-      div{
-          width:960px;
-          margin: 0 auto;
-      }
-      或:
-      div{
-          position:absolute;
-          width:960px;
-          left:50%;
-          margin-left:-480px; 
-      }
-      或:
-       div{
-          position:absolute;
-          width:960px;
-          left:50%;
-          margin-left:-480px; 
-      }
-			```
+	2)定宽块状
+		
+```css
+
+	div{
+		width:960px;
+          	margin: 0 auto;
+	}
+	或:
+	div{
+		position:absolute;
+		width:960px;
+          	left:50%;
+		margin-left:-480px; 
+	}
+	或:
+	div{
+		position:absolute;
+		width:960px;
+		left:50%;
+		margin-left:-480px; 
+	}
+```
 		
 	优点:实现方法简单易懂，浏览器兼容性强；
       
 	缺点:扩展性差，无法自适应未知项情况
-    3)不定宽块状
-      直接把元素改为行内元素,既display:inline-block,然后就可以用text-align:center了
-      缺点:子元素之间由回车符带来的空白间距,(而且这个间距并不是所有浏览器都有),所以需要解决下inline-block带来的间距问题
-      或:浮动实现水平居中的方法
+	
+	3)不定宽块状
+	直接把元素改为行内元素,既display:inline-block,然后就可以用text-align:center了
+	缺点:子元素之间由回车符带来的空白间距,(而且这个间距并不是所有浏览器都有),所以需要解决下inline-block带来的间距问题
 
+	4)浮动实现水平居中的方法
 
-### 7 、display有哪些值？说明他们的作用?
+	给浮动元素添加一个父元素，并让其宽度等于(多个)浮动元素的宽度(之和)，并且设置margin:0 auto
+	
+	5）css3的flex实现居中
+	
+	父元素设置display:flex;justify-content:center
+
+### 7. display有哪些值？说明他们的作用?
 
 	inline(默认)--内联
 	none  
@@ -338,17 +348,17 @@
 	flex  将对象作为弹性伸缩盒显示。（伸缩盒最新版本）(CSS3)
 	inline-flex  将对象作为内联块级弹性伸缩盒显示。（伸缩盒最新版本）(CSS3)
 
-### 8、 position的值？
+### 8. position的值？
 
 	static（默认）：按照正常文档流进行排列；
-	relative（相对定位）：不脱离文档流，参考自身静态位置通过 top, bottom, left, right 定位；
-	absolute(绝对定位)：参考距其最近一个不为static的父级元素通过top, bottom, left, right 定位；
-	fixed(固定定位)：所固定的参照对像是可视窗口。
-	center  与absolute一致,但偏移定位是以定位祖先元素的中心点为参考 (支持不高)
+	relative（相对定位）：不脱离文档流，参考自身静态位置通过 top, bottom, left, right 定位；其他元素还是以它的静态位置为基础排布
+	absolute(绝对定位)：参考距其最近一个不为static的父级元素通过top, bottom, left, right 定位；脱离文档流，其他元素当它不存在
+	fixed(固定定位)：所固定的参照对像是可视窗口。其他元素当它不存在
+	center与absolute一致,但偏移定位是以定位祖先元素的中心点为参考 (支持不高)(css3)
 	page 与absolute一致。元素在分页媒体或者区域块内,元素的包含块始终是初始包含块，否则取决于每个absolute模式。(CSS3)支持不高
-	sticky
+	sticky：对象在常态时遵循常规流。它就像是relative和fixed的合体，当在屏幕中时按常规流排版，当卷动到屏幕外时则表现如fixed。该属性的表现是现实中你见到的吸附效果。（CSS3）
 	
-### 9、 CSS3有哪些新特性？
+### 9. CSS3有哪些新特性？
 
 	1)css3的新的选择器
   
@@ -367,17 +377,26 @@
 	8)CSS3制作特效(过渡)
    
 	9)媒体查询
-	➤RGBA和透明度
-	➤background-image background-origin(content-box/padding-box/border-box) background-size background-repeat
-	➤word-wrap（对长的不可分割单词换行）word-wrap：break-word
-	➤文字阴影：text-shadow： 5px 5px 5px #FF0000;（水平阴影，垂直阴影，模糊距离，阴影颜色）
-	➤font-face属性：定义自己的字体
-	➤圆角（边框半径）：border-radius 属性用于创建圆角
-	➤边框图片：border-image: url(border.png) 30 30 round
-	➤盒阴影：box-shadow: 10px 10px 5px #888888
-	➤媒体查询：定义两套css，当浏览器的尺寸变化时会采用不同的属性
+	
+	10)RGBA和透明度
+	
+	11)background-image background-origin(content-box/padding-box/border-box) background-size background-repeat
+	
+	12)word-wrap（对长的不可分割单词换行）word-wrap：break-word
+	
+	13)文字阴影：text-shadow： 5px 5px 5px #FF0000;（水平阴影，垂直阴影，模糊距离，阴影颜色）
+	
+	14)font-face属性：定义自己的字体
+	
+	15)圆角（边框半径）：border-radius 属性用于创建圆角
+	
+	16)边框图片：border-image: url(border.png) 30 30 round
+	
+	17)盒阴影：box-shadow: 10px 10px 5px #888888
+	
+	18)媒体查询：定义两套css，当浏览器的尺寸变化时会采用不同的属性
 
-### 10、 请解释一下CSS3的flexbox（弹性盒布局模型）,以及适用场景？
+### 10. 请解释一下CSS3的flexbox（弹性盒布局模型）,以及适用场景？
 
 	该布局模型的目的是提供一种更加高效的方式来对容器中的条目进行布局、对齐和分配空间。在传统的布局方式中，block 布局是把块在垂直方向从上到下依次排列的；
 
