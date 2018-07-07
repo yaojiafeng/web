@@ -10,7 +10,10 @@
 	
 ### 2. box-sizing属性？
 
-	用来控制元素的盒子模型的解析模式，默认为content-box,context-box：W3C的标准盒子模型，设置元素的 height/width 属性指的是content部分的高/	宽,border-box：IE传统盒子模型。设置元素的height/width属性指的是border + padding + content部分的高/宽
+	可设置值为：content-box|border-box|inherit;
+	用来控制元素的盒子模型的解析模式，默认为content-box,context-box：W3C的标准盒子模型，设置元素的 height/width 属性指的是content部分的高/	宽;
+	border-box：IE传统盒子模型。设置元素的height/width属性指的是border + padding + content部分的高/宽;
+	inherit规定应从父元素继承 box-sizing 属性的值。
 	
 ### 3.CSS选择器有哪些？哪些属性可以继承？
 	元素选择器：通配符(*)不兼容ie6;
