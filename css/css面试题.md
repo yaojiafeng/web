@@ -56,7 +56,42 @@
 	          E[att*="val"],选择具有att属性且属性值为包含val的字符串的E元素,不兼容ie6
 						
 	          E[att|="val"],选择具有att属性且属性值为以val开头并用连接符"-"分隔的字符串的E元素，如果属性值仅为val，也将被选择
-	伪类选择器：
+						
+	伪类选择器：E:link,设置超链接a在未被访问前的样式
+						
+						E:visited,设置超链接a在其链接地址已被访问过时的样式
+						
+						E:hover,设置元素在其鼠标悬停时的样式
+						
+						E:active,设置元素在被用户激活（在鼠标点击与释放之间发生的事件）时的样式
+						
+						E:focus,设置对象在成为输入焦点（该对象的onfocus事件发生）时的样式
+						
+						E:lang(fr),匹配使用特殊语言的E元素,如：
+						
+```html
+<!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8" />
+	<title>语言伪类选择符 E:lang(fr)_CSS参考手册_web前端开发参考手册系列</title>
+	<meta name="author" content="Joy Du(飘零雾雨), dooyoe@gmail.com, www.doyoe.com" />
+	<style>
+		p:lang(zh-cmn-Hans) {
+			color: #f00;
+		}
+		p:lang(en) {
+			color: #090;
+		}
+	</style>
+	</head>
+	<body>
+		<p lang="zh-cmn-Hans">大段测试文字</p>
+		<p lang="en">english</p>
+	</body>
+</html>
+```
+		
 	伪对象选择器：
 	可继承的属性:布局(visibility),
             颜色(color,opacity不能继承),
