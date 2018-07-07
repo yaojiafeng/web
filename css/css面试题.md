@@ -1,6 +1,10 @@
+[css参考手册](http://www.css88.com/book/css/)
+
 ### 1.介绍一下标准的CSS的盒子模型？与低版本IE的盒子模型有什么不同的？
 	
 	ie8及以上为w3c标准盒子模型标准盒子模型：宽度=内容的宽度（content）+ border + padding + margin低版本IE盒子模型：宽度=内容宽度（content+border+padding）+ margin
+	
+[![cover](images/标准盒子模型.jpg)](images/标准盒子模型.jpg)
 	
 ### 2. box-sizing属性？
 
