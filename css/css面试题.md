@@ -27,30 +27,29 @@
             兄弟选择符(E~F)不兼容ie6;
 					
 ```html
-      <style> 
-		      /* 相邻选择符(E+F) */ 
-		      p+p{color:#f00;}
-		      /* 兄弟选择符(E~F) */
-		      p~p{color:#f00;} 
-	     </style>
-     	 <p>p1</p> 
-	     <p>p2</p> 
-	     <h3>这是一个标题</h3>
-	     <p>p3</p>
-	     <h3>这是一个标题</h3>
-	     <p>p4</p> 
-	     <p>p5</p>
+   <style> 
+      /* 相邻选择符(E+F) */ 
+      p+p{color:#f00;}
+      /* 兄弟选择符(E~F) */
+      p~p{color:#f00;} 
+   </style>
+   <p>p1</p> 
+	 <p>p2</p> 
+	 <h3>这是一个标题</h3>
+	 <p>p3</p>
+	 <h3>这是一个标题</h3>
+	 <p>p4</p> 
+	 <p>p5</p>
+   <!--此例，如果使用p + p{color:#f00;}，那么p2, p5将会变成红色；如果使用p ~ p{color:#f00;}，那么p2,p3,p4,p5将会变成红色；-->
 ```
 
-	   此例，如果使用p + p{color:#f00;}，那么p2, p5将会变成红色；如果使用p ~ p{color:#f00;}，那么p2,p3,p4,p5将会变成红色；
-										
 	属性选择器：E[att],选择具有att属性的E元素,不兼容ie6
-           E[att="val"],选择具有att属性且属性值等于val的E元素,不兼容ie6			
-	   E[att~="val"],选择具有att属性且属性值为一用空格分隔的字词列表,其中一个等于val的E元素(包含只有一个值且该值等于val的情况)不兼容ie6
-	   E[att^="val"],选择具有att属性且属性值为以val开头的字符串的E元素,不兼容ie6
-	   E[att$="val"],选择具有att属性且属性值为以val结尾的字符串的E元素,不兼容ie6
-	   E[att*="val"],选择具有att属性且属性值为包含val的字符串的E元素,不兼容ie6
-	   E[att|="val"],选择具有att属性且属性值为以val开头并用连接符"-"分隔的字符串的E元素，如果属性值仅为val，也将被选择
+            E[att="val"],选择具有att属性且属性值等于val的E元素,不兼容ie6			
+	          E[att~="val"],选择具有att属性且属性值为一用空格分隔的字词列表,其中一个等于val的E元素(包含只有一个值且该值等于val的情况)不兼容ie6
+	          E[att^="val"],选择具有att属性且属性值为以val开头的字符串的E元素,不兼容ie6
+	          E[att$="val"],选择具有att属性且属性值为以val结尾的字符串的E元素,不兼容ie6
+	          E[att*="val"],选择具有att属性且属性值为包含val的字符串的E元素,不兼容ie6
+	          E[att|="val"],选择具有att属性且属性值为以val开头并用连接符"-"分隔的字符串的E元素，如果属性值仅为val，也将被选择
 	伪类选择器：
 	伪对象选择器：
 	可继承的属性:布局(visibility),
@@ -70,6 +69,8 @@
 	不可继承的样式:border, padding, margin, width, height...
 	优先级(就近原则):!important > [ id > class > tag ]
 	!important 比内联优先级高
+	
+[css选择器](http://www.css88.com/book/css/selectors/index.htm)
 
 ### 4、CSS优先级算法如何计算？
 
