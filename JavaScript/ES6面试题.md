@@ -136,6 +136,8 @@
   var jsPromise = Promise.resolve($.ajax('/whatever.json'));
 ```
 
+[ES6 Promise](http://es6.ruanyifeng.com/#docs/promise)
+
 
 
 
