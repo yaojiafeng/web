@@ -145,6 +145,8 @@
 	</body>
 </html>
 ```
+
+![效果图](/images/first-letter.jpg)
 	
 	可继承的属性:布局(visibility),
             颜色(color,opacity不能继承),
