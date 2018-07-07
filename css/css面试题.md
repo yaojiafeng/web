@@ -147,6 +147,31 @@
 ```
 
 ![效果图](/images/first-letter.jpg)
+
+	E:first-line/E::first-line ,设置对象内的第一行的样式
+	
+	E:before/E::before,设置在对象前（依据对象树的逻辑结构）发生的内容。用来和content属性一起使用，并且必须定义content属性
+	
+```html
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+	<head>
+	<meta charset="utf-8" />
+	<title>E::before_CSS参考手册_web前端开发参考手册系列</title>
+	<meta name="author" content="Joy Du(飘零雾雨), dooyoe@gmail.com, www.doyoe.com" />
+	<style>
+		p{position:relative;color:#f00;font-size:14px;font-size:0\9;*font-size:14px;}
+		p:before{position:absolute;background:#fff;color:#000;content:"如果你的能看到这段文字，说明你的浏览器只支持E:before";font-size:14px;}
+		p::before{position:absolute;background:#fff;color:#000;content:"如果你的能看到这段文字，说明你的浏览器支持E:before和E::before";font-size:14px;}
+	</style>
+	</head>
+	<body>
+		<p>Sorry, 你的浏览器不支持E:before和E::before</p>
+	</body>
+</html>
+```
+
+![效果图](/images/beffore.jpg)
 	
 	可继承的属性:布局(visibility),
             颜色(color,opacity不能继承),
