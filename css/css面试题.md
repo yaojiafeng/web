@@ -82,6 +82,8 @@
 	E:active,设置元素在被用户激活（在鼠标点击与释放之间发生的事件）时的样式
 						
 	E:focus,设置对象在成为输入焦点（该对象的onfocus事件发生）时的样式
+	
+	E:firld-chird,匹配父元素的第一个子元素E
 						
 	E:lang(fr),匹配使用特殊语言的E元素,如：
 						
@@ -114,6 +116,8 @@
 	border-bottom: 1px solid #ddd;
 }
 ```
+
+***其余的css3伪类选择器见css3新增的伪类选择器***
 		
 	伪对象选择器：
 	可继承的属性:布局(visibility),
