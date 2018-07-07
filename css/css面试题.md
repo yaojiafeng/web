@@ -11,20 +11,27 @@
 ### 2. box-sizing属性？
 
 	可设置值为：content-box|border-box|inherit;
-	用来控制元素的盒子模型的解析模式，默认为content-box,context-box：W3C的标准盒子模型，设置元素的 height/width 属性指的是content部分的高/	宽;
+	用来控制元素的盒子模型的解析模式，默认为content-box,context-box：W3C的标准盒子模型，设置元素的 height/width 属性指的是content部分的高/宽;
 	border-box：IE传统盒子模型。设置元素的height/width属性指的是border + padding + content部分的高/宽;
 	inherit规定应从父元素继承 box-sizing 属性的值。
 	
 ### 3.CSS选择器有哪些？哪些属性可以继承？
 
 	元素选择器：通配符(*)不兼容ie6;
-            id选择符(E#id);
-            类选择符(E.class)ie6不支持多类选择;
-	          E(类型选择符，即标签名)
+           	 
+		  id选择符(E#id);
+            	  
+		  类选择符(E.class)ie6不支持多类选择;
+	          
+		  E(类型选择符，即标签名)
+		  
 	关系选择器：包含选择符(E F);
-            子选择符(E>F)不兼容ie6;
-	          相邻选择符(E+F)不兼容ie6;     
-            兄弟选择符(E~F)不兼容ie6;
+	
+           	  子选择符(E>F)不兼容ie6;
+		  
+	          相邻选择符(E+F)不兼容ie6;  
+		  
+            	  兄弟选择符(E~F)不兼容ie6;
 					
 ```html
    <style> 
@@ -45,7 +52,7 @@
 
 	属性选择器：E[att],选择具有att属性的E元素,不兼容ie6
 		
-		        E[att="val"],选择具有att属性且属性值等于val的E元素,不兼容ie6			
+		  E[att="val"],选择具有att属性且属性值等于val的E元素,不兼容ie6			
 						
 	          E[att~="val"],选择具有att属性且属性值有一个或者多个,其中一个等于val的E元素(包含只有一个值且该值等于val的情况)不兼容ie6，如<div class="a b">3</div>
 						
@@ -59,15 +66,15 @@
 						
 	伪类选择器：E:link,设置超链接a在未被访问前的样式
 						
-						E:visited,设置超链接a在其链接地址已被访问过时的样式
+		  E:visited,设置超链接a在其链接地址已被访问过时的样式
 						
-						E:hover,设置元素在其鼠标悬停时的样式
+	          E:hover,设置元素在其鼠标悬停时的样式
 						
-						E:active,设置元素在被用户激活（在鼠标点击与释放之间发生的事件）时的样式
+		  E:active,设置元素在被用户激活（在鼠标点击与释放之间发生的事件）时的样式
 						
-						E:focus,设置对象在成为输入焦点（该对象的onfocus事件发生）时的样式
+		  E:focus,设置对象在成为输入焦点（该对象的onfocus事件发生）时的样式
 						
-						E:lang(fr),匹配使用特殊语言的E元素,如：
+		  E:lang(fr),匹配使用特殊语言的E元素,如：
 						
 ```html
 <!DOCTYPE html>
