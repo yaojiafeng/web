@@ -203,7 +203,7 @@
 ***可继承的属性:***
 
 	布局(visibility),
-        颜色(color,opacity不能继承),
+	颜色(color,opacity不能继承),
 	字体(font,font-style,font-variant,font-weight,font-size, font-family,font-stretch,font-size-adjust), 
 	文本(text-transform,white-space,tab-size,word-break,word-wrap,overflow-wrap,text-align,text-align-last,text-justify,word-spacing,text-indent,line-height,letter-spacing,text-size-adjust,文本中的vertical-align没有继承,其他具有),
 	文本装饰(text-shadow,text-underline-position,text-decoration-skip),
