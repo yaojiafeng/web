@@ -172,24 +172,47 @@
 ```
 
 ![效果图](/images/beffore.jpg)
+
+	E:after/E::after ,设置在对象后（依据对象树的逻辑结构）发生的内容。用来和content属性一起使用，并且必须定义content属性
 	
-	可继承的属性:布局(visibility),
-            颜色(color,opacity不能继承),
-            字体(font,font-style,font-variant,font-weight,font-size, font-family,font-stretch,font-size-adjust), 
-            文本(text-transform,white-space,tab-size,word-break,word-wrap,overflow-wrap,text-align,text-align-last,
-                 text-justify,word-spacing,text-indent,line-height,letter-spacing,text-size-adjust,文本中的vertical-align没有继承,其他具有),
-            文本装饰(text-shadow,text-underline-position,text-decoration-skip),
-            书写模式(derection,writing-mode),
-            列表(list-style,list-style-image,,list-style-position,list-style-type),
-            表格(table-layout,border-collapse,border-spacing,empty-cells),
-            内容(quotes),
-            用户界面(cursor,zoom,pointer-events),
-            Only IE(scrollbar-3dlight-color,scrollbar-darkshadow-color,scrollbar-highlight-color,scrollbar-shadow-color,
-                    scrollbar-arrow-color,scrollbar-face-color,scrollbar-track-color,scrollbar-base-color,filter和behavior没有继承),
-            Only webkit(text-fill0-color,text-stroke,text-stroke-width,text-stroke-color，tap-highlight-color，user-drag)
+	E::placehoder,设置对象文字占位符的样式
+	::placeholder 伪元素用于控制表单输入框占位符的外观，它允许开发者/设计师改变文字占位符的样式，默认的文字占位符为浅灰色。当表单背景色为类似的颜色时它可能效果并不是很明显，那么就可以使用这个伪元素来改变文字占位符的颜色。需要注意的是，除了Firefox是 ::[prefix]placeholder，其他浏览器都是使用 ::[prefix]input-placeholder
+	
+	用法：
+	<input type="text" placeholder="占位符" />
+
+	input::-webkit-input-placeholder {
+		color: #999;
+	}
+	
+	input:-ms-input-placeholder { // IE10+
+		color: #999;
+	}
+	input:-moz-placeholder { // Firefox4-18
+		color: #999;
+	}
+	input::-moz-placeholder { // Firefox19+
+		color: #999;
+	}
+	
+	E::selection ,设置对象被选择时的样式,可以用来设置文字被选中时的样式
+	需要注意的是，::selection只能定义被选择时的background-color，color及text-shadow(IE11尚不支持定义该属性)
+	
+====
+	
+***可继承的属性:***
+
+	布局(visibility),
+        颜色(color,opacity不能继承),
+	字体(font,font-style,font-variant,font-weight,font-size, font-family,font-stretch,font-size-adjust), 
+	文本(text-transform,white-space,tab-size,word-break,word-wrap,overflow-wrap,text-align,text-align-last,text-justify,word-spacing,text-indent,line-height,letter-spacing,text-size-adjust,文本中的vertical-align没有继承,其他具有),
+	文本装饰(text-shadow,text-underline-position,text-decoration-skip),
+	书写模式(derection,writing-mode),
+	列表(list-style,list-style-image,,list-style-position,list-style-type),
+	表格(table-layout,border-collapse,border-spacing,empty-cells),
+	内容(quotes),
+	用户界面(cursor,zoom,pointer-events),Only IE(scrollbar-3dlight-color,scrollbar-darkshadow-color,scrollbar-highlight-color,scrollbar-shadow-color,scrollbar-arrow-color,scrollbar-face-color,scrollbar-track-color,scrollbar-base-color,filter和behavior没有继承),Only webkit(text-fill0-color,text-stroke,text-stroke-width,text-stroke-color，tap-highlight-color，user-drag)
 	不可继承的样式:border, padding, margin, width, height...
-	优先级(就近原则):!important > [ id > class > tag ]
-	!important 比内联优先级高
 	
 [css选择器](http://www.css88.com/book/css/selectors/index.htm)
 
@@ -214,6 +237,9 @@
 	如果优先级相同，则选择最后出现的样式。
     
 	继承得到的样式的优先级最低。
+	
+	优先级(就近原则):!important > [ id > class > tag ]
+	!important 比内联优先级高
 
 ### 5 、CSS3新增伪类有那些?(CSS伪类是用来添加一些选择器的特殊效果)
    
