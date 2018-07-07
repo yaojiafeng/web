@@ -117,9 +117,15 @@
 }
 ```
 
-***其余的css3伪类选择器见css3新增的伪类选择器***
+其余的css3伪类选择器见css3新增的伪类选择器
+===
+
+***伪对象选择器***
 		
-	伪对象选择器：
+	E:first-letter/E::first-letter,设置对象内的第一个字符的样式;
+	此伪对象仅作用于块对象。内联对象要使用该伪对象，必须先将其设置为块级对象。该伪类常被用来配合font-size属性和float属性制作首字下沉效果。IE6在使用该选择符时有个显式的BUG：选择符与包含规则的花括号之间不能紧挨着，需留有空格或换行。同时还存在该BUG的选择符包括：E:first-lineCSS3将伪对象选择符(Pseudo-Element Selectors)前面的单个冒号(:)修改为双冒号(::)用以区别伪类选择符(Pseudo-Classes Selectors)，但以前的写法仍然有效。即E:first-letter可转化为E::first-letter
+	
+	
 	可继承的属性:布局(visibility),
             颜色(color,opacity不能继承),
             字体(font,font-style,font-variant,font-weight,font-size, font-family,font-stretch,font-size-adjust), 
