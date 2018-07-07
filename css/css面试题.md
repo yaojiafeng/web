@@ -99,6 +99,13 @@
 	</body>
 </html>
 ```
+          E:not(s),匹配不含有s选择符的元素E,有了这个选择符，那么你将可以很好的处理类似这样的场景：假定有个列表，每个列表项都有一条底边线，但是最后一项不需要底边线
+	 
+```css
+.demo li:not(:last-child) {
+	border-bottom: 1px solid #ddd;
+}
+```
 		
 	伪对象选择器：
 	可继承的属性:布局(visibility),
