@@ -17,7 +17,7 @@
 	
 ### 3.CSS选择器有哪些？哪些属性可以继承？
 
-***元素选择符：***
+***(1)元素选择符：***
 
 	通配符(*)不兼容ie6;
            	 
@@ -28,7 +28,7 @@
 	E(类型选择符，即标签名)
 	
 	
-***关系选择符：***
+***(2)关系选择符：***
 	
 	包含选择符(E F);
 	
@@ -55,7 +55,7 @@
    <!--此例，如果使用p + p{color:#f00;}，那么p2, p5将会变成红色；如果使用p ~ p{color:#f00;}，那么p2,p3,p4,p5将会变成红色；-->
 ```
 
-***属性选择器***
+***(3)属性选择器***
 
 	E[att],选择具有att属性的E元素,不兼容ie6
 		
@@ -71,7 +71,7 @@
 						
 	E[att|="val"],选择具有att属性且属性值为以val开头并用连接符"-"分隔的字符串的E元素，如果属性值仅为val，也将被选择
 		  
-***伪类选择器***	
+***(4)伪类选择器:***	
 
 	E:link,设置超链接a在未被访问前的样式
 						
@@ -120,11 +120,31 @@
 其余的css3伪类选择器见css3新增的伪类选择器
 ===
 
-***伪对象选择器***
+***(5)伪对象选择器:***
 		
 	E:first-letter/E::first-letter,设置对象内的第一个字符的样式;
 	此伪对象仅作用于块对象。内联对象要使用该伪对象，必须先将其设置为块级对象。该伪类常被用来配合font-size属性和float属性制作首字下沉效果。IE6在使用该选择符时有个显式的BUG：选择符与包含规则的花括号之间不能紧挨着，需留有空格或换行。同时还存在该BUG的选择符包括：E:first-lineCSS3将伪对象选择符(Pseudo-Element Selectors)前面的单个冒号(:)修改为双冒号(::)用以区别伪类选择符(Pseudo-Classes Selectors)，但以前的写法仍然有效。即E:first-letter可转化为E::first-letter
 	
+```html
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans">
+	<head>
+	<meta charset="utf-8" />
+	<title>E::first-letter_CSS参考手册_web前端开发参考手册系列</title>
+	<meta name="author" content="Joy Du(飘零雾雨), dooyoe@gmail.com, www.doyoe.com" />
+		<style>
+			h1{font-size:16px;}
+			p{width:200px;padding:5px 10px;border:1px solid #ddd;font:14px/1.5 simsun,serif,sans-serif;}
+			p:first-letter {float:left;font-size:40px;font-weight:bold;line-height:1;}
+			p::first-letter {float:left;font-size:40px;font-weight:bold;line-height:1;}
+		</style>
+	</head>
+	<body>
+		<h1>杂志常用的首字下沉效果</h1>
+		<p>今天，阳光明媚，晴空万里，非常适合户外活动，如踏青、远足之类的。长期坐在办公室的同学们要多注意运动。</p>
+	</body>
+</html>
+```
 	
 	可继承的属性:布局(visibility),
             颜色(color,opacity不能继承),
