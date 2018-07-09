@@ -799,6 +799,13 @@ body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, fo
 	1.给float元素添加_display：inline 即可正常显示,因为在IE7以及IE7以上的IE版本中，这个双边距的bug已经修正，前缀符号"_"只有IE6能够识别，所以只需要让IE6去设置这个属性就足以。 
 
 	2.对IE6进行 _margin-left:5px;
+	
+***(3)行内属性标签，为了设置宽高，我们经常就会设置成display：block; 又有float,这样一来就产生ie6双边距问题***
+
+	解决方案：在display:block;后面加入display:inline;display:table;
+	(display：inline; 但是这样一来我们就不能设置宽高了，所以呢需要再加个 display:table;所以你设置display:block后，再添上display:inline和display:table)
+	
+***(4)***
 
 
 14、 为什么要初始化CSS样式
