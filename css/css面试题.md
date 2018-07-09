@@ -429,7 +429,7 @@
 ***(3)项目的属性***
 
 - flex-grow
-  - flex-grow: <number>; /* default 0 */;flex-grow属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大,如果所有项目的flex-grow属性都为1，则它们将等分剩余空间（如果有的话）。如果一个项目的flex-grow属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍
+  - flex-grow: \<number\>; /* default 0 */;flex-grow属性定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大,如果所有项目的flex-grow属性都为1，则它们将等分剩余空间（如果有的话）。如果一个项目的flex-grow属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍
 - flex-shrink
   - flex-shrink: <number>; /* default 1 */;flex-shrink属性定义了项目的缩小比例，默认为1，即如果空间不足，该项目将缩小,如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小。如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩小。负值对该属性无效。
 - flex-basis
