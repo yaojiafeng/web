@@ -563,7 +563,7 @@
 
 	进行css reset.
 	
-a.标签的默认样式
+a.了解标签的默认样式
 
 ```css
 /*块级元素*/
@@ -634,7 +634,7 @@ BDO[DIR="rtl"]  { direction: rtl; unicode-bidi:bidi-override }
   } /*定义标题和列表默认的打印样式*/
 ```
 
-b.浏览默认样式类
+b.了解浏览默认样式类
 
 	不同的浏览器默认的样式可能不尽相同，所以开发时的第一件事可能就是如何把它们统一。如果没对CSS初始化往往会出现浏览器之间的页面差异。
 
@@ -764,38 +764,35 @@ body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, fo
     table { border-collapse:collapse; border-spacing:0; }
 ```
 
-> 不同浏览器的标签默认的margin和padding不一样。
+***(2)IE6双边距bug***
 
-*{margin:0;padding:0;}
+	块属性标签添加了浮动float之后，若在浮动方向上也有margin值，则margin值会加倍。
+	
+```html
+<html>
+              <head>
+                      <style>
+                            body{
+                                    margin:0px;
+                                    padding:0px;
+                            }
+                            #box{
+                                    float:left;
+                                    margin:10px;
+                                    width:200px;
+                                    height:200px;
+                                    background:#696969;
+                            }
+                      </style>
+              </head>
+              <body>
+                       <div id="box"></div>
+              </body>
+    </html>
+```
+左一chrome,中间firefox,右边ie6
 
-➤IE6双边距bug：块属性标签float后，又有横行的margin情况下，在IE6显示margin比设置的大。hack：display:inline;将其转化为行内属性。
-
-➤渐进识别的方式，从总体中逐渐排除局部。首先，巧妙的使用“9”这一标记，将IE浏览器从所有情况中分离出来。接着，再次使用“+”将IE8和IE7、IE6分离开来，这样IE8已经独立识别。
-
-{background-color:#f1ee18;
-/*所有识别*/
-
-.background-color:#00deff9;
-
-/*IE6、7、8识别*/
-
-+background-color:#a200ff;
-
-/*IE6、7识别*/
-
-_background-color:#1e0bd1;
-
-/*IE6识别*/}
-
-➤设置较小高度标签（一般小于10px），在IE6，IE7中高度超出自己设置高度。hack：给超出高度的标签设置overflow:hidden;或者设置行高line-height 小于你设置的高度。
-
-➤IE下，可以使用获取常规属性的方法来获取自定义属性,也可以使用getAttribute()获取自定义属性；Firefox下，只能使用getAttribute()获取自定义属性。解决方法:统一通过getAttribute()获取自定义属性。
-
-➤Chrome 中文界面下默认会将小于 12px 的文本强制按照 12px 显示,可通过加入 CSS 属性 -webkit-text-size-adjust: none; 解决。
-
-➤超链接访问过后hover样式就不出现了，被点击访问过的超链接样式不再具有hover和active了。
-
-解决方法是改变CSS属性的排列顺序:L-V-H-A ( love hate ): a:link {} a:visited {} a:hover {} a:active {}
+![chrome](/images/chrome.jpg) ![firefox](/images/firefox.jpg) ![ie6](/images/ie6.jpg)
 
 14、 为什么要初始化CSS样式
 因为浏览器的兼容问题，不同浏览器对有些标签的默认值是不同的，如果没对CSS初始化往往会出现浏览器之间的页面显示差异。
