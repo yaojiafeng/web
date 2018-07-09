@@ -555,6 +555,8 @@
 </html>
 ```
 
+![品字布局](/images/manpin.png)
+
 ### 13.常见的兼容性问题？
 
 ➤不同浏览器的标签默认的margin和padding不一样。
