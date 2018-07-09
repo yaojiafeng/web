@@ -557,9 +557,9 @@
 
 ![品字布局](/images/manpin.png)
 
-### 13.常见的兼容性问题？
+### 13.常见的css兼容性问题？
 
-➤不同浏览器的标签默认的margin和padding不一样。
+> 不同浏览器的标签默认的margin和padding不一样。
 
 *{margin:0;padding:0;}
 
