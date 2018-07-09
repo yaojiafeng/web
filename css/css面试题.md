@@ -561,7 +561,81 @@
 
 ***(1)浏览器对标签的默认支持不同***
 
-	进行css reset
+	进行css reset.
+	
+先了解下标签的默认样式
+
+```css
+/*块级元素*/
+html, body,  div,ol, p, ul,  h1, h2,h3,h4,h5, h6,address,blockquote, form,dd,dl, dt, fieldset, frame, frameset,noframes,center, dir, hr, menu, pre  { display: block }
+ 
+/*列表元素类*/
+li{ display:list-item }
+ol{list-style-type: decimal }
+ol ul, ul ol,ul ul, ol ol  { margin-top: 0; margin-bottom: 0 }
+ol, ul{ margin-left: 40px }
+ 
+//预格式文本类
+i, cite, em,var, address{ font-style: italic }
+big{ font-size:1.17em }
+small, sub, sup{ font-size: .83em }
+sub{ vertical-align:sub }
+sup{ vertical-align:super }
+s, strike, del{ text-decoration: line-through }
+u, ins{ text-decoration:underline }
+//标题类
+h1{ font-size:2em; margin: .67em 0 }
+h2{ font-size:1.5em; margin: .75em 0 }
+h3{ font-size:1.17em; margin: .83em 0 }
+h4, p,blockquote, ul,fieldset, form,ol, dl, dir,menu { margin: 1.12em 0}
+h5 { font-size:.83em; margin: 1.5em 0 }
+h6{ font-size:.75em; margin: 1.67em 0 }
+h1, h2, h3, h4,h5, h6, b,strong  { font-weight: bolder }
+ 
+ 
+//伪类
+br:before{ content: ”\A” }
+:before, :after{ white-space: pre-line }
+:link, :visited { text-decoration: underline }
+:focus{ outline: thin dotted invert }
+//表格类
+table{ display: table }
+tr{ display:table-row }
+thead{ display:table-header-group }
+tbody{ display:table-row-group }
+tfoot{ display:table-footer-group }
+col{ display:table-column }
+colgroup{ display:table-column-group }
+td, th{ display: table-cell;}
+caption{ display: table-caption }
+th{font-weight: bolder; text-align: center }
+caption{ text-align: center }
+table{ border-spacing: 2px;}
+thead, tbody,tfoot { vertical-align:middle }
+td, th { vertical-align:inherit }
+ 
+//其它元素
+head{ display: none }
+body{ margin: 8px;line-height: 1.12 }     
+button, textarea,input, object,select  { display:inline-block;}
+blockquote{ margin-left: 40px;margin-right: 40px }
+pre, tt, code,kbd, samp  { font-family: monospace }
+pre{ white-space: pre}
+hr{ border: 1px inset }
+center{ text-align: center }
+abbr, acronym{ font-variant: small-caps; letter-spacing:0.1em }
+BDO[DIR="ltr"]  { direction: ltr; unicode-bidi:bidi-override }
+ BDO[DIR="rtl"]  { direction: rtl; unicode-bidi:bidi-override }
+ /*定义BDO元素当其属性为DIR="ltr/rtl"时的默认文本读写显示顺序*/
+ *[DIR="ltr"]{ direction: ltr;unicode-bidi: embed }
+ *[DIR="rtl"] { direction: rtl;unicode-bidi: embed }
+ /*定义任何元素当其属性为DIR="rtl/rtl"时的默认文本读写显示顺序*/
+ @media print {
+       h1{page-break-before: always }
+       h1, h2, h3,h4, h5, h6    { page-break-after: avoid }
+       ul, ol, dl{ page-break-before: avoid }
+  } /*定义标题和列表默认的打印样式*/
+```
 
 > 不同浏览器的标签默认的margin和padding不一样。
 
