@@ -413,7 +413,13 @@
 
 ***(2)容器的属性***
 
-- [flex-direction]
+- flex-direction
+- flex-wrap
+- flex-flow
+- justify-content
+- align-items
+- align-content
+
 ### 11 、用纯CSS创建一个三角形的原理是什么？
 
 	首先，需要把元素的宽度、高度设为0。然后设置边框样式。
