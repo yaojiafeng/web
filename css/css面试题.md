@@ -503,23 +503,59 @@
 }
 ```
 
-12 、一个满屏品字布局如何设计?
+### 12.一个满屏品字布局如何设计?
 
-第一种真正的品字：
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>满屏品字布局</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 0;
+        }
 
-➤三块高宽是确定的；
+        html,body{
+            height: 100%;/*此设置非常关键，因为默认的body，HTML高度为0，所以后面设置的div的高度无法用百分比显示*/
+        }       
 
-➤上面那块用margin: 0 auto;居中；
+        .header{
+            height:50%; /*此步结合html,body高度为100%，解决元素相对窗口的定位问题*/
+            width: 50%;     
+            background: #ccc;           
+            margin:0 auto;
+        }
+        .main{
+            width: 100%;
+            height: 50%;
+            background: #ddd;
+        }
 
-➤下面两块用float或者inline-block不换行；
+        .main .left,.main .right{
+            float: left;/*采用float方式，对元素进行左右定位*/
+            width:50%;/*此步解决元素相对窗口的定位问题*/
+            height:100%;/*此步解决元素相对窗口的定位问题*/
+            background: yellow;
+        }
 
-➤用margin调整位置使他们居中。
+        .main .right{
+            background: green;
+        }
+    </style>
+</head>
+<body>
+<div class="header"></div>
+<div class="main">
+    <div class="left"></div>
+    <div class="right"></div>
+</div>
+</body>
+</html>
+```
 
-第二种全屏的品字布局:
-
-上面的div设置成100%，下面的div分别宽50%，然后使用float或者inline使其不换行。
-
-13、 常见的兼容性问题？
+### 13.常见的兼容性问题？
 
 ➤不同浏览器的标签默认的margin和padding不一样。
 
