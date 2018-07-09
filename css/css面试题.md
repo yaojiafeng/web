@@ -445,16 +445,63 @@
 
 	首先，需要把元素的宽度、高度设为0。然后设置边框样式。
 
-	width: 0;
-	height: 0;
-
-	border-top: 40px solid transparent;
-
-	border-left: 40px solid transparent;
-
-	border-right: 40px solid transparent;
-
-	border-bottom: 40px solid #ff0000;
+```css
+/*四个三角形*/
+.triangle {
+    width: 0;
+    height: 0;
+    border-top: 20px solid #EEB422;
+    border-right: 20px solid #C0FF3E;
+    border-bottom: 20px solid #A020F0;
+    border-left: 20px solid #7CFC00;
+}
+ /*向上三角形*/
+.triangle-up {
+    width: 0;
+    height: 0;
+    border-right: 20px solid transparent;
+    border-bottom: 40px solid #A020F0;
+    border-left: 20px solid transparent;
+}
+ /*向下三角形*/
+.triangle-down {
+    width: 0;
+    height: 0;
+    border-top: 40px solid #EEB422;
+    border-right: 20px solid transparent;
+    border-left: 20px solid transparent;
+}
+ /*向左三角形*/
+.triangle-left {
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 40px solid #7CFC00;
+}
+/*向右三角形*/ 
+.triangle-right {
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-right: 40px solid #C0FF3E;
+}
+ 
+.triangle-left-bottom {
+    width: 0;
+    height: 0;
+    border-top: 40px solid transparent;
+    border-left: 40px solid #7CFC00;
+}
+ 
+.triangle-right-bottom {
+    width: 0;
+    height: 0;
+    border-top: 40px solid transparent;
+    border-right: 40px solid #C0FF3E;
+}
+```
 
 12 、一个满屏品字布局如何设计?
 
