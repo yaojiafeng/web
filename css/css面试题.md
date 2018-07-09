@@ -413,8 +413,8 @@
 
 ***(2)容器的属性***
 
-- flex-direction
-- flex-wrap
+- flex-direction    决定主轴的方向(即项目的排列方向)  flex-direction: row | row-reverse | column | column-reverse;
+- flex-wrap    默认情况下，项目都排在一条线（又称”轴线”）上。flex-wrap属性定义，如果一条轴线排不下，如何换行  flex-wrap: nowrap | wrap | wrap-reverse
 - flex-flow
 - justify-content
 - align-items
