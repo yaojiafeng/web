@@ -563,7 +563,7 @@
 
 	进行css reset.
 	
-先了解下标签的默认样式
+a.标签的默认样式
 
 ```css
 /*块级元素*/
@@ -575,7 +575,7 @@ ol{list-style-type: decimal }
 ol ul, ul ol,ul ul, ol ol  { margin-top: 0; margin-bottom: 0 }
 ol, ul{ margin-left: 40px }
  
-//预格式文本类
+/*预格式文本类*/
 i, cite, em,var, address{ font-style: italic }
 big{ font-size:1.17em }
 small, sub, sup{ font-size: .83em }
@@ -583,7 +583,7 @@ sub{ vertical-align:sub }
 sup{ vertical-align:super }
 s, strike, del{ text-decoration: line-through }
 u, ins{ text-decoration:underline }
-//标题类
+/*标题类*/
 h1{ font-size:2em; margin: .67em 0 }
 h2{ font-size:1.5em; margin: .75em 0 }
 h3{ font-size:1.17em; margin: .83em 0 }
@@ -591,14 +591,12 @@ h4, p,blockquote, ul,fieldset, form,ol, dl, dir,menu { margin: 1.12em 0}
 h5 { font-size:.83em; margin: 1.5em 0 }
 h6{ font-size:.75em; margin: 1.67em 0 }
 h1, h2, h3, h4,h5, h6, b,strong  { font-weight: bolder }
- 
- 
-//伪类
+/*伪类*/
 br:before{ content: ”\A” }
 :before, :after{ white-space: pre-line }
 :link, :visited { text-decoration: underline }
 :focus{ outline: thin dotted invert }
-//表格类
+/*表格类*/
 table{ display: table }
 tr{ display:table-row }
 thead{ display:table-header-group }
@@ -613,8 +611,7 @@ caption{ text-align: center }
 table{ border-spacing: 2px;}
 thead, tbody,tfoot { vertical-align:middle }
 td, th { vertical-align:inherit }
- 
-//其它元素
+/*其它元素*/
 head{ display: none }
 body{ margin: 8px;line-height: 1.12 }     
 button, textarea,input, object,select  { display:inline-block;}
@@ -625,16 +622,125 @@ hr{ border: 1px inset }
 center{ text-align: center }
 abbr, acronym{ font-variant: small-caps; letter-spacing:0.1em }
 BDO[DIR="ltr"]  { direction: ltr; unicode-bidi:bidi-override }
- BDO[DIR="rtl"]  { direction: rtl; unicode-bidi:bidi-override }
- /*定义BDO元素当其属性为DIR="ltr/rtl"时的默认文本读写显示顺序*/
- *[DIR="ltr"]{ direction: ltr;unicode-bidi: embed }
- *[DIR="rtl"] { direction: rtl;unicode-bidi: embed }
- /*定义任何元素当其属性为DIR="rtl/rtl"时的默认文本读写显示顺序*/
+BDO[DIR="rtl"]  { direction: rtl; unicode-bidi:bidi-override }
+/*定义BDO元素当其属性为DIR="ltr/rtl"时的默认文本读写显示顺序*/
+*[DIR="ltr"]{ direction: ltr;unicode-bidi: embed }
+*[DIR="rtl"] { direction: rtl;unicode-bidi: embed }
+/*定义任何元素当其属性为DIR="rtl/rtl"时的默认文本读写显示顺序*/
  @media print {
        h1{page-break-before: always }
        h1, h2, h3,h4, h5, h6    { page-break-after: avoid }
        ul, ol, dl{ page-break-before: avoid }
   } /*定义标题和列表默认的打印样式*/
+```
+
+b.浏览默认样式类
+
+	不同的浏览器默认的样式可能不尽相同，所以开发时的第一件事可能就是如何把它们统一。如果没对CSS初始化往往会出现浏览器之间的页面差异。
+
+	1).页边距
+
+		IE默认为10px，通过body的margin属性设置
+		FF默认为8px，通过body的padding属性设置
+
+	2).段间距
+
+		IE默认为19px，通过p的margin-top属性设置
+		FF默认为1.12em，通过p的margin-bottom属性设置
+
+	3).标题样式
+
+		h1~h6默认加粗显示：font-weight:bold;
+		
+	4).列表样式
+	
+		IE默认为40px，通过ul、ol的margin属性设置
+		FF默认为40px，通过ul、ol的padding属性设置
+		dl无缩进，但起内部的说明元素dd默认缩进40px，而名称元素dt没有缩进。
+
+	5).元素居中
+
+		IE默认为text-align:center;
+		FF默认为margin-left:auto;margin-right:auto;
+
+	6).超链接<a>样式
+
+		a样式默认带有下划线，显示颜色为蓝色，被访问过的超链接变紫色
+
+	7).鼠标样式
+
+		IE默认为cursor:hand;
+		FF默认为cursor:pointer;该声明在IE中也有效
+
+	8).图片链接样式
+　　　　
+		IE默认为紫色2px的边框线
+		FF默认为蓝色2px的边框线　　
+		
+```css
+/*reset*/
+@charset "UTF-8";
+/*css 初始化 */
+html, body, ul, li, ol, dl, dd, dt, p, h1, h2, h3, h4, h5, h6, form, fieldset, legend, img {
+    margin: 0;
+    padding: 0;
+}
+
+fieldset, img, input, button {
+    border: none;
+    padding: 0;
+    margin: 0;
+    outline-style: none;
+}
+
+ul, ol {
+    list-style: none;
+}
+
+input {
+    padding-top: 0;
+    padding-bottom: 0;
+    font-family: "SimSun", "宋体";
+}
+
+select, input {
+    vertical-align: middle;
+}
+
+select, input, textarea {
+    font-size: 12px;
+    margin: 0;
+}
+textarea {
+    resize: none;
+}
+
+/*防止拖动*/
+img {
+    border: 0;
+    vertical-align: middle;
+}
+
+/*  去掉图片低测默认的3像素空白缝隙*/
+table {
+    border-collapse: collapse;
+}
+
+body {
+    font: 12px/150% Arial, Verdana, "\5b8b\4f53";
+    color: #666;
+    background: #fff
+}
+h1, h2, h3, h4, h5, h6 {
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 100%;
+}
+
+s, i, em {
+    font-style: normal;
+    text-decoration: none;
+}
 ```
 
 > 不同浏览器的标签默认的margin和padding不一样。
