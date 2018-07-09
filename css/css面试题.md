@@ -425,6 +425,15 @@
   - align-items: flex-start | flex-end | center | baseline | stretch;align-items属性定义项目在交叉轴上如何对齐
 - align-content
   - align-content: flex-start | flex-end | center | space-between | space-around | stretch;align-content属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用
+  
+***(3)项目的属性***
+
+- flex-grow
+- flex-shrink
+- flex-basis
+- flex
+- order
+- align-self
 
 ### 11 、用纯CSS创建一个三角形的原理是什么？
 
