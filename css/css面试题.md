@@ -794,6 +794,13 @@ body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, fo
 
 ![chrome](/images/chrome.jpg) ![firefox](/images/firefox.jpg) ![ie6](/images/ie6.jpg)
 
+解决方案：
+
+	1.给float元素添加_display：inline 即可正常显示,因为在IE7以及IE7以上的IE版本中，这个双边距的bug已经修正，前缀符号"_"只有IE6能够识别，所以只需要让IE6去设置这个属性就足以。 
+
+	2.对IE6进行 _margin-left:5px;
+
+
 14、 为什么要初始化CSS样式
 因为浏览器的兼容问题，不同浏览器对有些标签的默认值是不同的，如果没对CSS初始化往往会出现浏览器之间的页面显示差异。
 
