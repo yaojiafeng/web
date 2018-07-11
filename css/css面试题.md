@@ -560,8 +560,6 @@
 ### 13.常见的css兼容性问题？
 
 ***(1)浏览器对标签的默认支持不同***
-
-	进行css reset.
 	
 a.了解标签的默认样式
 
@@ -677,8 +675,7 @@ b.了解浏览默认样式类
 		IE默认为紫色2px的边框线
 		FF默认为蓝色2px的边框线　　
 	
-css reset
-===
+	解决方案：css reset
 		
 ```css
 /*reset*/
@@ -766,7 +763,7 @@ body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, fo
 
 ***(2)IE6双边距bug***
 
-	块属性标签添加了浮动float之后，若在浮动方向上也有margin值，则margin值会加倍。
+	问题：块属性标签添加了浮动float之后，若在浮动方向上也有margin值，则margin值会加倍。
 	
 ```html
 <html>
@@ -805,11 +802,38 @@ body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, fo
 	解决方案：在display:block;后面加入display:inline;display:table;
 	(display：inline; 但是这样一来我们就不能设置宽高了，所以呢需要再加个 display:table;所以你设置display:block后，再添上display:inline和display:table)
 	
-***(4)***
+***(4)img标签在ie中的兼容问题***
 
+	问题：img是行内的，一般都会紧接着排放，但是在ie中会出现个间距
+	
+	解决方案：
+	
+***(5)(8)chrome下默认会将小于12px的文本强制按照12px来解析***
 
-14、 为什么要初始化CSS样式
-因为浏览器的兼容问题，不同浏览器对有些标签的默认值是不同的，如果没对CSS初始化往往会出现浏览器之间的页面显示差异。
+	解决方案:为其添加 -webkit-text-size-adjust: none;
+	
+***(6)CSS控制透明度问题***
+
+	解决方案：设置属性值兼容ie
+	
+```css
+.alpha{
+  opacity:0.6;
+  filter:alpha(opacity=60)
+}
+```
+
+***(7)有些时候图片下方会出现一条间隙，通常会出现在FF和IE6下面比如***
+
+```html
+<div><img src="1.jpg"/></div>
+```
+
+	解决方案：给img添加vertical-align属性，如：
+
+```css
+img{verticle-align:middle;}
+```
 
 15、 absolute的containing block计算方式跟正常流有什么不同？
 
