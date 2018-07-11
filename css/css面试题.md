@@ -1,3 +1,5 @@
+[css2.1文档](https://www.w3.org/TR/2011/REC-CSS2-20110607/#minitoc)
+[css2.2文档](https://www.w3.org/TR/CSS22/)
 [css参考手册](http://www.css88.com/book/css/)
 
 ### 1. 介绍一下标准的CSS的盒子模型？与低版本IE的盒子模型有什么不同的？
@@ -887,9 +889,9 @@ img{verticle-align:middle;}
    </HEAD>
    <BODY id="body">
       <DIV id="div1">
-      <P id="p1">This is text in the first paragraph...</P>
-      <P id="p2">This is text <EM id="em1"> in the 
-      <STRONG id="strong1">second</STRONG> paragraph.</EM></P>
+      	<P id="p1">This is text in the first paragraph...</P>
+      	<P id="p2">This is text <EM id="em1"> in the 
+     	 <STRONG id="strong1">second</STRONG> paragraph.</EM></P>
       </DIV>
    </BODY>
 </HTML>
@@ -976,10 +978,7 @@ img{verticle-align:middle;}
         </tr>
     </table>
 
-
-
-
-16、 CSS里的visibility属性有个collapse属性值？在不同浏览器下以后什么区别？
+### 16. CSS里的visibility属性有个collapse属性值？在不同浏览器下以后什么区别？
 当一个元素的visibility属性被设置成collapse值后，对于一般的元素，它的表现跟hidden是一样的。
 ➤chrome中，使用collapse值和使用hidden没有区别。
 ➤firefox，opera和IE，使用collapse值和使用display:none没有什么区别。
