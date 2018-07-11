@@ -895,38 +895,43 @@ img{verticle-align:middle;}
 </HTML>
 ```
 
+包含块的创建如下表：
+
 <table>
         <tr>
-            <th>设备</th>
-            <th>设备文件名</th>
-            <th>文件描述符</th>
-            <th>类型</th>
+            <th>元素</th>
+            <th>创建其包含块的元素</th>
         </tr>
         <tr>
-            <th>键盘</th>
-            <th>/dev/stdin</th>
-            <th>0</th>
-            <th>标准输入</th>
+            <th>html</th>
+            <th>视口(初始包含块)</th>
         </tr>
         <tr>
-            <th>显示器</th>
-            <th>/dev/stdout</th>
-            <th>1</th>
-            <th>标准输出</th>
+            <th>body</th>
+            <th>html</th>
         </tr>
         <tr>
-            <th>显示器</th>
-            <th>/dev/stderr</th>
-            <th>2</th>
-            <th>标准错误输出</th>
+            <th>div1</th>
+            <th>body</th>
+        </tr>
+	  <tr>
+            <th>p1</th>
+            <th>div1</th>
+        </tr>
+	  <tr>
+            <th>p2</th>
+            <th>div1</th>
+        </tr>
+	  <tr>
+            <th>em1</th>
+            <th>p2</th>
+        </tr>
+	  <tr>
+            <th>strong1</th>
+            <th>p2</th>
         </tr>
     </table>
 
-作者：Gaolex
-链接：https://www.jianshu.com/p/abaff828100d
-來源：简书
-简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。
-	
 
 16、 CSS里的visibility属性有个collapse属性值？在不同浏览器下以后什么区别？
 当一个元素的visibility属性被设置成collapse值后，对于一般的元素，它的表现跟hidden是一样的。
