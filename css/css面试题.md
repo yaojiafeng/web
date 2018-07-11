@@ -861,7 +861,7 @@ img{verticle-align:middle;}
 
 ### 14. absolute的containing block计算方式跟正常流有什么不同？
 
-***containing block***
+***containing block 概念***
 
 [containing block 参考](https://www.w3.org/TR/CSS2/visudet.html)
 
@@ -981,9 +981,12 @@ img{verticle-align:middle;}
     </table>
 
 ### 16. CSS里的visibility属性有个collapse属性值？在不同浏览器下以后什么区别？
-当一个元素的visibility属性被设置成collapse值后，对于一般的元素，它的表现跟hidden是一样的。
-➤chrome中，使用collapse值和使用hidden没有区别。
-➤firefox，opera和IE，使用collapse值和使用display:none没有什么区别。
+
+	当一个元素的visibility属性被设置成collapse值后，对于一般的元素，它的表现跟hidden是一样的。
+	
+➤ chrome中，使用collapse值和使用hidden没有区别。
+
+➤ firefox，opera和IE，使用collapse值和使用display:none没有什么区别。
 
 17、 display:none与visibility：hidden的区别？
 
