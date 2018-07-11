@@ -855,7 +855,7 @@ img{verticle-align:middle;}
 <div style="height:2px;font-size:2px;background:#000000;width:778px;">&nbps;</div>
 ```
 
-###14. absolute的containing block计算方式跟正常流有什么不同？
+### 14. absolute的containing block计算方式跟正常流有什么不同？
 
 ***containing block***
 
@@ -904,7 +904,7 @@ img{verticle-align:middle;}
         </tr>
         <tr>
             <th>html</th>
-            <th>视口(初始包含块)</th>
+            <th>initial C.B.(UA-dependent)</th>
         </tr>
         <tr>
             <th>body</th>
@@ -914,23 +914,69 @@ img{verticle-align:middle;}
             <th>div1</th>
             <th>body</th>
         </tr>
-	  <tr>
+	<tr>
             <th>p1</th>
             <th>div1</th>
         </tr>
-	  <tr>
+	<tr>
             <th>p2</th>
             <th>div1</th>
         </tr>
-	  <tr>
+	<tr>
             <th>em1</th>
             <th>p2</th>
         </tr>
-	  <tr>
+	<tr>
             <th>strong1</th>
             <th>p2</th>
         </tr>
     </table>
+    
+如果添加以下CSS规则：
+
+```css
+ #div1  { position: absolute; left: 50px; top: 50px }
+ #em1  { position: absolute; left: 100px; top: 100px }
+```
+
+包含块的创建如下表：
+
+<table>
+        <tr>
+            <th>元素</th>
+            <th>创建其包含块的元素</th>
+        </tr>
+        <tr>
+            <th>html</th>
+            <th>initial C.B. (UA-dependent)</th>
+        </tr>
+        <tr>
+            <th>body</th>
+            <th>html</th>
+        </tr>
+        <tr>
+            <th>div1</th>
+            <th>initial C.B.</th>
+        </tr>
+	<tr>
+            <th>p1</th>
+            <th>div1</th>
+        </tr>
+	<tr>
+            <th>p2</th>
+            <th>div1</th>
+        </tr>
+	<tr>
+            <th>em1</th>
+            <th>div1</th>
+        </tr>
+	<tr>
+            <th>strong1</th>
+            <th>em1</th>
+        </tr>
+    </table>
+
+
 
 
 16、 CSS里的visibility属性有个collapse属性值？在不同浏览器下以后什么区别？
