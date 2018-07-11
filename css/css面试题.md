@@ -837,6 +837,16 @@ img{verticle-align:middle;}
 
 ***(8)IE6下div高度无法小于10px***
 
+问题如：
+
+	正常：
+
+![2px](/images/2px.jpg)
+
+	ie:
+	
+![2px2](/images/2px2.jpg)
+
 解决方案：添加overflow属性或设置fontsize大小为高度大小  如
 
 ```html
