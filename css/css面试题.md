@@ -835,6 +835,16 @@ body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, fo
 img{verticle-align:middle;}
 ```
 
+***(8)IE6下div高度无法小于10px***
+
+解决方案：添加overflow属性或设置fontsize大小为高度大小  如
+
+```html
+<div style="height:2px;overflow:hidden;background:#000000;width:778px;"></div>
+<!--或者-->
+<div style="height:2px;font-size:2px;background:#000000;width:778px;">&nbps;</div>
+```
+
 15、 absolute的containing block计算方式跟正常流有什么不同？
 
 无论属于哪种，都要先找到其祖先元素中最近的 position 值不为 static 的元素，然后再判断：
