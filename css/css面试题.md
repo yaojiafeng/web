@@ -843,7 +843,7 @@ img{verticle-align:middle;}
 
 ![2px](/images/2px.jpg)
 
-	ie:
+	ie6:
 	
 ![2px2](/images/2px2.jpg)
 
@@ -855,17 +855,26 @@ img{verticle-align:middle;}
 <div style="height:2px;font-size:2px;background:#000000;width:778px;">&nbps;</div>
 ```
 
-15、 absolute的containing block计算方式跟正常流有什么不同？
+###14. absolute的containing block计算方式跟正常流有什么不同？
 
-无论属于哪种，都要先找到其祖先元素中最近的 position 值不为 static 的元素，然后再判断：
-➤若此元素为 inline 元素，则 containing block 为能够包含这个元素生成的第一个和最后一个 inline box 的 padding box (除 margin, border 外的区域)
- 的最小矩形；
-➤否则,则由这个祖先元素的 padding box 构成。
-如果都找不到，则为 initial containing block。
-补充：
-➤static(默认的)/relative：简单说就是它的父元素的内容框（即去掉padding的部分）
-➤absolute: 向上找最近的定位为absolute/relative的元素
-➤fixed: 它的containing block一律为根元素(html/body)
+[containing block](https://www.w3.org/TR/CSS2/visudet.html)
+
+	有时，一个元素的盒子的位置和尺寸根据一个确定的矩形计算，这个确定的矩形叫这个元素的包含块。一个元素的包含块根据以下规则确定：
+	
+	1、根元素所在的包含块叫初始包含块 initial containing block。对于连续媒体设备（continuous media），初始包含块的大小等于视口viewpor的大小，基点在画布的原点（视口左上角）；对于分页媒体（paged media），初始包含块是页面区域（page area）。初始包含块的direction属性与根元素的相同。
+
+	2、对于其他元素，如果元素的position属性是relative或static，他的包含块是由最近的祖先块容器盒（block container ancestor box）的内容区域（content edge：width属性和height属性确定的区域）创建的。
+
+	3、如果一个元素的position属性为fixed，他的包含块由视口创建（连续媒体）或者由页面区域创建（paged media）。
+
+	4、如果元素的position为absolute，他的包含块由最近的position不为static的祖先元素创建，具体创建方式如下：
+
+		A.如果创建包含块的祖先元素是行内元素（inline element），包含块的范围是这个祖先元素中的第一个和最后一个行内盒的padding box围起来的区域。
+
+		B.如果这个祖先元素不是行内元素，包含块的范围是这个祖先元素的内边距+width区域（padding edge）。
+
+	如果没有找到这样的祖先元素，这个绝对定位的元素的包含块为初始包含块。
+	
 
 16、 CSS里的visibility属性有个collapse属性值？在不同浏览器下以后什么区别？
 当一个元素的visibility属性被设置成collapse值后，对于一般的元素，它的表现跟hidden是一样的。
