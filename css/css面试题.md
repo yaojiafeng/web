@@ -857,11 +857,13 @@ img{verticle-align:middle;}
 
 ###14. absolute的containing block计算方式跟正常流有什么不同？
 
-[containing block](https://www.w3.org/TR/CSS2/visudet.html)
+***containing block***
+
+[containing block 参考](https://www.w3.org/TR/CSS2/visudet.html)
 
 	有时，一个元素的盒子的位置和尺寸根据一个确定的矩形计算，这个确定的矩形叫这个元素的包含块。一个元素的包含块根据以下规则确定：
 	
-	1、根元素所在的包含块叫初始包含块 initial containing block。对于连续媒体设备（continuous media），初始包含块的大小等于视口viewpor的大小，基点在画布的原点（视口左上角）；对于分页媒体（paged media），初始包含块是页面区域（page area）。初始包含块的direction属性与根元素的相同。
+	1、根元素所在的包含块叫初始包含块 initial containing block。对于连续媒体设备（continuous media），初始包含块的大小等于视口viewport的大小，基点在画布的原点（视口左上角）；对于分页媒体（paged media），初始包含块是页面区域（page area）。初始包含块的direction属性与根元素的相同。
 
 	2、对于其他元素，如果元素的position属性是relative或static，他的包含块是由最近的祖先块容器盒（block container ancestor box）的内容区域（content edge：width属性和height属性确定的区域）创建的。
 
@@ -874,6 +876,56 @@ img{verticle-align:middle;}
 		B.如果这个祖先元素不是行内元素，包含块的范围是这个祖先元素的内边距+width区域（padding edge）。
 
 	如果没有找到这样的祖先元素，这个绝对定位的元素的包含块为初始包含块。
+	
+下面的文档中没有定位的元素
+
+```html
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01//EN">
+<HTML>
+   <HEAD>
+      <TITLE>Illustration of containing blocks</TITLE>
+   </HEAD>
+   <BODY id="body">
+      <DIV id="div1">
+      <P id="p1">This is text in the first paragraph...</P>
+      <P id="p2">This is text <EM id="em1"> in the 
+      <STRONG id="strong1">second</STRONG> paragraph.</EM></P>
+      </DIV>
+   </BODY>
+</HTML>
+```
+
+<table>
+        <tr>
+            <th>设备</th>
+            <th>设备文件名</th>
+            <th>文件描述符</th>
+            <th>类型</th>
+        </tr>
+        <tr>
+            <th>键盘</th>
+            <th>/dev/stdin</th>
+            <th>0</th>
+            <th>标准输入</th>
+        </tr>
+        <tr>
+            <th>显示器</th>
+            <th>/dev/stdout</th>
+            <th>1</th>
+            <th>标准输出</th>
+        </tr>
+        <tr>
+            <th>显示器</th>
+            <th>/dev/stderr</th>
+            <th>2</th>
+            <th>标准错误输出</th>
+        </tr>
+    </table>
+
+作者：Gaolex
+链接：https://www.jianshu.com/p/abaff828100d
+來源：简书
+简书著作权归作者所有，任何形式的转载都请联系作者获得授权并注明出处。
 	
 
 16、 CSS里的visibility属性有个collapse属性值？在不同浏览器下以后什么区别？
