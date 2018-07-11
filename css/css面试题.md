@@ -984,9 +984,9 @@ img{verticle-align:middle;}
 
 	当一个元素的visibility属性被设置成collapse值后，对于一般的元素，它的表现跟hidden是一样的。
 	
-➤ chrome中，使用collapse值和使用hidden没有区别。
+> chrome中，使用collapse值和使用hidden没有区别。
 
-➤ firefox，opera和IE，使用collapse值和使用display:none没有什么区别。
+> firefox，opera和IE，使用collapse值和使用display:none没有什么区别。
 
 17、 display:none与visibility：hidden的区别？
 
