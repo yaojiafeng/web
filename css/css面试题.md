@@ -679,7 +679,7 @@ b.了解浏览默认样式类
 		IE默认为紫色2px的边框线
 		FF默认为蓝色2px的边框线　　
 	
-	解决方案：css reset
+解决方案：css reset
 		
 ```css
 /*reset*/
@@ -980,7 +980,7 @@ img{verticle-align:middle;}
         </tr>
     </table>
 
-### 16. CSS里的visibility属性有个collapse属性值？在不同浏览器下以后什么区别？
+### 15. CSS里的visibility属性有个collapse属性值？在不同浏览器下以后什么区别？
 
 	当一个元素的visibility属性被设置成collapse值后，对于一般的元素，它的表现跟hidden是一样的。
 	
@@ -988,13 +988,60 @@ img{verticle-align:middle;}
 
 > firefox，opera和IE，使用collapse值和使用display:none没有什么区别。
 
-17、 display:none与visibility：hidden的区别？
+### 16. display:none与visibility：hidden和opacity=0的区别？
 
-display：none 不显示对应的元素，在文档布局中不再分配空间（回流+重绘）
+<table>
+        <tr>
+            <th>比较</th>
+            <th>display:none</th>
+	    <th>visibility:hidden</th>
+            <th>opacity:0</th>
+        </tr>
+        <tr>
+            <th>占据空间</th>
+            <th>否</th>
+            <th>是</th>
+            <th>是</th>
+        </tr>
+        <tr>
+            <th>回流</th>
+            <th>是</th>
+	    <th>否</th>
+	    <th></th>
+        </tr>
+        <tr>
+           <th>重绘</th>
+            <th>是</th>
+	    <th>是</th>
+	    <th>否</th>
+        </tr>
+	<tr>
+            <th>子代继承性</th>
+            <th>否</th>
+	    <th>是</th>
+	    <th>是</th>
+        </tr>
+	<tr>
+            <th>子代反继承</th>
+            <th>否</th>
+	    <th>能</th>
+	    <th>否</th>
+        </tr>
+	<tr>
+             <th>transition效果</th>
+            <th>无</th>
+	    <th>有</th>
+	    <th>有</th>
+        </tr>
+	<tr>
+             <th>绑定的事件</th>
+            <th>不能响应</th>
+	    <th>不能响应</th>
+	    <th>能响应</th>
+        </tr>
+    </table>
 
-visibility：hidden 隐藏对应元素，在文档布局中仍保留原来的空间（重绘）
-
-18、 position跟display、overflow、float这些特性相互叠加后会怎么样？
+### 18.position跟display、overflow、float这些特性相互叠加后会怎么样？
 
 display属性规定元素应该生成的框的类型；position属性规定元素的定位类型；float属性是一种布局方式，定义元素在哪个方向浮动。
 
