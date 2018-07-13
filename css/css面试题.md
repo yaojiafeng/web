@@ -1041,7 +1041,9 @@ img{verticle-align:middle;}
         </tr>
     </table>
 
-### 17.position跟display、overflow、float这些特性相互叠加后会怎么样？
+### 17.position跟display、float这些特性相互叠加后会怎么样？
+
+如下图与表所示：
 
 ![display_float_position](/images/display_float_position.jpg)
 
@@ -1067,6 +1069,10 @@ table-footer-group, table-row, table-cell, table-caption, inline-block
             <th>按设定值</th>
         </tr>
 </table>
+
+### 18.position跟display、overflow、float下的margin collapse问题？
+
+
 
 19、 对BFC规范(块级格式化上下文：block formatting context)的理解？
 
