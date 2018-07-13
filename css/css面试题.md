@@ -1078,7 +1078,7 @@ table-footer-group, table-row, table-cell, table-caption, inline-block
 
 ***Formatting context***
 
-　　	Formatting context是W3C CSS2.1规范中的一个概念。它是页面中的一块渲染区域，并且有一套渲染规则，它决定了其子元素将如何定位，以及和其他元素的关系、相互作用。最常见的 Formatting context 有 Block fomatting context (简称BFC)和 Inline formatting context(简称IFC)。
+	Formatting context是W3C CSS2.1规范中的一个概念。它是页面中的一块渲染区域，并且有一套渲染规则，它决定了其子元素将如何定位，以及和其他元素的关系、相互作用。最常见的 Formatting context 有 Block fomatting context (简称BFC)和 Inline formatting context(简称IFC)。
 
 	CSS2.1 中只有BFC和IFC, CSS3中还增加了G（grid）FC和F(flex)FC。 　　
 
