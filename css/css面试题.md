@@ -422,7 +422,7 @@
 - flex-wrap    
   - flex-wrap: nowrap | wrap | wrap-reverse;默认情况下，项目都排在一条线（又称”轴线”）上。flex-wrap属性定义，如果一条轴线排不下，如何换行
 - flex-flow
-  - flex-flow: <flex-direction> || <flex-wrap>;flex-flow属性是flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap
+  - flex-flow: \<flex-direction\> || <flex-wrap>;flex-flow属性是flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap
 - justify-content
   - justify-content: flex-start | flex-end | center | space-between | space-around;justify-content属性定义了项目在主轴上的对齐方式
 - align-items
@@ -1043,7 +1043,30 @@ img{verticle-align:middle;}
 
 ### 17.position跟display、overflow、float这些特性相互叠加后会怎么样？
 
+![display_float_position](/images/display_float_position.jpg)
 
+转换对应表
+
+<table>
+        <tr>
+            <th>设定值</th>
+            <th>计算值</th>
+        </tr>
+	<tr>
+            <th>inline-table</th>
+            <th>table</th>
+        </tr>
+	<tr>
+            <th>inline, run-in, table-row-group, table-column, table-column-group, table-header-group, 
+table-footer-group, table-row, table-cell, table-caption, inline-block
+	    </th>
+            <th>block</th>
+        </tr>
+	<tr>
+            <th>其他</th>
+            <th>按设定值</th>
+        </tr>
+</table>
 
 19、 对BFC规范(块级格式化上下文：block formatting context)的理解？
 
