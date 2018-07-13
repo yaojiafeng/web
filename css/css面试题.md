@@ -1110,7 +1110,7 @@ table-footer-group, table-row, table-cell, table-caption, inline-block
 
 1.防止margin重叠（塌陷）
 
-	两个相邻Box垂直方向margin重叠
+	属于同一个BFC的两个相邻Box垂直方向margin重叠
 	
 ```html
 <style>
@@ -1131,13 +1131,9 @@ table-footer-group, table-row, table-cell, table-caption, inline-block
 
 ![margin1](/images/margin1.jpg)
 
-	两个p之间的距离为100px，发送了margin重叠（塌陷），以最大的为准，如果第一个P的margin为80的话，两个P之间的距离还是100，以最大的为准。
+	根据BFC布局规则第二条，Box垂直方向的距离由margin决定，属于同一个BFC(上例中是body根元素的BFC)的两个相邻Box的margin会发生重叠;那么两个p之间的距离为100px，发送了margin重叠（塌陷），以最大的为准，如果第一个P的margin为80的话，两个P之间的距离还是100，以最大的为准。
 
-根据BFC布局规则第二条：
-
-<p style="color:red">Box垂直方向的距离由margin决定。属于同一个BFC(上例中是body根元素的BFC)的两个相邻Box的margin会发生重叠</p>
-
-	我们可以在p外面包裹一层容器，并触发该容器生成一个新BFC。那么两个P便不属于同一个BFC，就不会发生margin重叠了
+我们可以在p外面包裹一层容器，并触发该容器生成一个新BFC。那么两个P便不属于同一个BFC，就不会发生margin重叠了
 	
 ```html
 <style>
@@ -1162,6 +1158,8 @@ table-footer-group, table-row, table-cell, table-caption, inline-block
 ```
 
 ![margin2](/images/margin2.jpg)
+
+	两个p之间margin不重叠了
 
 
 
