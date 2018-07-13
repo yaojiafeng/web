@@ -1076,6 +1076,16 @@ table-footer-group, table-row, table-cell, table-caption, inline-block
 
 19、 对BFC规范(块级格式化上下文：block formatting context)的理解？
 
+***Formatting context***
+
+　　	Formatting context是W3C CSS2.1规范中的一个概念。它是页面中的一块渲染区域，并且有一套渲染规则，它决定了其子元素将如何定位，以及和其他元素的关系、相互作用。最常见的 Formatting context 有 Block fomatting context (简称BFC)和 Inline formatting context(简称IFC)。
+
+	CSS2.1 中只有BFC和IFC, CSS3中还增加了G（grid）FC和F(flex)FC。 　　
+
+***BFC 定义***
+
+	BFC(Block formatting context)直译为"块级格式化上下文"。它是一个独立的渲染区域，只有Block-level box参与， 它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干。 　　　
+
 BFC规定了内部的Block Box如何布局。
 
 定位方案：
