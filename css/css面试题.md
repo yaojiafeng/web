@@ -1100,7 +1100,7 @@ table-footer-group, table-row, table-cell, table-caption, inline-block
 ***BFC的约束规则***
 
 - 内部的Box会在垂直方向上一个接一个的放置
-- 垂直方向上的距离由margin决定。（完整的说法是：属于同一个BFC的两个相邻Box的margin会发生重叠（塌陷），与方向无关。）
+- 垂直方向上的距离由margin决定，属于同一个BFC的两个相邻Box的margin会发生重叠（塌陷），与margin方向无关
 - 每个元素的左外边距与包含块的左边界相接触（从左向右），即使浮动元素也是如此。（这说明BFC中子元素不会超出他的包含块，而position为absolute的元素可以超出他的包含块边界）
 - BFC的区域不会与float的元素区域重叠
 - 计算BFC的高度时，浮动子元素也参与计算
@@ -1110,7 +1110,7 @@ table-footer-group, table-row, table-cell, table-caption, inline-block
 
 1.防止margin重叠（塌陷）
 
-	属于同一个BFC的两个相邻Box垂直方向margin重叠
+属于同一个BFC的两个相邻Box垂直方向margin重叠
 	
 ```html
 <style>
@@ -1160,6 +1160,66 @@ table-footer-group, table-row, table-cell, table-caption, inline-block
 ![margin2](/images/margin2.jpg)
 
 	两个p之间margin不重叠了
+	
+属于同一个BFC的相邻Box水平方向margin重叠
+
+```html
+<!doctype HTML>
+<html>
+<head>
+<style type="text/css">
+
+    #green {
+        margin:10px 10px 10px 10px
+    }
+    #blue {
+        margin:10px 10px 10px 10px
+    }
+    #red {
+        margin:10px 10px 10px 10px
+    }
+    body {
+        writing-mode:tb-rl;
+    }
+
+</style>
+</head>
+<body>
+
+<div id="green" style="background:lightgreen;height:100px;width:100px;"></div>
+<div id="blue" style="background:lightblue;height:100px;width:100px;"></div>
+<div id="red" style="background:pink;height:100px;width:100px;"></div>
+
+</body>
+</html>
+```
+
+	可以看到水平方向的margin发生了重叠
+	
+![margin3](/images/margin3.jpg)
+
+将每个div加display:inline-block(触发新的的BFC)
+
+```css
+#green {
+        margin:10px 10px 10px 10px;
+        display: inline-block
+    }
+    #blue {
+        margin:10px 10px 10px 10px;
+        display: inline-block;
+    }
+    #red {
+        margin:10px 10px 10px 10px;
+        display: inline-block;
+    }
+    /* body {
+        writing-mode:tb-rl;
+    } */
+```
+
+![margin4](/images/margin4.jpg)
+
 
 
 
