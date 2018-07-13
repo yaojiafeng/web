@@ -113,6 +113,22 @@ div[class|="a"] {
 #ccc{
     display: table
 }
+
+/*三角形*/
+#triangle-up {
+    width: 0;
+    height: 0;
+    border-left: 50px solid transparent;
+    border-right: 50px solid transparent;
+    border-bottom: 100px solid red;
+}
+.triangle-left-bottom {
+    width: 0;
+    height: 0;
+    border-top: 40px solid transparent;
+    border-left: 40px solid #7CFC00;
+}
+
 /*footer*/
 footer{
    position: relative;
