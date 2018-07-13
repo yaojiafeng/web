@@ -814,7 +814,17 @@ body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, fo
 	
 ***(5)(8)chrome下默认会将小于12px的文本强制按照12px来解析***
 
-	解决方案:为其添加 -webkit-text-size-adjust: none;
+	解决方案:transform: scale(0.x) (注：-webkit-text-size-ajust:none无效)
+	
+```css 
+p{
+ font-size: 14px;
+ transform: scale(0.5);
+ -webkit-transform: scale(0.5); 
+}
+```
+
+	字体为7px
 	
 ***(6)CSS控制透明度问题***
 
