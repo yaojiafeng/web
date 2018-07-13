@@ -1131,6 +1131,37 @@ table-footer-group, table-row, table-cell, table-caption, inline-block
 
 ![margin1](/images/margin1.jpg)
 
+	两个p之间的距离为100px，发送了margin重叠（塌陷），以最大的为准，如果第一个P的margin为80的话，两个P之间的距离还是100，以最大的为准。
+
+根据BFC布局规则第二条：
+
+<p style="color:red">Box垂直方向的距离由margin决定。属于同一个BFC(上例中是body根元素的BFC)的两个相邻Box的margin会发生重叠</p>
+
+	我们可以在p外面包裹一层容器，并触发该容器生成一个新BFC。那么两个P便不属于同一个BFC，就不会发生margin重叠了
+	
+```html
+<style>
+    .wrap {
+        overflow: hidden;// 新的BFC
+    }
+    p {
+        color: #f55;
+        background: #fcc;
+        width: 200px;
+        line-height: 100px;
+        text-align:center;
+        margin: 100px;
+    }
+</style>
+<body>
+    <p>Haha</p>
+    <div class="wrap">
+        <p>Hehe</p>
+    </div>
+</body>
+```
+
+![margin2](/images/margin2.jpg)
 
 
 
