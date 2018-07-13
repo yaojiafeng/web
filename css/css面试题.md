@@ -1074,7 +1074,7 @@ table-footer-group, table-row, table-cell, table-caption, inline-block
 
 
 
-19、 对BFC规范(块级格式化上下文：block formatting context)的理解？
+### 19.对BFC规范(块级格式化上下文：block formatting context)的理解？
 
 ***Formatting context***
 
@@ -1085,6 +1085,20 @@ table-footer-group, table-row, table-cell, table-caption, inline-block
 ***BFC 定义***
 
 	BFC(Block formatting context)直译为"块级格式化上下文"。它是一个独立的渲染区域，只有Block-level box参与， 它规定了内部的Block-level Box如何布局，并且与这个区域外部毫不相干。 　　　
+
+***BFC的生成***
+
+- 根元素
+- float的值不为none
+- overflow的值不为visible
+- display的值为inline-block、table-cell、table-caption
+> display：table也认为可以生成BFC，其实这里的主要原因在于Table会默认生成一个匿名的table-cell，正是这个匿名的table-cell生成了BFC
+- position的值为absolute或fixed
+
+
+
+
+
 
 BFC规定了内部的Block Box如何布局。
 
