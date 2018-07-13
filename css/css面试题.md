@@ -1088,13 +1088,48 @@ table-footer-group, table-row, table-cell, table-caption, inline-block
 
 ***BFC的生成***
 
-- 根元素
+满足下列条件之一就可触发BFC
+
+- 根元素(html)
 - float的值不为none
 - overflow的值不为visible
 - display的值为inline-block、table-cell、table-caption
 > display：table也认为可以生成BFC，其实这里的主要原因在于Table会默认生成一个匿名的table-cell，正是这个匿名的table-cell生成了BFC
 - position的值为absolute或fixed
 
+***BFC的约束规则***
+
+- 内部的Box会在垂直方向上一个接一个的放置
+- 垂直方向上的距离由margin决定。（完整的说法是：属于同一个BFC的两个相邻Box的margin会发生重叠（塌陷），与方向无关。）
+- 每个元素的左外边距与包含块的左边界相接触（从左向右），即使浮动元素也是如此。（这说明BFC中子元素不会超出他的包含块，而position为absolute的元素可以超出他的包含块边界）
+- BFC的区域不会与float的元素区域重叠
+- 计算BFC的高度时，浮动子元素也参与计算
+- BFC就是页面上的一个隔离的独立容器，容器里面的子元素不会影响到外面元素，反之亦然
+
+***BFC在布局中的应用***
+
+1.防止margin重叠（塌陷）
+
+	两个相邻Box垂直方向margin重叠
+	
+```html
+<style>
+    p {
+        color: #f55;
+        background: #fcc;
+        width: 200px;
+        line-height: 100px;
+        text-align:center;
+        margin: 100px;
+    }
+</style>
+<body>
+    <p>Haha</p>
+    <p>Hehe</p>
+</body>
+```
+
+![margin1](/images/margin1.jpg)
 
 
 
