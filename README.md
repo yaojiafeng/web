@@ -16,10 +16,8 @@
 - [html](engineering/README.md)
 - [angular](engineering/lint.md)
 - [webpack](thanks/README.md)
+- [计算机网络](https://github.com/yaojiafeng/web/tree/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C)
 
 ## 相关资料
 
-- [http权威指南][TypeScript]
-- [javascript高级程序设计]（[中文版][中文手册]）
-- [ECMAScript 6 入门]
 
