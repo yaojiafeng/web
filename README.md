@@ -1,11 +1,6 @@
 # web
 
-专注web开发。
-
-## 关于
-
-- [GitHub 地址][GitHub]
-- 作者：[姚家锋](https://github.com/yaojiafeng)
+喜欢记录一些东西，喜欢看书，喜欢看文档，喜欢看技术博客，喜欢孤独终老
 
 ## 目录
 
@@ -18,6 +13,5 @@
 - [webpack](thanks/README.md)
 - [计算机网络](https://github.com/yaojiafeng/web/tree/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C)
 
-## 相关资料
 
 
