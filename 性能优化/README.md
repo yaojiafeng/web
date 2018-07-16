@@ -10,7 +10,7 @@
 
 - [规则二：使用内容发布网络](https://github.com/yaojiafeng/web/blob/master/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/%E4%BD%BF%E7%94%A8%E5%86%85%E5%AE%B9%E5%8F%91%E5%B8%83%E7%BD%91%E7%BB%9C.md)
 
-- [规则三：添加Expires头]
+- [规则三：添加Expires头]()https://github.com/yaojiafeng/web/blob/master/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/Expries.md
 
 - [规则四：压缩组件]
 
