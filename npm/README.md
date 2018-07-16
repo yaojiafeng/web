@@ -2,7 +2,7 @@
 
 参考官网：[npm](https://docs.npmjs.com/)
 
-常用指令
+CLI commands：
 
         npm install npm@latest -g// 跟新 npm 版本
 
