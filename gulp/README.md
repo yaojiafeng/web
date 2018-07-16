@@ -10,8 +10,6 @@ gulp 是基于 node 实现 Web 前端自动化开发的工具，利用它能够�
 - [订阅本书](https://github.com/nimojs/gulp-book/issues/7)
 - [论坛](https://github.com/nimojs/gulp-book/issues)
 
-**因为 Node 的全局包安装都是在C盘，所有请在C盘使用 gulp 以方便熟悉 gulp **
-
 > 相关教程：[webpack-book](https://github.com/nimojs/webpack-book)
 
 ## 目录
@@ -23,9 +21,6 @@ gulp 是基于 node 实现 Web 前端自动化开发的工具，利用它能够�
 - [使用 gulp 编译 LESS](chapter5.md)
 - [使用 gulp 编译 Sass](chapter6.md)
 - [使用 gulp 构建一个项目](chapter7.md)
-
-
-
 
 将规律转换为 gulp 代码
 -------------------
