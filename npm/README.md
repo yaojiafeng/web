@@ -1,6 +1,6 @@
 ## 记录一下npm 
 
-参考官网：[npm](https://www.npmjs.com/package/npm)
+参考官网：[npm](https://docs.npmjs.com/)
 
 常用指令
 
