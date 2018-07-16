@@ -19,8 +19,6 @@
 gulp 代码
 ----
 
-你可以 [下载所有示例代码](https://github.com/yaojiafeng/web/gulp/master.zip) 或 [在线查看代码](https://github.com/yaojiafeng/web/tree/master/gulp/demo/chapter2)
-
 **建议**：你可以只阅读下面的代码与注释或同时阅读代码解释
 
 gulp 的所有配置代码都写在 `gulpfile.js` 文件。
