@@ -6,7 +6,7 @@
 
 # 性能优化规则
 
-- [规则一：减少http请求]
+- [规则一：减少http请求](https://github.com/yaojiafeng/web/blob/master/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/%E5%87%8F%E5%B0%91http%E8%AF%B7%E6%B1%82.md)
 
 - [规则二：使用内容发布系统]
 
