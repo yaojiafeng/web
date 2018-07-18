@@ -1282,9 +1282,9 @@ table-footer-group, table-row, table-cell, table-caption, inline-block
 
 	这种方法不用修改HTML代码，但是缺点在于父容器变成浮动以后，会影响到后面元素的定位，而且有时候，父容器是定位死的，无法变成浮动。
 
-(3)浮动元素的自动clearing
+(3)设置父元素overflow不为visible
 
-	让父容器变得可以自动"清理"（clearing）子元素的浮动，从而能够识别出浮动子元素的位置，不会出现显示上的差错。要做到这点，只要为父容器加上一条"overflow: hidden"的CSS语句就行了。关于为何父容器可以自动识别：由于加上overflow:hidden之后要计算超出的大小来隐藏，所以父容器会自动撑开自己把所有的子元素放进去，同时会计算浮动的子元素。
+	设置父元素overflow不为visible,能让父元素生成为BFC,BFC的规则决定计算BFC的高度时，浮动子元素也参与计算
 
 ```html
 <div style="overflow: hidden;">
@@ -1292,8 +1292,6 @@ table-footer-group, table-row, table-cell, table-caption, inline-block
    <div style="float:right;width:45%;"></div>
 </div>
 ```
-
-	这种方法的缺点主要有二个，一个是IE 6不支持，另一个是一旦子元素的大小超过父容器的大小，就会出显示问题。
 
 (4):after伪选择符
 
@@ -1308,7 +1306,7 @@ table-footer-group, table-row, table-cell, table-caption, inline-block
 }
 ```
 
-	"clearfix"是父容器的class名称，content:" ",是在父容器的结尾处放一个空白字符，height:0让元素高度为0;display: block; clear: both是确保这个空白字符是非浮动的独立区块。但是，:after选择符IE 6不支持，也就是说上面的这段代码在IE 6中无效，这怎么办？我们添加一条IE 6的独有命令"zoom:1;"就行了，这条命令的作用是激活父元素的"hasLayout"属性，让父元素拥有自己的布局。IE 6会读取这条命令，其他浏览器则会直接忽略它。
+	:after选择符IE 6不支持，加zoom：1这条命令的作用是激活父元素的"hasLayout"属性，让父元素拥有自己的布局。IE 6会读取这条命令，其他浏览器则会直接忽略它。
 	
 最终代码（常用这种方法）
 
@@ -1324,46 +1322,7 @@ table-footer-group, table-row, table-cell, table-caption, inline-block
 }
 ```
 
-### 21。上下margin重合的问题
-
-在重合元素外包裹一层容器，并触发该容器生成一个BFC。
-
-例子：
-
-<div class="aside"></div><div class="text"> <div class="main"></div></div><!--下面是css代码-->
-.aside {
-
-margin-bottom: 100px; width: 100px;
-
-height: 150px;
-
-background: #f66; }
-
-.main {
-
-margin-top: 100px;
-
-height: 200px;
-
-background: #fcc; }
-
-.text{
-
-/*盒子main的外面包一个div，
-
-通过改变此div的属性使两个
-
-盒子分属于两个不同的BFC，
-
-以此来阻止margin重叠*/overflow: hidden;
-
-//此时已经触发了BFC属性。}
-
-22、设置元素浮动后，该元素的display值是多少？
-
-自动变成display:block
-
-23 、移动端的布局用过媒体查询吗？
+### 21.移动端的布局用过媒体查询吗？
 
 通过媒体查询可以为不同大小和尺寸的媒体定义不同的css，适应相应的设备的显示。
 
@@ -1373,11 +1332,11 @@ background: #fcc; }
 
 ➤CSS : @media only screen and (max-device-width:480px) {/css样式/}
 
-24 、使用 CSS 预处理器吗？
+### 22.使用 CSS 预处理器吗？
 
 Less sass
 
-25、 CSS优化、提高性能的方法有哪些？
+### 23.CSS优化、提高性能的方法有哪些？
 
 ➤避免过度约束
 
@@ -1397,19 +1356,19 @@ Less sass
 
 ➤尽可能的精简规则，你可以合并不同类里的重复规则
 
-26 、浏览器是怎样解析CSS选择器的？
+### 24.浏览器是怎样解析CSS选择器的？
 CSS选择器的解析是从右向左解析的。若从左向右的匹配，发现不符合规则，需要进行回溯，会损失很多性能。
 若从右向左匹配，先找到所有的最右节点，对于每一个节点，向上寻找其父节点直到找到根元素或满足条件的匹配规则，则结束这个分支的遍历。
 两种匹配规则的性能差别很大，是因为从右向左的匹配在第一步就筛选掉了大量的不符合条件的最右节点（叶子节点），而从左向右的匹配规则的性能都浪费在了失败的
 查找上面。而在 CSS 解析完毕后，需要将解析的结果与 DOM Tree 的内容一起进行分析建立一棵 Render Tree，最终用来进行绘图。在建立 Render Tree 时
 （WebKit 中的「Attachment」过程），浏览器就要为每个 DOM Tree 中的元素根据 CSS 的解析结果（Style Rules）来确定生成怎样的Render Tree。
 
-27、 在网页中的应该使用奇数还是偶数的字体？为什么呢？
+### 25.在网页中的应该使用奇数还是偶数的字体？为什么呢？
 
 使用偶数字体。偶数字号相对更容易和 web 设计的其他部分构成比例关系。Windows 自带的点阵宋体（中易宋体）从 Vista 开始只提供 12、14、16 px 这三个大小的
 点阵，而 13、15、17 px时用的是小一号的点。（即每个字占的空间大了 1 px，但点阵没变），于是略显稀疏。
 
-28、 margin和padding分别适合什么场景使用？
+### 26.margin和padding分别适合什么场景使用？
 
 何时使用margin：
 
