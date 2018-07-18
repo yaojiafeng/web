@@ -1469,16 +1469,7 @@ user-scalable=no”>
 
 多行文本垂直居中：需要设置display属性为inline-block。
 
-35 、怎么让Chrome支持小于12px 的文字？
 
-p{
-font-size:10px;
-
--webkit-transform:scale(0.8);
-
-}
-
-//0.8是缩放比例
 
 36、让页面里的字体变清晰，变细用CSS怎么做？
 
