@@ -1,6 +1,5 @@
 # web
 
-[Gitter](https://badges.gitter.im/Join Chat.svg)
 
 ## 目录
 
