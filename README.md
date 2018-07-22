@@ -1,6 +1,6 @@
 # web
 
-喜欢记录一些东西，喜欢看书，喜欢看文档，喜欢看技术博客
+[![Gitter](https://badges.gitter.im/Join Chat.svg)](聊天室 URL)
 
 ## 目录
 
