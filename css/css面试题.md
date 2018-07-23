@@ -422,7 +422,7 @@
 - flex-wrap    
   - flex-wrap: nowrap | wrap | wrap-reverse;默认情况下，项目都排在一条线（又称”轴线”）上。flex-wrap属性定义，如果一条轴线排不下，如何换行
 - flex-flow
-  - flex-flow: \<flex-direction\> || <flex-wrap>;flex-flow属性是flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap
+  - flex-flow: \<flex-direction\> || \<flex-wrap\>;flex-flow属性是flex-direction属性和flex-wrap属性的简写形式，默认值为row nowrap
 - justify-content
   - justify-content: flex-start | flex-end | center | space-between | space-around;justify-content属性定义了项目在主轴上的对齐方式
 - align-items
@@ -439,7 +439,7 @@
 - flex-basis
   - flex-basis: \<length\> | auto; /* default auto */;flex-basis属性定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小
 - flex
-  - flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ];flex属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。该属性有两个快捷值：auto (1 1 auto) 和 none (0 0 auto)。建议优先使用这个属性，而不是单独写三个分离的属性，因为浏览器会推算相关值
+  - flex: none | [\<'flex-grow'\> \<'flex-shrink'\>? || \<'flex-basis'\> ];flex属性是flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。该属性有两个快捷值：auto (1 1 auto) 和 none (0 0 auto)。建议优先使用这个属性，而不是单独写三个分离的属性，因为浏览器会推算相关值
 - order
   -  order: \<integer\>;order属性定义项目的排列顺序。数值越小，排列越靠前，默认为0
 - align-self
