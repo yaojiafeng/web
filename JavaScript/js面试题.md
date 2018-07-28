@@ -158,7 +158,59 @@ jsonhandle({
 
 ![jsonp_1](./images/jsonp_1.jpg)
 
+将前端代码再进行修改，代码如下：
 
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GoJSONP</title>
+</head>
+<body>
+<script type="text/javascript">
+    function jsonhandle(data){
+        alert("age:" + data.age + "name:" + data.name);
+    }
+</script>
+<script type="text/javascript" src="jquery-1.8.3.min.js">
+</script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        var url = "http://www.practice-zhao.com/student.php?id=1&callback=jsonhandle";
+        var obj = $('<script><\/script>');
+        obj.attr("src",url);
+        $("body").append(obj);
+    });
+</script>
+</body>
+</html>
+```
+
+这里动态的添加了一个script标签，src指向跨域的一个php脚本，并且将上面的js函数名作为callback参数传入，那么我们看下PHP代码怎么写的：
+
+```php
+<?php
+$data = array(
+    'age' => 20,
+    'name' => '张三',
+);
+
+$callback = $_GET['callback'];
+
+echo $callback."(".json_encode($data).")";
+return;
+```
+
+PHP代码返回了一段JS语句，即
+
+```js
+jsonhandle({
+    "age" : 15,
+    "name": "John",
+})
+```
+
+此时访问页面时，动态添加了一个script标签，src指向PHP脚本，执行返回的JS代码，成功弹出提示框。 所以JSONP将访问跨域请求变成了执行远程JS代码，服务端不再返回JSON格式的数据，而是返回了一段将JSON数据作为传入参数的函数执行代码。
 
 	
 	
