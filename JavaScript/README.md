@@ -11,6 +11,13 @@ Boolean(NaN),
 Boolean(false)
 ```
 
+### 2. typeof 优先==
+
+```js
+typeof 1=='number'//true
+typeof (1=='number')//boolean
+```
+
 
 
 
