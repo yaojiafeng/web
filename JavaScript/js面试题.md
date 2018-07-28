@@ -56,6 +56,48 @@ JavaScript有3大对象，分别是本地对象、内置对象和宿主对象。
   - application/x-www-form-urlencoded
 - 请求中的任意XMLHttpRequestUpload 对象均没有注册任何事件监听器；XMLHttpRequestUpload 对象可以使用 XMLHttpRequest.upload 属性访问。
 - 请求中没有使用 ReadableStream 对象。
+
+比如说，假如站点 http://foo.example 的网页应用想要访问 http://bar.other 的资源。http://foo.example 的网页中可能包含类似于下面的 JavaScript 代码：
+
+```js
+var invocation = new XMLHttpRequest();
+var url = 'http://bar.other/resources/public-data/';
+   
+function callOtherDomain() {
+  if(invocation) {    
+    invocation.open('GET', url, true);
+    invocation.onreadystatechange = handler;
+    invocation.send(); 
+  }
+}
+```
+
+```http
+GET /resources/public-data/ HTTP/1.1
+Host: bar.other
+User-Agent: Mozilla/5.0 (Macintosh; U; Intel Mac OS X 10.5; en-US; rv:1.9.1b3pre) Gecko/20081130 Minefield/3.1b3pre
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
+Accept-Language: en-us,en;q=0.5
+Accept-Encoding: gzip,deflate
+Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+Connection: keep-alive
+Referer: http://foo.example/examples/access-control/simpleXSInvocation.html
+Origin: http://foo.example
+
+
+HTTP/1.1 200 OK
+Date: Mon, 01 Dec 2008 00:23:53 GMT
+Server: Apache/2.0.61 
+Access-Control-Allow-Origin: *
+Keep-Alive: timeout=2, max=100
+Connection: Keep-Alive
+Transfer-Encoding: chunked
+Content-Type: application/xml
+
+[XML Data]
+```
+
+
 	
 	
 	
