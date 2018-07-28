@@ -41,21 +41,21 @@ JavaScript有3大对象，分别是本地对象、内置对象和宿主对象。
   - HEAD
   - POST
 - Fetch 规范定义了对 CORS 安全的首部字段集合，不得人为设置该集合之外的其他首部字段。该集合为：
-Accept
-Accept-Language
-Content-Language
-Content-Type （需要注意额外的限制）
-DPR
-Downlink
-Save-Data
-Viewport-Width
-Width
-Content-Type 的值仅限于下列三者之一：
-text/plain
-multipart/form-data
-application/x-www-form-urlencoded
-请求中的任意XMLHttpRequestUpload 对象均没有注册任何事件监听器；XMLHttpRequestUpload 对象可以使用 XMLHttpRequest.upload 属性访问。
-请求中没有使用 ReadableStream 对象。
+  - Accept
+  - Accept-Language
+  - Content-Language
+  - Content-Type （需要注意额外的限制）
+  - DPR
+  - Downlink
+  - Save-Data
+  - Viewport-Width
+  - Width
+- Content-Type 的值仅限于下列三者之一：
+  - text/plain
+  - multipart/form-data
+  - application/x-www-form-urlencoded
+- 请求中的任意XMLHttpRequestUpload 对象均没有注册任何事件监听器；XMLHttpRequestUpload 对象可以使用 XMLHttpRequest.upload 属性访问。
+- 请求中没有使用 ReadableStream 对象。
 	
 	
 	
