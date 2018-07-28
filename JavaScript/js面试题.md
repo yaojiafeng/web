@@ -74,7 +74,7 @@ function callOtherDomain() {
 
 客户端和服务器之间使用 CORS 首部字段来处理跨域权限：
 
-![simple_req](simple_req.jpg)
+![simple_req](./images/simple_req.jpg)
 
 分别检视请求报文和响应报文：
 
