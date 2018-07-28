@@ -1,46 +1,68 @@
-
-
-## vdom
-	问题:
-   
-	1.vdom是什么?为何存在vdom?
-  
-	2.如何使用vdom?核心API是什么?
-  
-	3.介绍一下diff算法?
-
-**1.介绍js的基本数据类型。**
+### 1.介绍js的基本数据类型。
 	
-	Undefined、Null、Boolean、Number、String、
+	Undefined、Null、Boolean、Number、String
+	
 	ECMAScript 2015 新增:Symbol(创建后独一无二且不可变的数据类型 )
 
-**2. 介绍js有哪些内置对象？**
+### 2. 介绍js有哪些内置对象？
 	
-	JavaScript有3大对象，分别是本地对象、内置对象和宿主对象。在此引用ECMA-262（ECMAScript的制定标准）对于他们的定义：
-    本地对象
-        与宿主无关，独立于宿主环境的ECMAScript实现提供的对象。
-        简单来说，本地对象就是 ECMA-262 定义的类（引用类型）。
-        这些引用类型在运行过程中需要通过new来创建所需的实例对象。
-        包含：Object、Function、Array、String、Boolean、Number、Date、RegExp、Error、EvalError、RangeError、ReferenceError、
-		     SyntaxError、TypeError、URIError
-    单体内置对象
-        与宿主无关，独立于宿主环境的ECMAScript实现提供的对象。
-        在 ECMAScript 程序开始执行前就存在，本身就是实例化内置对象，开发者无需再去实例化。
-        内置对象是本地对象的子集。
-        包含：Global和Math。
-	Global对象的方法：</br>
-	isNaN(),isFinite(),parseInt(),parseFloat(),encodeURI(),encodeURIcomponent(),decodeURI(),decodeURIcomponent()...
----
+JavaScript有3大对象，分别是本地对象、内置对象和宿主对象。在此引用ECMA-262（ECMAScript的制定标准）对于他们的定义：
+    
+(1)本地对象
+
+        与宿主无关，独立于宿主环境的ECMAScript实现提供的对象。简单来说，本地对象就是 ECMA-262 定义的类（引用类型）。这些引用类型在运行过程中需要通过new来创建所需的实例对象。
+        
+	包含：Object、Function、Array、String、Boolean、Number、Date、RegExp、Error、EvalError、RangeError、ReferenceError、SyntaxError、TypeError、URIError
+	
+(2)单体内置对象(Global和Math)。
+        
+	与宿主无关，独立于宿主环境的ECMAScript实现提供的对象。在 ECMAScript 程序开始执行前就存在，本身就是实例化内置对象，开发者无需再去实例化。内置对象是本地对象的子集。包含：Global和Math。
+	
+	Global对象的方法:isNaN(),isFinite(),parseInt(),parseFloat(),encodeURI(),encodeURIcomponent(),decodeURI(),decodeURIcomponent()
 
    	Math
         ECMAScript5中增添了JSON这个存在于全局的内置对象。内置对象也是本地对象。
-    宿主对象
-        由 ECMAScript 实现的宿主环境提供的对象，包含两大类，一个是宿主提供，一个是自定义类对象。
-        所有非本地对象都属于宿主对象。
-        对于嵌入到网页中的JS来说，其宿主对象就是浏览器提供的对象，浏览器对象有很多，如Window和Document等。
-        所有的DOM和BOM对象都属于宿主对象。
+(3)宿主对象window
 
-**3.说几条写JavaScript的基本规范？**
+        由 ECMAScript 实现的宿主环境提供的对象，包含两大类，一个是宿主提供，一个是自定义类对象。所有非本地对象都属于宿主对象。对于嵌入到网页中的JS来说，其宿主对象就是浏览器提供的对象，浏览器对象有很多，如Window和Document等。所有的DOM和BOM对象都属于宿主对象。
+
+### 3.如何实现跨域？
+
+(1)CORS(跨域资源共享)
+
+	CORS定义了必须访问跨域资源时，浏览器与服务器该如何沟通。CORS背后的思想，就是使用自定义的HTTP头部让浏览器与服务器进行沟通，从而决定请求或响应是应该成功还是失败。
+	
+1)简单请求(simple requests)
+
+若请求满足所有下述条件，则该请求可视为“简单请求”：
+
+- 使用下列方法之一：
+ - GET
+ - HEAD
+ - POST
+- Fetch 规范定义了对 CORS 安全的首部字段集合，不得人为设置该集合之外的其他首部字段。该集合为：
+Accept
+Accept-Language
+Content-Language
+Content-Type （需要注意额外的限制）
+DPR
+Downlink
+Save-Data
+Viewport-Width
+Width
+Content-Type 的值仅限于下列三者之一：
+text/plain
+multipart/form-data
+application/x-www-form-urlencoded
+请求中的任意XMLHttpRequestUpload 对象均没有注册任何事件监听器；XMLHttpRequestUpload 对象可以使用 XMLHttpRequest.upload 属性访问。
+请求中没有使用 ReadableStream 对象。
+	
+	
+	
+	
+
+### 3.说几条写JavaScript的基本规范？
+
 
 	1.不要在同一行声明多个变量。
 	2.请使用 ===/!==来比较true/false或者数值
@@ -1286,3 +1308,12 @@ jQuery中没有提供这个功能，所以你需要先编写两个jQuery的扩�
 - 如何管理前端团队?
 
 - 最近在学什么？能谈谈你未来3，5年给自己的规划吗？
+
+## vdom
+	问题:
+   
+	1.vdom是什么?为何存在vdom?
+  
+	2.如何使用vdom?核心API是什么?
+  
+	3.介绍一下diff算法?
