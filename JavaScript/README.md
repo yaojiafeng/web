@@ -11,11 +11,12 @@ Boolean(NaN),
 Boolean(false)
 ```
 
-### 2. typeof 优先==
+### 2. typeof 优先==;typeof 返回的是字符串
 
 ```js
 typeof 1=='number'//true
 typeof (1=='number')//boolean
+typeof (typeof 1)//"string"
 ```
 
 
