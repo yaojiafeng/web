@@ -111,6 +111,54 @@ Content-Type: application/xml
 
 > 现在，除了 http://foo.example，其它外域均不能访问该资源（该策略由请求首部中的 ORIGIN 字段定义，见第10行）。Access-Control-Allow-Origin 应当为 * 或者包含由 Origin 首部字段所指明的域名。
 
+在接收到服务端响应后，浏览器将会查看响应中是否包含Access-Control-Allow-Origin响应头。如果该响应头存在，那么浏览器会分析该响应头中所标示的内容。如果其包含了当前页面所在的域，那么浏览器就将知道这是一个被允许的跨域访问
+
+2)预检请求(Preflighed Requests)
+3)带凭据的请求
+
+(2)jsonp(json with padding)
+
+1)jsonp原理：
+
+	script标签src属性中的链接可以访问跨域的js脚本，利用这个特性，服务端不再返回JSON格式的数据，而是返回一段调用某个函数的js代码，在src中进行了调用，这样实现了跨域。
+	
+2)jsonp的实现
+
+域www.practice.com下面的前端代码：
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GoJSONP</title>
+</head>
+<body>
+<script type="text/javascript">
+    function jsonhandle(data){
+        alert("age:" + data.age + "name:" + data.name);
+    }
+</script>
+<script type="text/javascript" src="jquery-1.8.3.min.js">
+</script>
+<script type="text/javascript" src="http://www.practice-zhao.com/remote.js"></script>
+</body>
+</html>
+```
+
+这里调用了跨域的remote.js脚本，remote.js代码如下：
+
+```js
+jsonhandle({
+    "age" : 15,
+    "name": "John",
+})
+```
+
+也就是这段远程的js代码执行了上面定义的函数，弹出了提示框:
+
+![jsonp_1](./images/jsonp_1.jpg)
+
+
 
 	
 	
