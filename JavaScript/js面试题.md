@@ -37,9 +37,9 @@ JavaScript有3大对象，分别是本地对象、内置对象和宿主对象。
 若请求满足所有下述条件，则该请求可视为“简单请求”：
 
 - 使用下列方法之一：
- - GET
- - HEAD
- - POST
+  - GET
+  - HEAD
+  - POST
 - Fetch 规范定义了对 CORS 安全的首部字段集合，不得人为设置该集合之外的其他首部字段。该集合为：
 Accept
 Accept-Language
