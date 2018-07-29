@@ -72,6 +72,12 @@ function callOtherDomain() {
 }
 ```
 
+客户端和服务器之间使用 CORS 首部字段来处理跨域权限：
+
+![simple_req](./images/simple_req.jpg)
+
+分别检视请求报文和响应报文：
+
 ```http
 GET /resources/public-data/ HTTP/1.1
 Host: bar.other
@@ -97,6 +103,114 @@ Content-Type: application/xml
 [XML Data]
 ```
 
+> 第 1~10 行是请求首部。第10行 的请求首部字段 Origin 表明该请求来源于 http://foo.exmaple。
+
+> 第 13~22 行是来自于 http://bar.other 的服务端响应。响应中携带了响应首部字段 Access-Control-Allow-Origin（第 16 行）。使用 Origin 和 Access-Control-Allow-Origin 就能完成最简单的访问控制。本例中，服务端返回的 Access-Control-Allow-Origin: * 表明，该资源可以被任意外域访问。如果服务端仅允许来自 http://foo.example 的访问，该首部字段的内容如下：
+
+> Access-Control-Allow-Origin: http://foo.example
+
+> 现在，除了 http://foo.example，其它外域均不能访问该资源（该策略由请求首部中的 ORIGIN 字段定义，见第10行）。Access-Control-Allow-Origin 应当为 * 或者包含由 Origin 首部字段所指明的域名。
+
+在接收到服务端响应后，浏览器将会查看响应中是否包含Access-Control-Allow-Origin响应头。如果该响应头存在，那么浏览器会分析该响应头中所标示的内容。如果其包含了当前页面所在的域，那么浏览器就将知道这是一个被允许的跨域访问
+
+2)预检请求(Preflighed Requests)
+3)带凭据的请求
+
+(2)jsonp(json with padding)
+
+1)jsonp原理：
+
+	script标签src属性中的链接可以访问跨域的js脚本，利用这个特性，服务端不再返回JSON格式的数据，而是返回一段调用某个函数的js代码，在src中进行了调用，这样实现了跨域。
+	
+2)jsonp的实现
+
+域www.practice.com下面的前端代码：
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GoJSONP</title>
+</head>
+<body>
+<script type="text/javascript">
+    function jsonhandle(data){
+        alert("age:" + data.age + "name:" + data.name);
+    }
+</script>
+<script type="text/javascript" src="jquery-1.8.3.min.js">
+</script>
+<script type="text/javascript" src="http://www.practice-zhao.com/remote.js"></script>
+</body>
+</html>
+```
+
+这里调用了跨域的remote.js脚本，remote.js代码如下：
+
+```js
+jsonhandle({
+    "age" : 15,
+    "name": "John",
+})
+```
+
+也就是这段远程的js代码执行了上面定义的函数，弹出了提示框:
+
+![jsonp_1](./images/jsonp_1.jpg)
+
+将前端代码再进行修改，代码如下：
+
+```html
+<!DOCTYPE html>
+<html>
+<head>
+    <title>GoJSONP</title>
+</head>
+<body>
+<script type="text/javascript">
+    function jsonhandle(data){
+        alert("age:" + data.age + "name:" + data.name);
+    }
+</script>
+<script type="text/javascript" src="jquery-1.8.3.min.js">
+</script>
+<script type="text/javascript">
+    $(document).ready(function(){
+        var url = "http://www.practice-zhao.com/student.php?id=1&callback=jsonhandle";
+        var obj = $('<script><\/script>');
+        obj.attr("src",url);
+        $("body").append(obj);
+    });
+</script>
+</body>
+</html>
+```
+
+这里动态的添加了一个script标签，src指向跨域的一个php脚本，并且将上面的js函数名作为callback参数传入，那么我们看下PHP代码怎么写的：
+
+```php
+<?php
+$data = array(
+    'age' => 20,
+    'name' => '张三',
+);
+
+$callback = $_GET['callback'];
+
+echo $callback."(".json_encode($data).")";
+return;
+```
+
+PHP代码返回了一段JS语句，即
+
+```js
+jsonhandle({
+    "age" : 15,
+    "name": "John",
+})
+```
+
+此时访问页面时，动态添加了一个script标签，src指向PHP脚本，执行返回的JS代码，成功弹出提示框。 所以JSONP将访问跨域请求变成了执行远程JS代码，服务端不再返回JSON格式的数据，而是返回了一段将JSON数据作为传入参数的函数执行代码。
 
 	
 	
