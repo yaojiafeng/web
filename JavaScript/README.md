@@ -19,6 +19,14 @@ typeof (1=='number')//boolean
 typeof (typeof 1)//"string"
 ```
 
+### 3.
+
+```
+console.log(([])?true:false); 
+console.log(([]==false?true:false)); 
+console.log(({}==false)?true:false);
+```
+
 
 
 
