@@ -9,6 +9,15 @@ Boolean(undefined),
 Boolean(0),
 Boolean(NaN),
 Boolean(false)
+
+//Boolean([])  true
+console.log(([])?true:false); //true
+
+//布尔类型与其它任何类型进行比较，布尔类型将会转换为number类型,Number(false) 0;Number([])实际是调用String([])得到"",再Number("")得到0
+console.log(([]==false?true:false));//true
+
+//Number({})得到NaN,0与NaN相比为false
+console.log(({}==false)?true:false);//false
 ```
 
 ### 2. typeof 优先==;typeof 返回的是字符串
@@ -19,13 +28,6 @@ typeof (1=='number')//boolean
 typeof (typeof 1)//"string"
 ```
 
-### 3.
-
-```
-console.log(([])?true:false); 
-console.log(([]==false?true:false)); 
-console.log(({}==false)?true:false);
-```
 
 
 
