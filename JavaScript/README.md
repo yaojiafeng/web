@@ -61,64 +61,67 @@ typeof (typeof 1)//"string"
              <td>零次或一次出现</td>
       </tr>
        <tr>
-             <td></td>
-             <td></td>
-             <td></td>
-             <td></td>
+             <td>*</td>
+             <td>*?</td>
+             <td>*+</td>
+             <td>零次或多次出现</td>
       </tr>
        <tr>
-             <td></td>
-             <td></td>
-             <td></td>
-             <td></td>
+             <td>+</td>
+             <td>+?</td>
+             <td>++</td>
+             <td>一次或多次出现</td>
       </tr>
        <tr>
-             <td></td>
-             <td></td>
-             <td></td>
-             <td></td>
+             <td>{n}</td>
+             <td>{n}?</td>
+             <td>{n}+</td>
+             <td>恰好n次出现</td>
       </tr>
        <tr>
-             <td></td>
-             <td></td>
-             <td></td>
-             <td></td>
+             <td>{n，m}</td>
+             <td>{n，m}</td>
+             <td>{n，m}+</td>
+             <td>至少n次至m次出现</td>
       </tr>
        <tr>
-             <td></td>
-             <td></td>
-             <td></td>
-             <td></td>
+             <td> {n，}</td>
+             <td> {n，}？</td>
+             <td>{n，}+</td>
+             <td>至少n次出现</td>
       </tr>
 </table>
- 贪   婪                          惰   性                             支   配                             描   述
-    ？                              ？？                                 ？+                              零次或一次出现
-    *                               *？                                  *+                               零次或多次出现
-    +                               +？                                  ++                               一次或多次出现
-    {n}                             {n}？                                {n}+                             恰好n次出现
-    {n，m}                          {n，m}？                             {n，m}+                          至少n次枝多m次出现
-    {n，}                           {n，}？                              {n，}+                           至少n次出现
+
 贪婪量词测试
+
+```js
 <script>
  var str="abbbaabbbaaabbb1234";
  var re1=/.*bbb/g;
  alert(re1.exec(str));
 </script>
+```
 
 惰性量词测试
+
+```js
 <script>
  var str="abbbaabbbaaabbb1234";
  var re1=/.*?bbb/g;
  alert(re1.exec(str));
 </script>
+```
 
 支配性量词测试
+
+```js
 <script>
  var str="abbbaabbbaaabbb1234";
  var re1=/.*+bbb/g;
  alert(re1.exec(str));
 </script>
-由于使用支配性量词不能匹配到任何字符串，所以没有截图。
+```
+
  
 
 
