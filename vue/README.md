@@ -1,8 +1,15 @@
+# vue的学习
+
+### 1.jquery和vue的区别？
+
+- vue 实现数据与视图分离
+- vue 以数据驱动视图，只关心数据变化，DOM操作被封装
+
 ### 1.active-class是哪个组件的属性？嵌套路由怎么定义？
 答：vue-router模块的router-link组件。
  
 
-2、怎么定义vue-router的动态路由？怎么获取传过来的动态参数？ 
+32、怎么定义vue-router的动态路由？怎么获取传过来的动态参数？ 
 答：在router目录下的index.js文件中，对path属性加上/:id。  使用router对象的params.id
  
 
