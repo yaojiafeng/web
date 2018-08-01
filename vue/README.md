@@ -11,6 +11,29 @@
   - 模版引擎
   - 渲染 （再渲染）
 
+### 3.vue如何实现响应式？
+- 实现响应式监听
+- data代理到vm
+  - Object.defineProperty()
+```js
+var vm={};
+var data={name:'yao',age:18}
+for(key in data){
+  (function(key){
+    Object.defineProperty(vm,key,{
+      get:function(){
+        return data[key];
+      },
+      set:function(newVal){
+        data[key]=newVal;
+      }
+    })
+  })(key)
+}
+            
+```
+
+
 ### 1.active-class是哪个组件的属性？嵌套路由怎么定义？
 答：vue-router模块的router-link组件。
  
