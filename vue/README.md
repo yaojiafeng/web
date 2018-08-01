@@ -26,8 +26,8 @@ for(key in data){
         return data[key];
       },
       set:function(newVal){
-        console.log('监听到set操作，改变数据时可以调用的逻辑')
         data[key]=newVal;
+        console.log('监听到set操作，改变数据时可以调用的逻辑')
       }
     })
   })(key)
