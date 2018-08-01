@@ -22,9 +22,11 @@ for(key in data){
   (function(key){
     Object.defineProperty(vm,key,{
       get:function(){
+        console.log('监听到get操作,读取数据可以调用的逻辑')
         return data[key];
       },
       set:function(newVal){
+        console.log('监听到set操作，改变数据时可以调用的逻辑')
         data[key]=newVal;
       }
     })
