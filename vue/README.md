@@ -1,9 +1,15 @@
 # vue的学习
 
 ### 1.jquery和vue的区别？
-
-- vue 实现数据与视图分离
+- vue 实现数据与视图分离（解耦）
 - vue 以数据驱动视图，只关心数据变化，DOM操作被封装
+
+### 2.对mvvm的理解？
+- vm为viewModel,连接view和model
+- mvvm的三要素
+  - 响应式
+  - 模版引擎
+  - 渲染 （再渲染）
 
 ### 1.active-class是哪个组件的属性？嵌套路由怎么定义？
 答：vue-router模块的router-link组件。
