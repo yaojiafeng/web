@@ -35,6 +35,11 @@ for(key in data){
             
 ```
 
+### 4.vue如何解析模板？
+
+
+
+
 
 ### 1.active-class是哪个组件的属性？嵌套路由怎么定义？
 答：vue-router模块的router-link组件。
