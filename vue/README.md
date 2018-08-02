@@ -37,6 +37,8 @@ for(key in data){
 
 ### 4.vue如何解析模板？
 
+![compile](./images/compile.jpg)
+
 
 
 
