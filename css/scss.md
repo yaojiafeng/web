@@ -14,4 +14,24 @@
   - 被导入文件的名字以.css结尾；
   - 被导入文件的名字是一个URL地址
   - 被导入文件的名字是CSS的url()值。
+  
+  ### 2.使用变量
+  
+  - 变量申明
+  ```css
+  $highlight-color: #F90;
+  ```
+  任何可以用作css属性值的赋值都 可以用作sass的变量值
+  
+  - 变量引用
+```css
+$nav-color: #F90;
+nav {
+   $width: 100px;
+   width: $width;
+   color: $nav-color;
+}
+```
+凡是css属性的标准值（比如说1px或者bold）可存在的地方，变量就可以使用
+  
  
