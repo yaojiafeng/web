@@ -8,3 +8,9 @@ white-space:normal;
 word-break:break-all;
 ```
 
+### 2.img底下3像素距离
+
+- 解决
+```css
+ vertical-align: top;
+```
