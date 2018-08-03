@@ -14,3 +14,4 @@ word-break:break-all;
 ```css
  vertical-align: top;
 ```
+### 3.各种浏览器对基本元素的内置实现样式不一，需要reset
