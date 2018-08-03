@@ -36,5 +36,40 @@ nav {
 
 ### 3.嵌套
 
+- 选择器嵌套
+- 属性嵌套
+
+### 4.混合器
+
+- @mixin, 混合器中不仅可以包含属性，也可以包含css规则，包含选择器和选择器中的属性
+```css
+//定义
+@mixin bg-color ($color){
+    background: $color;
+    display: flex;
+}
+//使用
+h1{
+    height: 10px;
+    @include bg-color($color:green)
+}
+```
+
+### 5.选择器继承
+
+- 选择器继承是说一个选择器可以继承为另一个选择器定义的所有样式
+```css
+//通过选择器继承继承样式
+.error {
+  border: 1px solid red;
+  background-color: #fdd;
+}
+.seriousError {
+  @extend .error;
+  border-width: 3px;
+}
+```
+
+
   
  
