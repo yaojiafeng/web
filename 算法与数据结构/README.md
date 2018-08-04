@@ -199,11 +199,36 @@
 
 - 时间复杂度
 
-  - 最优：O(nlog(n))
+  - 最优：O(nlog(n)) 快速排序最优的情况就是每一次取到的元素都刚好平分整个数组
   
-  - 最差：O(n^2)
+  - 最差：O(n^2) 最差的情况就是每一次取到的元素就是数组中最小/最大的，这种情况其实就是冒泡排序了
   
   - 平均：O(nlog(n))
+- 空间复杂度
+  - 最优：O(log(n))
+  - 最差：O( n )
+- javascript实现
+```js
+function quickSort(arr, l, r) {
+    if (l < r) {
+        var i = l, j = r, temp = arr[l];
+        while (i < j) {
+            while (i < j && arr[j] >= temp) // 从右向左找第一个小于x的数
+                j--;
+            if (i < j)
+                arr[i++] = arr[j];
+
+            while (i < j && arr[i] < temp) // 从左向右找第一个大于等于x的数
+                i++;
+            if (i < j)
+                arr[j--] = arr[i];
+        }
+        arr[i] = temp;
+        quickSort(arr, l, i - 1); // 递归调用 
+        quickSort(arr, i + 1, r);
+    }
+}
+```
 
 ### 合并排序
 
