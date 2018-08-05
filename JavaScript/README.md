@@ -128,6 +128,9 @@ typeof (typeof 1)//"string"
 ### 5.var a=b=3
  从右往左执行，相当与b=3;var a=b;
  
+### 6. 事件顺序 
+
+ mousedown->focus->mouseup->click
 
 
 
