@@ -122,7 +122,8 @@ typeof (typeof 1)//"string"
 </script>
 ```
 
-### 4.slice,concat为浅复制，但
+### 4.slice,concat为浅复制
+ slice和concat这两个方法，仅适用于对不包含引用对象的一维数组的深拷贝
 
 
  
