@@ -122,6 +122,8 @@ typeof (typeof 1)//"string"
 </script>
 ```
 
+### 4.slice,concat为浅复制，但
+
 
  
 
