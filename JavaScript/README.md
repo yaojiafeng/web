@@ -125,7 +125,8 @@ typeof (typeof 1)//"string"
 ### 4.slice,concat为浅复制
  slice和concat这两个方法，仅适用于对不包含引用对象的一维数组的深拷贝
 
-
+### 5.var a=b=3
+ 从右往左执行，相当与b=3;var a=b;
  
 
 
