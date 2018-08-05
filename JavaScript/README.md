@@ -1,8 +1,8 @@
 # javascript常忘的东西
 ## 目录
-- [转化为boolean值后为fasle的：'',0,null,undefined,false和NaN](#转化为boolean值后为fasle的：'',0,null,undefined,false和NaN)
-- [typeof 优先==;typeof 返回的是字符串](#typeof 优先==;typeof 返回的是字符串)
-- [正则](#正则)
+- [转化为boolean值后为fasle的：'',0,null,undefined,false和NaN](#1. 转化为boolean值后为fasle的：'',0,null,undefined,false和NaN)
+- [typeof 优先==;typeof 返回的是字符串](#2. typeof 优先==;typeof 返回的是字符串)
+- [正则](#3. 正则)
 ### 1. 转化为boolean值后为fasle的：'',0,null,undefined,false和NaN
       
 ```js
