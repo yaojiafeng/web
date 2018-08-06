@@ -14,16 +14,20 @@
     
 # git clone
 
+- clone master分支：
+  - git clone https://github.com/yaojiafeng/web.git（只克隆master分支）
+
 - clone 某个分支：
   - git clone -b  dev  https://github.com/yaojiafeng/web.git
 
-- clone 所有分支：
-  - git clone https://github.com/yaojiafeng/web.git
+
 
 # 分支管理
     Git鼓励大量使用分支：
 
-    查看分支：git branch
+    查看所有分支：git branch （当前分支有个*在前面）
+    
+    查看远程分支：git baranch -a （红色标记）
 
     创建分支：git branch <name>
 
