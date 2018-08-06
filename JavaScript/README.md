@@ -148,11 +148,11 @@ typeof (typeof 1)//"string"
   - event.returnValue=false;取消事件默认行为
   - DOM0级获取事件对象：window.event,DOM2级跟DOM一样传参event
   
-  ### 9.字符串的方法
+### 9.字符串的方法
   
-  - str.substring(start,[stop]) 方法返回的子串包括 start 处的字符，但不包括 stop 处的字符,不接受负的参数。
-  - str.substr(start,[length]),方法可在字符串中抽取从 start 下标开始的指定数目的字符。
-  - str.slice(start,[stop]),方法返回的子串包括 start 处的字符，但不包括 stop 处的字符
+- str.substring(start,[stop]) 方法返回的子串包括 start 处的字符，但不包括 stop 处的字符,不接受负的参数。
+- str.substr(start,[length]),方法可在字符串中抽取从 start 下标开始的指定数目的字符。
+- str.slice(start,[stop]),方法返回的子串包括 start 处的字符，但不包括 stop 处的字符
 
 
 
