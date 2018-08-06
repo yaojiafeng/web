@@ -139,7 +139,7 @@ typeof (typeof 1)//"string"
 - 具有舍入误差的运算结可能会符合我们的期望，原因可能是“负负得正”
 - 怎么办？1个办法是使用整型代替浮点数计算；2是不要直接比较两个浮点数，而应该使用bignumber.js这样的浮点数运算库
 
-### 8.如何阻止时间冒泡，阻止默认行为？
+### 8.如何阻止事件冒泡，阻止默认行为？
 - DOM中
   - event.stopPropagation();取消事件的进一步捕获或冒泡。如果bubbles为true，则可以使用这个方法
   - event.preventDefault();取消事件的默认行为。如果cancelable是true，则可以使用这个方法
