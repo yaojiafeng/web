@@ -20,14 +20,14 @@
 - clone 某个分支：
   - git clone -b  dev  https://github.com/yaojiafeng/web.git
 
-
+> 当只git clone 到主分支到本地时，又想git clone dev分支到本地，可以 git checkout -b dev origin/dev 
 
 # 分支管理
     Git鼓励大量使用分支：
 
     查看所有分支：git branch （当前分支有个*在前面）
     
-    查看远程分支：git baranch -a （红色标记）
+    查看远程分支：git branch -a （红色标记）
 
     创建分支：git branch <name>
 
