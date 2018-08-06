@@ -76,6 +76,16 @@ $cookie=$_GET('cookie');
 
 攻击者获取cookie信息后，还要与web系统建立会话，才能侵入用户的账户，建立会话通常需要能修改cookie的工具，例如桂林老兵cookie欺骗工具，firefox的浏览器插件firecookie等。
 
+### 3.xss 预防
+
+- XSS Filter
+  xss本质是web应用服务的漏洞，解决问题的根本是在web应用程序的代码中消除xss漏洞
+  - input Filtering
+    - 客户端输入验证
+    - 输入过滤消毒，把敏感字符串如<,>,&,",#，javascript,expression等过滤掉
+  - output Filtering
+    - 输出编码，将敏感字符转化为html实体编码，如<转化为&lt;
+
 
 
 
