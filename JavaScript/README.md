@@ -144,9 +144,9 @@ typeof (typeof 1)//"string"
   - event.stopPropagation();取消事件的进一步捕获或冒泡。如果bubbles为true，则可以使用这个方法
   - event.preventDefault();取消事件的默认行为。如果cancelable是true，则可以使用这个方法
 - IE中
-- event.cancelBubble=true;取消事件冒泡
-- event.returnValue=false;取消事件默认行为
-- DOM0级获取事件对象：window.event,DOM2级跟DOM一样传参event
+  - event.cancelBubble=true;取消事件冒泡
+  - event.returnValue=false;取消事件默认行为
+  - DOM0级获取事件对象：window.event,DOM2级跟DOM一样传参event
 
 
 
