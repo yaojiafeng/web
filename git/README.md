@@ -12,13 +12,13 @@
     
     查看修改的内容   git diff test.js
     
-    
+# git clone
 
+- clone 某个分支：
+  - git clone -b  dev  https://github.com/yaojiafeng/web.git
 
-
-
-
-
+- clone 所有分支：
+  - git clone https://github.com/yaojiafeng/web.git
 
 # 分支管理
     Git鼓励大量使用分支：
