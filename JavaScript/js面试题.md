@@ -1,11 +1,12 @@
 ## 目录
 
-- [1.介绍js有哪些内置对象？](#1.介绍js有哪些内置对象？)
-- [2.如何实现跨域](#2.如何实现跨域？)
+- [1.介绍js有哪些内置对象](#1.介绍js有哪些内置对象)
+- [2.如何实现跨域](#2.如何实现跨域)
 
-### 1.介绍js有哪些内置对象？
+### 1.介绍js有哪些内置对象
 	
 - JavaScript有3大对象，分别是本地对象、内置对象和宿主对象。在此引用ECMA-262（ECMAScript的制定标准）对于他们的定义：
+
 (1)本地对象
         
 	Object、Function、Array、String、Boolean、Number、Date、RegExp、Error、EvalError、RangeError、ReferenceError、SyntaxError、TypeError、URIError
