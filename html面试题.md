@@ -24,6 +24,37 @@ HTML (Hyper Text Markup Languge)
 
   不同浏览器（版本）、HTML4（5）、CSS2等实际略有差异
   参考: http://stackoverflow.com/questions/6867254/browsers-default-css-for-html-elements
+  
+### 4.对web标准和w3c标准的理解？
+
+- Web标准不是某一个标准，而是一系列标准的集合。网页主要由三部分组成：结构（Structure）、表现（Presentation）和行为（Behavior）。
+- 对应的标准也分三方面：结构化标准语言主要包括HTML, XHTML和XML，表现标准语言主要包括CSS，行为标准主要包括对象模型（如W3C DOM）、ECMAScript等。[例如：js交互操作]
+- 这些标准大部分由万维网联盟（外语缩写：W3C）起草和发布，也有一些是其他标准组织制订的标准，比如ECMA（European Computer Manufacturers Association）的ECMAScript标准。
+
+W3C对于WEB标准提出了规范化的要求，也就是实际编程中的一些代码规范：整理出以下几点
+
+               1、对于结构要求：（标签规范可以提高搜索引擎对页面的抓取效率，对SEO很有帮助）
+
+                        1）标签和属性名字母要小写
+
+                        2）标签要闭合              
+
+                        3）标签不允许随意嵌套
+
+               2、对于css和js来说
+
+                        1）尽量使用外链css样式表和js脚本。使结构、表现和行为分为三块，符合规范。同时提高页面选软速度，提高用户体验。
+
+                        2）样式尽量不使用行内样式，使结构和表现分离，标签的id和class等属性命名要做到语义化，标签越少，加载速度越快，用户体验提高，代码维护简单，便于改版。
+
+                        3）不需要变动页面内容，就可以操作页面样式和数据，提高网站的易用性。
+
+
+
+
+
+
+
 页面导入样式时，使用link和@import有什么区别？
 
   （1）link属于XHTML标签，除了加载CSS外，还能用于定义RSS, 定义rel连接属性等作用；而@import是CSS提供的，只能用于加载CSS;
