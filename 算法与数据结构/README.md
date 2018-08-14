@@ -370,16 +370,37 @@ console.log(a);
 ### 合并排序
 
 - 合并排序是一种分治算法。这个算法不断地将一个数组分为两部分，分别对左子数组和右子数组排序，然后将两个数组合并为新的有序数组。
-
 - 稳定：是
-
 - 时间复杂度：
-
   - 最优：O(nlog(n))
+  - 最差：O(nlog(n))  
+  - 平均：O(nlog(n)) 
+  - javascript实现
   
-  - 最差：O(nlog(n))
-  
-  - 平均：O(nlog(n))
+```js
+function　merge(left, right){
+    var　result=[];
+    while(left.length>0 && right.length>0){
+        if(left[0]<right[0]){
+        /*shift()方法用于把数组的第一个元素从其中删除，并返回第一个元素的值。*/
+            result.push(left.shift());
+        }else{
+            result.push(right.shift());
+        }
+    }
+    return　result.concat(left).concat(right);
+}
+function　mergeSort(items){
+    if(items.length == 1){
+        return　items;
+}
+var　middle = Math.floor(items.length/2),
+    left = items.slice(0, middle),
+    right = items.slice(middle);
+    return　merge(mergeSort(left), mergeSort(right));
+}
+
+```
 
 
 桶排序
