@@ -367,7 +367,7 @@ console.log(a);
 
 
 
-### 合并排序
+### 归并排序
 
 - 合并排序是一种分治算法。这个算法不断地将一个数组分为两部分，分别对左子数组和右子数组排序，然后将两个数组合并为新的有序数组。
 - 稳定：是
@@ -375,7 +375,7 @@ console.log(a);
   - 最优：O(nlog(n))
   - 最差：O(nlog(n))  
   - 平均：O(nlog(n)) 
-  - javascript实现
+- javascript实现
   
 ```js
 function　merge(left, right){
