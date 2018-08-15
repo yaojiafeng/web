@@ -402,6 +402,36 @@ var　middle = Math.floor(items.length/2),
 
 ```
 
+### 简单选择排序
+
+```c
+void Swap(int A[], int i, int j)
+{
+    int temp = A[i];
+    A[i] = A[j];
+    A[j] = temp;
+}
+
+void SelectionSort(int A[], int n)
+{
+    for (int i = 0; i < n - 1; i++)         // i为已排序序列的末尾
+    {
+        int min = i;
+        for (int j = i + 1; j < n; j++)     // 未排序序列
+        {
+            if (A[j] < A[min])              // 找出未排序序列中的最小值
+            {
+                min = j;
+            }
+        }
+        if (min != i)
+        {
+            Swap(A, min, i);    // 放到已排序序列的末尾，该操作很有可能把稳定性打乱，所以选择排序是不稳定的排序算法
+        }
+    }
+}
+```
+
 
 桶排序
 
