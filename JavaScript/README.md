@@ -121,6 +121,9 @@ typeof (typeof 1)//"string"
  alert(re1.exec(str));
 </script>
 ```
+常用正则：
+- 手机验证
+  - /^1[3|4|5|7|8][0-9]\d{8}$/
 
 ### 4.slice,concat为浅复制
  slice和concat这两个方法，仅适用于对不包含引用对象的一维数组的深拷贝
