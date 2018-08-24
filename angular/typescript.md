@@ -62,4 +62,18 @@ class Clock implements ClockInterface {
     constructor(h: number, m: number) { }
 }
 ```
+- 接口继承
+```ts
+interface Shape {
+    color: string;
+}
+
+interface PenStroke {
+    penWidth: number;
+}
+
+interface Square extends Shape, PenStroke {
+    sideLength: number;
+}
+```
 
