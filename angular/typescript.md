@@ -76,4 +76,14 @@ interface Square extends Shape, PenStroke {
     sideLength: number;
 }
 ```
+- 接口继承类
+```ts
+class Control {
+    private state: any;
+}
+
+interface SelectableControl extends Control {
+    select(): void;
+}
+```
 
