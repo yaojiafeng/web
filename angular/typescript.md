@@ -38,4 +38,27 @@ let strLength: number = (<string>someValue).length;
 let strLength: number = (someValue as string).length;
 ```
 ### 接口
+在TypeScript里，接口的作用就是为这些类型命名和为你的代码或第三方代码定义契约。
+```ts
+interface List{
+  name:string,//必须
+  age?:number,//可选
+  readonly power:number,//只读,只能在对象刚刚创建的时候修改其值,之后不能修改  
+}
+```
+- 类类型
+```ts
+interface ClockInterface {
+    currentTime: Date;
+    setTime(d: Date);
+}
+
+class Clock implements ClockInterface {
+    currentTime: Date;
+    setTime(d: Date) {
+        this.currentTime = d;
+    }
+    constructor(h: number, m: number) { }
+}
+```
 
