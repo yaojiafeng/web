@@ -1,6 +1,7 @@
 ## 目录
 - [基本类型](#基本类型)
 - [接口](#接口)
+- [类](#类)
 
 
 ### 基本类型
@@ -86,4 +87,6 @@ interface SelectableControl extends Control {
     select(): void;
 }
 ```
+### 类
+
 
