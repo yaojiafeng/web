@@ -26,3 +26,5 @@ x = [10, 'hello']; // Error
 enum Color {Red, Green, Blue}
 let c: Color = Color.Green;//1
 ```
+- any
+
