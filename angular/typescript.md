@@ -1,5 +1,6 @@
 ## 目录
 - [基本类型](#基本类型)
+- [接口](#接口)
 
 
 ### 基本类型
@@ -36,4 +37,5 @@ let strLength: number = (<string>someValue).length;
 //or
 let strLength: number = (someValue as string).length;
 ```
+### 接口
 
