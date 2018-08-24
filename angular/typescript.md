@@ -27,4 +27,13 @@ enum Color {Red, Green, Blue}
 let c: Color = Color.Green;//1
 ```
 - any
+- void
+- never
+- 类型断言
+```ts
+let someValue: any = "this is a string";
+let strLength: number = (<string>someValue).length;
+//or
+let strLength: number = (someValue as string).length;
+```
 
