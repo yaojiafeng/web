@@ -88,6 +88,29 @@ interface SelectableControl extends Control {
 }
 ```
 ### 类
+- 类
+- 静态属性,静态方法
+- public、private、protected
+- readonly
+```ts
+class Greeter {
+    readonly id:string;//只读属性必须在声明时或构造函数里被初始化
+    readonly idx:string='8';
+    greeting: string;//实例属性,默认公有public
+    static name:string;//静态属性
+    privite _age:number;//私有,类的外部不能访问
+    protected _level:string;//受保护，类的外部不能访问,但是派生类能访问
+    constructor(message: string,id:string) {
+        this.greeting = message;
+        this.id=id;
+    }
+    greet() {
+        return "Hello, " + this.greeting;
+    }
+}
+
+let greeter = new Greeter("world");
+```
 
 
 
