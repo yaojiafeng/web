@@ -98,11 +98,11 @@ class Greeter {
     readonly idx:string='8';
     greeting: string;//实例属性,默认公有public
     static name:string;//静态属性
-    privite _age:number;//私有,类的外部不能访问
+    private _age:number;//私有,类的外部不能访问
     protected _level:string;//受保护，类的外部不能访问,但是派生类能访问
     constructor(message: string,id:string) {
         this.greeting = message;
-        this.id=id;
+        this.id=id;//只读属性在构造函数中初始化,之后不能改
     }
     greet() {
         return "Hello, " + this.greeting;
@@ -111,6 +111,25 @@ class Greeter {
 
 let greeter = new Greeter("world");
 ```
+- 属性参数
+```ts
+class Animal {
+    constructor(private name: string) { }
+    move(distanceInMeters: number) {
+        console.log(`${this.name} moved ${distanceInMeters}m.`);
+    }
+}
+//相当于
+class Animal {
+    private name:string;
+    constructor(name: string) {
+        this.name=name;
+    }
+    move(distanceInMeters: number) {
+        console.log(`${this.name} moved ${distanceInMeters}m.`);
+    }
+}
 
+```
 
 
