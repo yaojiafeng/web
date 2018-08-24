@@ -131,5 +131,18 @@ class Animal {
 }
 
 ```
+- get,set
+```ts
+class Employee {
+    private _fullName: string;
+    // fullName为实例属性
+    get fullName(): string {
+        return this._fullName;
+    }
+    set fullName(newName: string) { 
+        this._fullName = newName;
+    }
+}
+```
 
 
