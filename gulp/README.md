@@ -81,7 +81,7 @@ gulp.task('script', function() {
 ```
 
 a.js 压缩前
-```
+```js
 function demo (msg) {
     alert('--------\r\n' + msg + '\r\n--------')
 }
@@ -89,7 +89,7 @@ function demo (msg) {
 demo('Hi')
 ```
 a.js 压缩后
-```
+```js
 function demo(n){alert("--------\r\n"+n+"\r\n--------")}demo("Hi");
 ```
 
