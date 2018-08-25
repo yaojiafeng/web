@@ -25,9 +25,161 @@ JavaScript的单元测试在使用MVC或者MVVM的框架后，变得越来越容
 - HTML引用JavaScript或者CSS文件
 
 比如我们需要使用Bower之类来引用前端JavaScript和CSS的第三方库，那么如果版本升级，添加移除等都用手工来修改HTML的话，第一比较耗时，第二比较容易疏漏，尤其是在我们需要切换Debug和production版本时将会有很多额外的工作，那么使用前端构建工具可以很好的解决这些问题。
+## 常用配置
+```js
+const gulp = require('gulp');
+const sourcemaps = require('gulp-sourcemaps');
+const gutil = require('gulp-util');
+const del = require('del');
+const nodemon = require('gulp-nodemon');
+const runSequence = require('run-sequence');
+const sass = require('gulp-sass');
+const autoprefixer = require('gulp-autoprefixer');
+const plumber = require('gulp-plumber');
+const concat = require('gulp-concat');
+const uglify = require('gulp-uglify');
+const minify = require('gulp-clean-css');
+const imagemin = require('gulp-imagemin');
+const pngquant = require('imagemin-pngquant');
+const shell = require('gulp-shell');
+const connect = require('gulp-connect');
+const open = require('gulp-open');
+const pug = require('gulp-pug');
 
+const path = process.env.PWD;
 
+/**
+ * 公共错误处理函数
+ */
+function commonErrorHandle(event) {
+    gutil.beep();
+    gutil.log(event)
+};
 
+/* 删除dist目录，删除所有之前编译的内容 */
+gulp.task('clean', (cb) => {
+    return del(['dist'], cb);
+});
+
+/* 移动字体库 */
+gulp.task('fonts', () => {
+    return gulp.src('source/fonts/**/*')
+        .pipe(gulp.dest('dist/fonts/'));
+});
+
+/* 压缩图片 */
+gulp.task('imagemin', () => {
+    return gulp.src('source/images/**/*')
+           .pipe(imagemin({
+               progressive: true,
+               svgoPlugins: [{ removeViewBox: false }],
+               use: [pngquant()]
+           }))
+        .pipe(gulp.dest('dist/images/'));
+});
+
+/* 压缩合并js逻辑 */
+gulp.task('jsmin', () => {
+    return gulp.src(['source/js/*.js', '!source/js/libs.min.js'])
+        .pipe(plumber({ errorHandler: commonErrorHandle }))
+        // .pipe(sourcemaps.init())
+        .pipe(concat('app.js'))
+        .pipe(uglify())
+        // .pipe(sourcemaps.write())
+        .pipe(gulp.dest('dist/js/'))
+});
+
+/* 移动通用js文件 */
+gulp.task('cpjs', () => {
+    return gulp.src(['source/js/*.js', '!source/js/app.js'])
+        .pipe(gulp.dest('dist/js/'));
+})
+
+/* 压缩合并css样式 */
+gulp.task('cssmin', () => {
+    return gulp.src('source/css/**/*.scss')
+        .pipe(plumber({ errorHandler: commonErrorHandle }))
+        // .pipe(sourcemaps.init())
+        .pipe(sass())
+        .pipe(concat('style.css'))
+        .pipe(autoprefixer({
+            browsers: ['last 2 versions'],
+            cascade: false
+        }))
+        .pipe(minify())
+        // .pipe(sourcemaps.write())
+        .pipe(gulp.dest('dist/css/'))
+});
+
+// gulp.task('views', () => {
+//     return gulp.src('source/**/*.pug')
+//         .pipe(pug())
+// })
+
+/* 开发阶段，编译生成页面 */
+gulp.task('pages', shell.task(`pug -O locale/zh.json source/pages -o dist/ -P `));
+
+/* 编译英文版本 */
+gulp.task('pages_en', shell.task(`pug -O locale/en.json source/pages -o dist/ -P `));
+
+/* 生产环境中，编译生成页面 */
+gulp.task('pagesmin', shell.task(`pug -O locale/zh.json source/pages -o dist/`));
+
+/* 生产环境中，编译英文版本 */
+gulp.task('pagesmin_en', shell.task(`pug -O locale/en.json source/pages -o dist/`));
+
+/* liveReload服务器*/
+gulp.task('server', () => {
+    connect.server({
+        root: 'dist',
+        livereload: true
+    });
+});
+
+/* 加载html页面 */
+gulp.task('html', () => {
+    gulp.src('./dist/*.html')
+        .pipe(connect.reload());
+})
+
+/**
+ * 检测文件变化
+ */
+gulp.task('watch', () => {
+    gulp.watch(['source/**/*'], ['pages', 'cssmin', 'jsmin']).on('change', (e) => {
+        console.info(`Source->File ${e.path} + has been changed`)
+    })
+});
+
+gulp.task('browser', () => {
+    gulp.src(__filename)
+        .pipe(open({ uri: 'http://localhost:8080' }));
+})
+
+/**
+ * 默认为开发者环境
+ */
+gulp.task('default', () => {
+    runSequence('clean', 'fonts', 'pages', 'cssmin', 'jsmin', 'cpjs','imagemin', 'server', 'watch', 'browser');
+});
+
+/**
+ * 编译英文版本
+ */
+gulp.task('english', () => {
+    runSequence('clean', 'fonts', 'pages_en', 'cssmin', 'jsmin', 'cpjs', 'imagemin', 'server', 'watch');
+});
+
+/**
+ * 构建生产版本
+ */
+gulp.task('build', (cb) => {
+    runSequence('clean', 'fonts', 'pagesmin', 'cssmin', 'jsmin', 'cpjs', 'imagemin', cb)
+});
+gulp.task('build_en', (cb) => {
+    runSequence('clean', 'fonts', 'pagesmin_en', 'cssmin', 'jsmin', 'cpjs', 'imagemin', cb)
+});
+```
 ## 目录
 
 - [安装 Node 和 gulp](chapter1.md)
