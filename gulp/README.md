@@ -28,7 +28,7 @@ JavaScript的单元测试在使用MVC或者MVVM的框架后，变得越来越容
 ## 常用插件
 ```js
 const gulp = require('gulp');
-const sourcemaps = require('gulp-sourcemaps');
+const sourcemaps = require('gulp-sourcemaps');//sourcemaps记录了生成文件中的每一条语句在源文件中的对应位置，
 const gutil = require('gulp-util');
 const del = require('del');
 const nodemon = require('gulp-nodemon');
