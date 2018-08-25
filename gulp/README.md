@@ -25,7 +25,7 @@ JavaScript的单元测试在使用MVC或者MVVM的框架后，变得越来越容
 - HTML引用JavaScript或者CSS文件
 
 比如我们需要使用Bower之类来引用前端JavaScript和CSS的第三方库，那么如果版本升级，添加移除等都用手工来修改HTML的话，第一比较耗时，第二比较容易疏漏，尤其是在我们需要切换Debug和production版本时将会有很多额外的工作，那么使用前端构建工具可以很好的解决这些问题。
-## 常用配置
+## 常用插件
 ```js
 const gulp = require('gulp');
 const sourcemaps = require('gulp-sourcemaps');
