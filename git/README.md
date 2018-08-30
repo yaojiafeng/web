@@ -39,6 +39,8 @@
 
     删除分支：git branch -d <name>
     
+    git rebase
+    
   # 远程仓库的使用
  
  1. 查看当前远程仓库
