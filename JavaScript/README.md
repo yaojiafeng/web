@@ -168,9 +168,9 @@ typeof (typeof 1)//"string"
 let o={name:yao};
 let arr = [1,2,3]
 o.toString()
-"[object Object]"
+//"[object Object]"
 arr.toString()
-"1,2,3"
+//"1,2,3"
 ```
 
 
