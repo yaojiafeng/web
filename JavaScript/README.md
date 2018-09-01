@@ -157,6 +157,22 @@ typeof (typeof 1)//"string"
 - str.substr(start,[length]),方法可在字符串中抽取从 start 下标开始的指定数目的字符。
 - str.slice(start,[stop]),方法返回的子串包括 start 处的字符，但不包括 stop 处的字符
 
+### 10.
+
+- Object 类的 toString 方法返回一个字符串，该字符串由类名（对象是该类的一个实例）、at 
+标记符“@”和此对象哈希码的无符号十六进制表示组成。Arrays的toString方法是返回指定数组内容的字符串表示形式。
+
+- 两者是重名函数关系，没有复写
+
+```js
+let o={name:yao};
+let arr = [1,2,3]
+o.toString()
+"[object Object]"
+arr.toString()
+"1,2,3"
+```
+
 
 
 
