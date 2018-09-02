@@ -172,6 +172,21 @@ o.toString()
 arr.toString()
 //"1,2,3"
 ```
+### 11深拷贝
+```js
+function copy(arr){
+    var obj=arr.constructor==Array?[]:{};
+　　//第二种方法 var obj=arr instanceof Array?[]:{}
+    for(var item in arr){
+        if(typeof arr[item]==="object"){
+            obj[item]=copy(arr[item]);
+        }else{
+            obj[item]=arr[item];
+        }
+    }
+    return obj;
+}
+```
 
 
 
