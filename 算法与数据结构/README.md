@@ -57,12 +57,24 @@
 - 数组与链表的比较
 <table>
   <tr>
-     <td>-
-    </td>
-    <td>数组
-    </td>
-     <td>链表
-    </td>
+     <th>-</th>
+     <th>数组</th>
+     <th>链表</th>
+  </tr>
+  <tr>
+     <td>读取</td>
+     <td>o(1)</td>
+     <td>o(n)</td>
+  </tr>
+    <tr>
+     <td>插入</td>
+     <td>o(n)</td>
+     <td>o(1)</td>
+  </tr>
+    <tr>
+     <td>删除</td>
+     <td>o(n)</td>
+     <td>o(1)</td>
   </tr>
 </table>
   
