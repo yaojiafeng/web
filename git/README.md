@@ -6,7 +6,7 @@
 - [远程仓库的使用](#远程仓库的使用)
 - [diff](#diff)
 
-# 创建版库
+### 创建版库
 
     初始化一个Git仓库，使用git init命令。
     
@@ -20,7 +20,7 @@
     
     查看修改的内容   git diff test.js
     
-# clone
+### clone
 
 - clone master分支：
   - git clone https://github.com/yaojiafeng/web.git（只克隆master分支）
@@ -30,7 +30,7 @@
 
 > 当只git clone 到主分支到本地时，又想git clone dev分支到本地，可以 git checkout -b dev origin/dev 
 
-# 分支管理
+### 分支管理
     Git鼓励大量使用分支：
 
     查看所有分支：git branch （当前分支有个*在前面）
@@ -49,7 +49,7 @@
     
     git rebase
     
-  # 远程仓库的使用
+ ### 远程仓库的使用
  
  1. 查看当前远程仓库
                     
@@ -77,21 +77,21 @@
   
         git remote rename  oldremotename  newremotename
         git remote rm remote-name
- # diff
+ ### diff
  
     git diff
 
 **用于比较两次修改的差异**
 
-　　　　1.1 比较工作区与暂存区
+- 比较工作区与暂存区
 
 　　　　　　git diff 不加参数即默认比较工作区与暂存区
 
-　　　　1.2 比较暂存区与最新本地版本库（本地库中最近一次commit的内容）
+- 比较暂存区与最新本地版本库（本地库中最近一次commit的内容）
 
 　　　　　　git diff --cached  [<path>...] 
 
-　　　　1.3 比较工作区与最新本地版本库
+- 比较工作区与最新本地版本库
 
 　　　　　　git diff HEAD [<path>...]  如果HEAD指向的是master分支，那么HEAD还可以换成master
 
