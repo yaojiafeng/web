@@ -1,7 +1,7 @@
 ## 目录
 
 - [创建版库](#创建版库)
-- [git clone](#git clone)
+- [clone](#clone)
 - [分之管理](#分支管理)
 
 # 创建版库
@@ -18,7 +18,7 @@
     
     查看修改的内容   git diff test.js
     
-# git clone
+# clone
 
 - clone master分支：
   - git clone https://github.com/yaojiafeng/web.git（只克隆master分支）
