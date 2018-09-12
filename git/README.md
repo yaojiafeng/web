@@ -85,11 +85,11 @@
 
 - 比较工作区与暂存区
 
-　　　　　　git diff 不加参数即默认比较工作区与暂存区
+        git diff 不加参数即默认比较工作区与暂存区
 
 - 比较暂存区与最新本地版本库（本地库中最近一次commit的内容）
 
-　　　　　　git diff --cached  [<path>...] 
+        git diff --cached  [<path>...] 
 
 - 比较工作区与最新本地版本库
 
