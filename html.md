@@ -4,8 +4,8 @@ HTML (Hyper Text Markup Languge)
 
 ### meta
 - meta 设置页面的元数据
-  - name="" ,content=""
-  - http-equiv="",content=""
+  - name="application-name/author/description/generator/keywords" ,content=""
+  - http-equiv="content-type/expires/refresh/set-cookie",content=""
 
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
