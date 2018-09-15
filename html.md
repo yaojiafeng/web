@@ -5,7 +5,7 @@ HTML (Hyper Text Markup Languge)
 ### meta
 - meta 设置页面的元数据
   - name="" ,content=""
-  - http-equiv="refle",content=""
+  - http-equiv="",content=""
 
 ```html
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
