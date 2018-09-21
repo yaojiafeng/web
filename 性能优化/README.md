@@ -7,9 +7,9 @@
 ## 目录
 - [减少http请求](#减少http请求)
 
-- [使用CDN](#使用CDN)
+- [使用CDN](# 使用CDN)
 
-- [添加Expires头](#添加Expires头)
+- [添加Expires头](# 添加Expires头)
 
 ### 减少http请求
 
@@ -43,7 +43,7 @@
 
 - 合并js和css脚本
 
-    可使用工具来实现：gulp,grunt...
+      可使用工具来实现：gulp,grunt...
    
  
  
@@ -56,6 +56,7 @@ CDN 的全称是Content Delivery Network，即内容分发网络。其目的是�
     CDN适合发布静态内容，如图片，脚本样式表和Flash。
   
     缺点：响应时间受其他网站的影响。
+    
 
 ### 添加Expires头
 
