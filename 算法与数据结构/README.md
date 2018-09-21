@@ -288,12 +288,10 @@ function quickSort(arr, l, r) {
   - O(1)
 - javascript实现
 ```js
-function bubbleSort(arr, len) {
+function bubbleSort(arr) {
     var temp;
-    for (var j = 0; j < len - 1; j++)         // 控制排序的趟数，每趟最大元素就像气泡一样"浮"到数组的最后
-    {
-        for (var i = 0; i < len - 1 - j; i++) // 依次比较相邻的两个元素,使较大的那个向后移
-        {
+    for (var j = 0; j < arr.length - 1; j++){         // 控制排序的趟数，每趟最大元素就像气泡一样"浮"到数组的最后
+        for (var i = 0; i < arr.length - 1 - j; i++){ // 依次比较相邻的两个元素,使较大的那个向后移
             if (arr[i] > arr[i + 1]) {           // 如果条件改成arr[i] >= arr[i + 1],则变为不稳定的排序算法
                 temp = arr[i];
                 arr[i] = arr[i + 1];
@@ -301,6 +299,7 @@ function bubbleSort(arr, len) {
             }
         }
     }
+    return arr;
 }
 ```
 ### 堆排序
