@@ -6,7 +6,7 @@
 
 ## 目录
 - [减少http请求](#减少http请求)
-- [CDN](# CDN)
+- [CDN](#CDN)
 
 ### 减少http请求
 
