@@ -1,12 +1,13 @@
 ***性能优化可以从两个大的层面考虑：***
 
-### 1.优化加载页面性能 
+## 1.优化加载页面性能 
 
-### 2.页面渲染性能优化 
+## 2.页面渲染性能优化
 
-# 性能优化规则
+## 目录
+- [减少http请求](# 减少http请求)
 
-- [规则一：减少http请求](https://github.com/yaojiafeng/web/blob/master/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/%E5%87%8F%E5%B0%91http%E8%AF%B7%E6%B1%82.md)
+### 减少http请求
 
 - [规则二：使用内容发布网络](https://github.com/yaojiafeng/web/blob/master/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96/%E4%BD%BF%E7%94%A8%E5%86%85%E5%AE%B9%E5%8F%91%E5%B8%83%E7%BD%91%E7%BB%9C.md)
 
