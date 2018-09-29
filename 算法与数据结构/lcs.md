@@ -37,5 +37,4 @@ function lcs(str1, str2) {
             _lcs(str1, str2, i - 1, j, arr, result);
         }
     }
-        测试：
 ```
