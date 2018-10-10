@@ -1,4 +1,4 @@
-# javascript常忘的东西
+# javascript
 
 ### 1. 转化为boolean值后为fasle的：'',0,null,undefined,false和NaN
       
