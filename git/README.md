@@ -7,7 +7,7 @@
 - [diff](#diff)
 - [查看git安装目录](#查看git安装目录)
 - [git撤销](#git撤销)
-- [git status](#git status)
+- [status](#status)
 
 ### 创建版库
 
@@ -135,5 +135,5 @@
  - 暂存区撤销修改：(1)git reset HEAD ;(2)git checkout -- file
  - 分支撤销修改：git reset --hard HEAD^
  
- ### git status
+ ### status
  - git status 查看修改后工作区的状态
