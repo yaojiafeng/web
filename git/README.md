@@ -6,6 +6,7 @@
 - [远程仓库的使用](#远程仓库的使用)
 - [diff](#diff)
 - [查看git安装目录](#查看git安装目录)
+- [git 撤销](#git 撤销)
 
 ### 创建版库
 
@@ -127,4 +128,9 @@
  ### 查看git安装目录
  - Mac平台:在命令行中输入which git, 就会显示git的安装位置了;
  - Windows平台:打开cmd,输入where git就会显示git的安装路径了.
+ 
+ ### git 撤销
+ - 工作区撤销修改：git checkout -- file
+ - 暂存区撤销修改：(1)git reset HEAD ;(2)git checkout -- file
+ - 分支撤销修改：git reset --hard HEAD^
         
