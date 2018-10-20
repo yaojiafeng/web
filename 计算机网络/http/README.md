@@ -3,6 +3,7 @@
 ## contents
 - [缓存](#缓存)
 - [https](#https)
+- [cookie](#cookie)
 
 ### 缓存
   - 缓存命中（cache hit）
@@ -68,3 +69,4 @@
   - SSL握手协议（SSL Handshake Protocol）
   
         它建立在SSL记录协议之上，用于在实际的数据传输开始前，通讯双方进行身份认证、协商加密算法、交换加密密钥等。
+### cookie
