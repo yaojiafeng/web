@@ -78,3 +78,10 @@
   - 虽然cookie保存在浏览器端，但是一般是在服务器端设置的。
   - 可以在HTTP返回体里，通过设置Set-Cookie来告诉浏览器端所要存储的cookie。
   - 用来保存客户浏览器请求服务器页面的请求信息
+- cookie相关字段的说明
+  - 名称：一个唯一确定cookie的名称。cookie名称是不区分大小写的。cookie的名称必须是经过URL编码的。
+  - 值：储存在cookie中的字符串值。值必须被URL编码。
+  - 域：cookie对于哪个域是有效的。所有向该域发送的请求中都会包含这个cookie信息。如果没有明确设定，那么这个域会被认作来自设置cookie的那个域。
+  - 路径：对于指定域中的那个路径，应该向服务器发送cookie。例如，你可以指定cookie只有从http://www.wrox.com/books/中才能访问，那么http://www.wrox.com的页面就不会发送cookie信息，即使请求都是来自同一个域的。
+   - 失效时间：表示cookie何时应该被删除的时间戳（也就是，何时应该停止向服务器发送这个cookie）。默认情况下，浏览器会话结束时即将所有cookie删除；不过也可以自己设置删除时间。这个值是个GMT格式的日期（Wdy,DD-Mon-YYYY HH:MM:SSGMT），用于指定应该删除cookie的准确时间。因此，cookie可在浏览器关闭后依然保存在用户的机器上。如果你设置的失效日期是个以前的时间，则cookie会被立刻删除。
+  - 安全标志：指定后，cookie只有在使用SSL连接的时候才发送到服务器。例如，cookie信息只能发送给 https://www.wrox.com，而http://www.wrox.com的请求则不能发送 cookie。
