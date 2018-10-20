@@ -89,3 +89,31 @@
   - 简单来说，Cookie就是服务器暂存放在你的电脑里的资料（.txt格式的文本文件），好让服务器用来辨认你的计算机。当你在浏览网站的时候，Web服务器会先送一小小资料放在你的计算机上，Cookie 会把你在网站上所打的文字或是一些选择都记录下来。当下次你再访问同一个网站，Web服务器会先看看有没有它上次留下的Cookie资料，有的话，就会依据Cookie里的内容来判断使用者，送出特定的网页内容给你。
   - 网站可以利用cookie跟踪统计用户访问该网站的习惯，比如什么时间访问，访问了哪些页面，在每个网页的停留时间等。利用这些信息，一方面是可以为用户提供个性化的服务，另一方面，也可以作为了解所有用户行为的工具，对于网站经营策略的改进有一定参考价值。
   - 目前Cookie最广泛的是记录用户登录信息，这样下次访问时可以不需要输入自己的用户名、密码了——当然这种方便也存在用户信息泄密的问题，尤其在多个用户共用一台电脑时很容易出现这样的问题。
+- 设置/删除
+```js
+document.cookie = 'name=value;'
+
+//封装setCookie方法
+//setCookie 首先对name和value进行编码
+function setCookie(name,value,expires,path,domain,secure){
+
+    var cookie = encodeURIComponent(name)+ '=' +encodeURIComponent(value);
+    
+    //注意分号后面要有空格
+    //后面的4个参数是可选的，所以用if判断并追加
+     
+    if(expires){
+        cookie +='; expires='+expires.toGMTString();
+    }
+    if(path){
+        cookie += '; path='+path;
+    }
+    if(domain){
+        cookie += '; domain='+domain;
+    }
+    if(secure){
+        cookie += '; secure='+secure;
+    }
+    document.cookie = cookie;
+}
+```
