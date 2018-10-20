@@ -117,3 +117,8 @@ function setCookie(name,value,expires,path,domain,secure){
     document.cookie = cookie;
 }
 ```
+- cookie缺点
+  - Cookie数量和长度的限制。IE6或更低版本每个domian下最多20个cookie，IE7和之后的版本最多可以有 50个cookie，Firefox最多50个cookie，chrome和Safari没有做硬性限制，每个cookie长度不能超过4KB，否则会被截掉。
+  - IE和Opera 会清理近期最少使用的cookie，Firefox会随机清理cookie。这就导致不能永久储存信息。
+  - 安全性问题。如果cookie被人拦截了，那人就可以取得所有的session信息。即使加密也与事无补，因为拦截者并不需要知道cookie的意义，他只要原样转发cookie就可以达到目的了。
+  - 并且每次你请求一个新的页面的时候，cookie只要满足作用域和作用路径，Cookie都会被发送过去，这样无形中浪费了带宽。
