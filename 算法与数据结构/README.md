@@ -304,6 +304,7 @@ function bubbleSort(arr) {
 
 //改进的冒泡
 function bubbleSort(arr) {
+    var temp;
     var flag;
     for(var i = 0, len = arr.length; i < len - 1; i++) {
         flag = false;
