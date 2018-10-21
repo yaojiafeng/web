@@ -313,8 +313,8 @@ function bubbleSort(arr) {
                 temp = arr[j];
                 arr[j] = arr[j + 1];
                 arr[j + 1] = temp;
-            }
-            flag = true;         
+                 flag = true;
+            }         
         }
         if(flag == false)
             return;
