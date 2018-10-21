@@ -306,7 +306,7 @@ function bubbleSort(arr) {
 function bubbleSort(arr) {
     var flag;
     for(var i = 0, len = arr.length; i < len - 1; i++) {
-        didSwap = false;
+        flag = false;
         for(var j = 0; j < len - i - 1; j++) {
            if (arr[j] > arr[j + 1]) {        
                 temp = arr[j];
@@ -315,7 +315,7 @@ function bubbleSort(arr) {
             }
             flag = true;         
         }
-        if(didSwap == false)
+        if(flag == false)
             return;
     }    
 }
