@@ -301,6 +301,24 @@ function bubbleSort(arr) {
     }
     return arr;
 }
+
+//改进的冒泡
+function bubbleSort(arr) {
+    var flag;
+    for(var i = 0, len = arr.length; i < len - 1; i++) {
+        didSwap = false;
+        for(var j = 0; j < len - i - 1; j++) {
+           if (arr[j] > arr[j + 1]) {        
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+            flag = true;         
+        }
+        if(didSwap == false)
+            return;
+    }    
+}
 ```
 ### 堆排序
 - 基本思想：
