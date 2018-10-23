@@ -128,9 +128,9 @@ function Stack(){
     this.q1 = new Queue();
     this.q2 = new Queue();
     this.push = function(e){
-        if(this.q1.size()==0){
+        if((this.q1.size()==0&&this.q2.size()==0)||(this.q1.size()!=0&&this.q2.size()==0)){
             this.q1.push(e);
-        }else if(this.q2.size()==0){
+        }else if(this.q2.size()!=0&&this.q1.size()==0){
             this.q2.push(e);
         }
     }
@@ -138,13 +138,13 @@ function Stack(){
         if(this.q1.size()!=0){
             var len = this.q1.size();
             for(var i = 0 ;i<len-1;i++){
-                this.q2.push(this.q1.pop);
+                this.q2.push(this.q1.pop());
             }
             return this.q1.pop();
         }else if(this.q2.size()!=0){
             var len = this.q2.size();
             for(var i = 0 ;i<len-1;i++){
-                this.q1.push(this.q2.pop);
+                this.q1.push(this.q2.pop());
             }
             return this.q2.pop(); 
         }
