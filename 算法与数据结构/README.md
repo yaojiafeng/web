@@ -109,6 +109,20 @@
   - 插入：O(1)
   
   - 删除：O(1)
+```js
+function Queue(){
+    this.arr=[];
+    this.push = function (e){
+        this.arr.push(e);
+    }
+    this.pop = function(){
+        return this.arr.shift();
+    }
+    this.size =function(){
+        return this.arr.length;
+    }
+}
+```
   
 ### 树
 
