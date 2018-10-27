@@ -134,6 +134,7 @@
  - 工作区撤销修改：git checkout -- filename
  - 暂存区撤销修改：(1)git reset HEAD ;(2)git checkout -- filename
  - 分支撤销修改：git reset --hard HEAD^
+ - git revert commit（要撤消的提交的commit，此时只是回滚了本地）已经提交到远程了，回滚
  
  ### status
  - git status 查看修改后工作区的状态
