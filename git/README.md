@@ -131,8 +131,8 @@
  - Windows平台:打开cmd,输入where git就会显示git的安装路径了.
  
  ### git撤销
- - 工作区撤销修改：git checkout -- file
- - 暂存区撤销修改：(1)git reset HEAD ;(2)git checkout -- file
+ - 工作区撤销修改：git checkout -- filename
+ - 暂存区撤销修改：(1)git reset HEAD ;(2)git checkout -- filename
  - 分支撤销修改：git reset --hard HEAD^
  
  ### status
