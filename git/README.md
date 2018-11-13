@@ -89,6 +89,9 @@
   - 当将修改add到暂存区时，git diff则比较的是，当前工作区中的文件与暂存区中的文件。
   - 当没将工作区的修改提交到暂存区时，git diff比较的是，工作区中的文件与上次提交到版本库中的文件。
 
+- git diff HEAD -- demo.js
+  - 比较的是工作区中的文件demo.js与版本库中文件demo.js的差异。HEAD指向的是版本库中的当前版本
+
  ### 查看git安装目录
  - Mac平台:在命令行中输入which git, 就会显示git的安装位置了;
  - Windows平台:打开cmd,输入where git就会显示git的安装路径了.
