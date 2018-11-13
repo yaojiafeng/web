@@ -82,51 +82,13 @@
         git remote rename  oldremotename  newremotename
         git remote rm remote-name
  ### diff
- 
-    git diff
 
 **用于比较两次修改的差异**
 
-- 比较工作区与暂存区
+- git diff demo.js
+  - 当将修改add到暂存区时，git diff则比较的是，当前工作区中的文件与暂存区中的文件。
+  - 当没将工作区的修改提交到暂存区时，git diff比较的是，工作区中的文件与上次提交到版本库中的文件。
 
-        git diff readme.txt 查看工作区中的readme.txt文件修改了什么，对比的是工作区修改后跟上一个已经提交的版本的差异
-
-- 比较暂存区与最新本地版本库（本地库中最近一次commit的内容）
-
-        git diff --cached  [<path>...] 
-
-- 比较工作区与最新本地版本库
-
-　　　　　　git diff HEAD [<path>...]  如果HEAD指向的是master分支，那么HEAD还可以换成master
-
-　　　　1.4 比较工作区与指定commit-id的差异
-
-　　　　　　git diff commit-id  [<path>...] 
-
-　　　　1.5 比较暂存区与指定commit-id的差异
-
-　　　　　　git diff --cached [<commit-id>] [<path>...] 
-
-　　　　1.6 比较两个commit-id之间的差异
-
-　　　　　　git diff [<commit-id>] [<commit-id>]
-
-　　　　1.7 使用git diff打补丁
-
-　　　　　　git diff > patch //patch的命名是随意的，不加其他参数时作用是当我们希望将我们本仓库工作区的修改拷贝一份到其他机器上使用，但是修改的文件比较多，拷贝量比较大，
-
-　　　　　　此时我们可以将修改的代码做成补丁，之后在其他机器上对应目录下使用 git apply patch 将补丁打上即可
-
-　　　　　　git diff --cached > patch //是将我们暂存区与版本库的差异做成补丁
-
-　　　　　　  git diff --HEAD > patch //是将工作区与版本库的差异做成补丁
-
-　　　　　　git diff Testfile > patch//将单个文件做成一个单独的补丁
-
-　　　　拓展：git apply patch 应用补丁，应用补丁之前我们可以先检验一下补丁能否应用，git apply --check patch 如果没有任何输出，那么表示可以顺利接受这个补丁
-
-　　　　　　　另外可以使用git apply --reject patch将能打的补丁先打上，有冲突的会生成.rej文件，此时可以找到这些文件进行手动打补丁　
-       
  ### 查看git安装目录
  - Mac平台:在命令行中输入which git, 就会显示git的安装位置了;
  - Windows平台:打开cmd,输入where git就会显示git的安装路径了.
