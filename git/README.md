@@ -6,7 +6,7 @@
 - [远程仓库的使用](#远程仓库的使用)
 - [diff](#diff)
 - [查看git安装目录](#查看git安装目录)
-- [git撤销](#git撤销)
+- [撤销修改](#撤销修改)
 - [status](#status)
 - [版本回退](#版本回退)
 
@@ -96,9 +96,12 @@
  - Mac平台:在命令行中输入which git, 就会显示git的安装位置了;
  - Windows平台:打开cmd,输入where git就会显示git的安装路径了.
  
- ### git撤销
- - 工作区撤销修改：git checkout -- filename
- - 暂存区撤销修改：(1)git reset HEAD ;(2)git checkout -- filename
+ ### 撤销修改
+ - 工作区撤销修改：
+   - git checkout -- demo.js
+ - 暂存区撤销修改：
+   - git reset HEAD demo.js
+   - git checkout -- demo.js
  - 分支撤销修改：git reset --hard HEAD^
  - git revert commit（要撤消的提交的commit，此时只是回滚了本地）已经提交到远程了，回滚
  
