@@ -98,7 +98,7 @@
  
  ### 撤销修改
  - 工作区撤销修改：
-   - git checkout -- demo.js
+   - git checkout -- demo.js 其实是用版本库里的版本替换工作区的版本
  - 暂存区撤销修改：
    - git reset HEAD demo.js
    - git checkout -- demo.js
@@ -109,6 +109,7 @@
  - git status 查看修改后工作区的状态
  
  ### 版本回退
+    git reset --hard commit_id
 在Git中，用HEAD表示当前版本，也就是最新的提交commit_id，上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100。
 - HEAD指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令 git reset --hard commit_id
 - 穿梭前，用git log可以查看提交历史，以便确定要回退到哪个版本。
