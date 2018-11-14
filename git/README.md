@@ -117,6 +117,6 @@
 - 要重返未来，用git reflog查看命令历史，以便确定要回到未来的哪个版本。
 
 ### 删除文件
-- 工作区删除demo.js后，使用git rm demo.js 从版本库中删除demo.js,并且git commit
+- 工作区删除demo.js后，使用git rm demo.js 从版本库中删除demo.js,并且git commit,文件就从版本库中被删除了
   - git rm demo.js
   - git commit -m 'rm demo.js'
