@@ -35,7 +35,15 @@ someEle.onclick = callback;
 
   - Date 类型的对象会被设置为 String
   - 其它类型的值会被设置为 Number
-
+```js
+1+{} // "1[object Object]"
+1+[] // "1"
+/*
+1) 调用 obj.valueOf() 方法 //{}
+2) obj.toString() // "[object Object]"
+3) 1+"[object Object]"// "1[object Object]"
+*/
+```
 - 2.转换为数字
 - 3.转换为字符串
 
