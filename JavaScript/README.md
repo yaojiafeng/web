@@ -46,6 +46,7 @@ someEle.onclick = callback;
 */
 ```
 - 2.ToNumber() 将值转换为数字
+
 <table>
     <th>
         <td>参数</td>
