@@ -52,6 +52,10 @@ someEle.onclick = callback;
         <td>参数</td>
         <td>结果</td>
     </tr>
+     <tr>
+        <td>undefined</td>
+        <td>NaN</td>
+    </tr>
     <tr>
         <td>null</td>
         <td>0</td>
