@@ -53,8 +53,20 @@ someEle.onclick = callback;
         <td>结果</td>
     </tr>
     <tr>
-        <td>undefined</td>
-        <td>NaN</td>
+        <td>null</td>
+        <td>0</td>
+    </tr>
+    <tr>
+        <td>string</td>
+        <td>由字符串解析为数字。例如，"324"被转换为324</td>
+    </tr>
+    <tr>
+        <td>boolean</td>
+        <td>0/1</td>
+    </tr>
+    <tr>
+        <td>number</td>
+        <td>不需转换</td>
     </tr>
 </table>
 
