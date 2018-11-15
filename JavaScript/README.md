@@ -45,7 +45,19 @@ someEle.onclick = callback;
 3) 1+"[object Object]"// "1[object Object]"
 */
 ```
-- 2.转换为数字
+- 2.ToNumber() 将值转换为数字
+<table>
+    <th>
+        <td>参数</td>
+        <td>结果</td>
+    </th>
+    <tr>
+        <td>undefined</td>
+        <td>NaN</td>
+    </tr>
+</table>
+
+- 2.ToNumber() 将值转换为数字
 - 3.转换为字符串
 
 ### 1. 转化为boolean值后为fasle的：'',0,null,undefined,false和NaN
