@@ -48,10 +48,10 @@ someEle.onclick = callback;
 - 2.ToNumber() 将值转换为数字
 
 <table>
-    <th>
+    <tr>
         <td>参数</td>
         <td>结果</td>
-    </th>
+    </tr>
     <tr>
         <td>undefined</td>
         <td>NaN</td>
