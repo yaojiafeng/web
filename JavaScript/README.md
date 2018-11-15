@@ -1,4 +1,23 @@
-# javascript
+# js的常用的玩意
+- [防抖](#防抖)
+
+### 防抖
+- 函数执行过一次后，在等待某时间段内不能再次执行。
+- 在等待时间内触发此函数，则重新计算等待时间
+```js
+function debounce(fn,wait){
+    var timer = null;
+    return function(){
+        clearTimeout(timer);
+        timer = setTimeout(fn,wait);
+    }
+}
+function doSomeThing(){
+   console.log('do');
+}
+var callback = debounce(doSomeThing,5000);
+someEle.onclick = callback;
+```
 
 ### 1. 转化为boolean值后为fasle的：'',0,null,undefined,false和NaN
       
