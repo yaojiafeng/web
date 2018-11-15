@@ -10,7 +10,8 @@
 - [使用CDN](#使用CDN)
 
 - [添加Expires头](#添加Expires头)
-- [减少reflow/repaint](#减少reflow/repaint)
+
+- [reflow/repaint](#reflow/repaint)
 
 ### 减少http请求
 
@@ -62,7 +63,7 @@ CDN 的全称是Content Delivery Network，即内容分发网络。其目的是�
 ### 添加Expires头
 ...
 
-### 减少reflow/repaint
+### reflow/repaint
 - 不要一条一条地修改 DOM 的样式。与其这样，还不如预先定义好 css 的 class，然后修改 DOM 的 className。 
 - 不要把 DOM 结点的属性值放在一个循环里当成循环里的变量。 
 - 为动画的 HTML 元件使用 fixed 或 absoult 的 position，那么修改他们的 CSS 是不会 reflow 的。 
