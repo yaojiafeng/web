@@ -74,6 +74,7 @@ someEle.onclick = callback;
     </tr>
 </table>
 
+    如果输入的值是一个对象，则会首先会调用 ToPrimitive(obj, Number) 将该对象转换为原始值， 然后在调用 ToNumber() 将这个原始值转换为数字。
 - 3.通过ToString()将值转换为字符串
 <table>
     <tr>
@@ -102,6 +103,7 @@ someEle.onclick = callback;
     </tr>
 </table>
 
+        如果输入的值是一个对象，则会首先会调用 ToPrimitive(obj, String) 将该对象转换为原始值， 然后再调用 ToString() 将这个原始值转换为字符串。
 ### 1. 转化为boolean值后为fasle的：'',0,null,undefined,false和NaN
       
 ```js
