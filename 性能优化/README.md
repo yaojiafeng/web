@@ -60,6 +60,7 @@ CDN 的全称是Content Delivery Network，即内容分发网络。其目的是�
     
 
 ### 添加Expires头
+...
 
 ### 减少reflow/repaint
 - 不要一条一条地修改 DOM 的样式。与其这样，还不如预先定义好 css 的 class，然后修改 DOM 的 className。 
