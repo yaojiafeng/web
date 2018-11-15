@@ -18,6 +18,11 @@ function doSomeThing(){
 var callback = debounce(doSomeThing,5000);
 someEle.onclick = callback;
 ```
+防抖的使用场景
+- 每次 resize/scroll 触发统计事件
+- 文本输入验证（连续输入文字后发生AJAX请求进行验证，验证一次就好）
+- mousemove，mousedown
+- 加载更多(这个与前2个还是有点区别)
 
 ### 1. 转化为boolean值后为fasle的：'',0,null,undefined,false和NaN
       
