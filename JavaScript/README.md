@@ -1,6 +1,7 @@
 ## 目录
 - [防抖](#防抖)
 - [类型转换](#类型转换)
+- [自定义事件](#自定义事件)
 
 ### 防抖
 - 函数执行过一次后，在等待某时间段内不能再次执行。
@@ -37,13 +38,13 @@ someEle.onclick = callback;
   - Date 类型的对象会被设置为 String
   - 其它类型的值会被设置为 Number
 ```js
-1+{} // "1[object Object]"
-1+[] // "1"
-/*
-1) 调用 obj.valueOf() 方法 //{}
-2) obj.toString() // "[object Object]"
-3) 1+"[object Object]"// "1[object Object]"
-*/
+    1+{} // "1[object Object]"
+    1+[] // "1"
+    /*
+        1) 调用 obj.valueOf() 方法 //{}
+        2) obj.toString() // "[object Object]"
+        3) 1+"[object Object]"// "1[object Object]"
+    */
 ```
 - 2.通过ToNumber() 将值转换为数字
 
@@ -103,6 +104,43 @@ someEle.onclick = callback;
     </tr>
 </table>
 
+### 自定义事件
+```js
+function EventTarget(){
+    this.handlers={};
+}
+
+EventTarget.prototype = {
+    constructor:EventTarget,
+    addHandler:function(type,handler){
+        if(typeof this.handlers[type]=='undefined'){
+            this.handlers[type]=[];
+        }
+        this.handlers[type].push(handler);
+    },
+    fire:function(event){
+        if(!event.target){
+            event.target=this;
+        }
+        if(this.handlers[event.type] instanceof Array){
+            var handlers = this.handlers[event.type];
+            for(var i = 0 ,len = handlers.length;i<len;i++){
+                handlers[i](event);
+            }
+        }
+    },
+}
+
+function handleMessage(event){
+    console.log('message received:'+event.message);
+}
+
+var target =new EventTarget();
+
+target.addHandler('message',handleMessage)
+
+target.fire({type:'message',message:'hello world'})
+```
     如果输入的值是一个对象，则会首先会调用 ToPrimitive(obj, String) 将该对象转换为原始值， 然后再调用 ToString() 将这个原始值转换为字符串。
 ### 1. 转化为boolean值后为fasle的：'',0,null,undefined,false和NaN
       
