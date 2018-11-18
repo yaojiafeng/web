@@ -1,5 +1,6 @@
 ## 目录
 - [防抖](#防抖)
+- [节流](#节流)
 - [类型转换](#类型转换)
 - [自定义事件](#自定义事件)
 
@@ -25,6 +26,25 @@ someEle.onclick = callback;
 - 文本输入验证（连续输入文字后发生AJAX请求进行验证，验证一次就好）
 - mousemove，mousedown
 - 加载更多(这个与前2个还是有点区别)
+
+### 节流
+- 规定时间内只能执行一次函数
+- 当上一次函数执行完了才能重新计算执行下一次
+```js
+function throttle(fn,wait){
+    var canRun = true;
+    return function(){
+        if(!canRun){
+            return;
+        }
+        canRun = false;
+        setTimeout(()=>{
+            console.log('throttle');
+            canRun = true;
+            fn();},wait)
+    }
+}
+```
 
 ### 类型转换
 - 1.通过 ToPrimitive() 转换为原始值
