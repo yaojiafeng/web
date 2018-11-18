@@ -6,6 +6,7 @@
 
 ## 目录
 - [盒子模型](#盒子模型)
+- [box-sizing属性](#box-sizing属性)
 
 ### 盒子模型
 	
@@ -15,7 +16,7 @@
 
 ![IE盒子模型](/images/IE盒子模型.jpg)
 	
-### 2. box-sizing属性？
+### box-sizing属性
 
 	可设置值为：content-box|border-box|inherit;
 	用来控制元素的盒子模型的解析模式，默认为content-box,context-box：W3C的标准盒子模型，设置元素的 height/width 属性指的是content部分的高/宽;
