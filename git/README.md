@@ -64,7 +64,9 @@
     
  1. 添加远程仓库
 
-          git remote add [shortname] [url]
+- git remote add origin git@server-name:path/repo-name.git
+
+      比如：git remote add origin git@github.com:yaojiafeng/web.git
            
  1. 从远程仓库拉取数据
     
