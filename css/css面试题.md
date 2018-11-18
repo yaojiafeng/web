@@ -7,6 +7,7 @@
 ## 目录
 - [盒子模型](#盒子模型)
 - [box-sizing属性](#box-sizing属性)
+- [CSS选择器](#CSS选择器)
 
 ### 盒子模型
 	
@@ -23,7 +24,7 @@
 	border-box：IE传统盒子模型。设置元素的height/width属性指的是border + padding + content部分的高/宽;
 	inherit规定应从父元素继承 box-sizing 属性的值。
 	
-### 3. CSS选择器有哪些？哪些属性可以继承？
+### CSS选择器
 
 ***(1)元素选择符：***
 
