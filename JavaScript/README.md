@@ -45,6 +45,8 @@ function throttle(fn,wait){
     }
 }
 ```
+节流的使用场景
+- 监听页面的滚动事件
 
 ### 类型转换
 - 1.通过 ToPrimitive() 转换为原始值
