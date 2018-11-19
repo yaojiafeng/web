@@ -30,7 +30,7 @@
 - network thread: 处理网络请求，从网上获取数据；
 - storage thread: 控制文件等的访问；
 
-![主进程](./image/主进程.jpg)
+![主进程](./image/主进程.png)
 
 
  
