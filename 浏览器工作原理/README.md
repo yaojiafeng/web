@@ -22,13 +22,15 @@
   
 ### 导航
 
-***多进程***
+***多线程***
 
 浏览器 Tab 外的工作主要由 Browser Process 掌控，Browser Process 又对这些工作进一步划分，使用不同线程进行处理
 
 - UI thread ： 控制浏览器上的按钮及输入框；
 - network thread: 处理网络请求，从网上获取数据；
 - storage thread: 控制文件等的访问；
+
+![主进程](./image/主进程.jpg)
 
 
  
