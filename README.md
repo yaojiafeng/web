@@ -3,7 +3,6 @@
 
 ## 目录
 - [浏览器工原理](https://github.com/yaojiafeng/web/blob/master/%E6%B5%8F%E8%A7%88%E5%99%A8%E5%B7%A5%E4%BD%9C%E5%8E%9F%E7%90%86.md)
-- [http](https://github.com/yaojiafeng/web/tree/master/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/http)
 - [javascript](https://github.com/yaojiafeng/web/tree/master/JavaScript)
 - [css](https://github.com/yaojiafeng/web/tree/master/css) 
 - [html](https://github.com/yaojiafeng/web/tree/master/html)
