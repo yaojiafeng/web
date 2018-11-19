@@ -7,4 +7,13 @@
 
 ![浏览器多进程架构](./image/浏览器多进程架构.jpg)
 
+- Browser Process
+  - 负责包括地址栏，书签栏，前进后退按钮等部分的工作
+  - 负责处理浏览器的一些不可见的底层操作，比如网络请求和文件访问
+- Renderer Process
+  - 负责一个 tab 内关于网页呈现的所有事情
+- Plugin Process
+  - 负责控制一个网页用到的所有插件，如 flash
+- GPU Process
+  - 负责处理 GPU 相关的任务
 
