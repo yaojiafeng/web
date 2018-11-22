@@ -3,6 +3,7 @@
 - [节流](#节流)
 - [类型转换](#类型转换)
 - [自定义事件](#自定义事件)
+- [promise](#promise)
 
 ### 防抖
 - 函数执行过一次后，在等待某时间段内不能再次执行。
@@ -164,6 +165,54 @@ target.addHandler('message',handleMessage)
 target.fire({type:'message',message:'hello world'})
 ```
     如果输入的值是一个对象，则会首先会调用 ToPrimitive(obj, String) 将该对象转换为原始值， 然后再调用 ToString() 将这个原始值转换为字符串。
+    
+### promise实现
+```js
+function MyPromise(fn) {
+  this.value;
+  this.resolveFunc = function() {};
+  this.rejectFunc = function() {};
+  fn(this.resolve.bind(this), this.reject.bind(this));
+}
+
+MyPromise.prototype.resolve = function(val) {
+  var self = this;
+  self.value=val;
+  setTimeout(function() {
+    self.resolveFunc(self.value);
+  }, 0);
+}
+
+MyPromise.prototype.reject = function(val) {
+  var self=this;
+  self.value=val;
+  setTimeout(function() {
+    self.rejectFunc(self.value);
+  }, 0);
+}
+
+MyPromise.prototype.then = function(resolveFunc, rejectFunc) {
+  this.resolveFunc = resolveFunc;
+  this.rejectFunc = rejectFunc;
+}
+
+var fn=function(resolve, reject){
+  console.log('begin to execute!');
+  var number=Math.random();
+  if(number<=0.5){
+    resolve('less than 0.5');
+  }else{
+    reject('greater than 0.5');
+  }
+}
+
+var p = new MyPromise(fn);
+p.then(function(data) {
+  console.log('resolve: ', data);
+}, function(data) {
+  console.log('reject: ', data);
+});
+```
 ### 1. 转化为boolean值后为fasle的：'',0,null,undefined,false和NaN
       
 ```js
