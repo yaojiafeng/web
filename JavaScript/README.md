@@ -235,6 +235,65 @@ obj.getNum();//1　　打印的是obj.num，值为1
 obj.getNumLater()//0　　打印的是window.num，值为0
 ```
 
+三种解决方法
+
+- 将当前对象的this存为一个变量，定时器内的函数利用闭包来访问这个变量，如下：
+```js
+var num = 0;
+function Obj (){
+    var that = this;    //将this存为一个变量，此时的this指向obj
+    this.num = 1,
+    this.getNum = function(){
+        console.log(this.num);
+    },
+    this.getNumLater = function(){
+        setTimeout(function(){
+            console.log(that.num);    //利用闭包访问that，that是一个指向obj的指针
+        }, 1000)
+    }
+}
+var obj = new Obj; 
+obj.getNum();//1　　打印的是obj.num，值为1
+obj.getNumLater()//1　　打印的是obj.num，值为1
+```
+- 利用bind()方法
+```js
+var num = 0;
+function Obj (){
+    this.num = 1,
+    this.getNum = function(){
+        console.log(this.num);
+    },
+    this.getNumLater = function(){
+        setTimeout(function(){
+            console.log(this.num);
+        }.bind(this), 1000)    //利用bind()将this绑定到这个函数上
+    }
+}
+var obj = new Obj(); 
+obj.getNum();//1　　打印的为obj.num，值为1
+obj.getNumLater()//1　　打印的为obj.num，值为1
+```
+- 箭头函数
+
+```js
+var num = 0;
+function Obj (){
+    this.num = 1,
+    this.getNum = function(){
+        console.log(this.num);
+    },
+    this.getNumLater = function(){
+        setTimeout(() => {
+            console.log(this.num);
+        }, 1000)    //箭头函数中的this总是指向外层调用者，也就是Obj
+    }
+}
+var obj = new Obj(); 
+obj.getNum();//1　　打印的是obj.num，值为1
+obj.getNumLater()//1　　打印的是obj.num，值为1
+```
+
 
 ### 1. 转化为boolean值后为fasle的：'',0,null,undefined,false和NaN
       
