@@ -4,6 +4,7 @@
 - [类型转换](#类型转换)
 - [自定义事件](#自定义事件)
 - [promise实现](#promise实现)
+- [关于setInterval和setTImeout中的this指向问题](#关于setInterval和setTImeout中的this指向问题)
 
 ### 防抖
 - 函数执行过一次后，在等待某时间段内不能再次执行。
@@ -213,6 +214,9 @@ p.then(function(data) {
   console.log('reject: ', data);
 });
 ```
+### 关于setInterval和setTImeout中的this指向问题
+
+
 ### 1. 转化为boolean值后为fasle的：'',0,null,undefined,false和NaN
       
 ```js
