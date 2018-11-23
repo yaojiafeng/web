@@ -216,6 +216,25 @@ p.then(function(data) {
 ```
 ### 关于setInterval和setTImeout中的this指向问题
 
+在setInterval和setTimeout中传入函数时，函数中的this会指向window对象，如下例：
+```js
+var num = 0;
+function Obj (){
+    this.num = 1,
+    this.getNum = function(){
+        console.log(this.num);
+    },
+    this.getNumLater = function(){
+        setTimeout(function(){
+            console.log(this.num);
+        }, 1000)
+    }
+}
+var obj = new Obj(); 
+obj.getNum();//1　　打印的是obj.num，值为1
+obj.getNumLater()//0　　打印的是window.num，值为0
+```
+
 
 ### 1. 转化为boolean值后为fasle的：'',0,null,undefined,false和NaN
       
