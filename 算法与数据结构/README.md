@@ -21,6 +21,7 @@
     - [简单选择排序](#简单选择排序)
     - [插入排序](#插入排序)
     - [归并排序](#归并排序)
+  - [求集合的所有子集](#求集合的所有子集)
 
 # 数据结构
 
@@ -653,3 +654,20 @@ V = 0 | 使用了4个硬币(1 – 1 = 0)
 Theta Θ 表示
 
 Theta Θ 表示用于描述某个算法的确界，包括最小上界和最大下界。
+
+### 求集合的所有子集
+```js
+ function getSubSets(set) {
+            var subset = [];
+            function count(arr, temp, start) {
+                subset.push(temp.slice(0));   //slice()从0开始返回temp中的所有元素
+                for (var i = start; i < arr.length; i++) {
+                    temp.push(set[i]);
+                    count(arr, temp, i + 1); //递归，从1、2、3。。。开始
+                    temp.pop();            //返回temp中的最后一个元素
+                }
+            }
+            count(set, [], 0);
+            return subset;
+        };
+```
