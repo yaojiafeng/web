@@ -18,5 +18,5 @@ word-break:break-all;
  vertical-align: top;
 ```
 
-### CSS 中 inline 元素可以设置 padding 和 margin 吗?
+### CSS中inline元素可以设置padding和margin吗?
 padding四个方向都可以，margin 只有水平方向可以设置，不能设置宽高
