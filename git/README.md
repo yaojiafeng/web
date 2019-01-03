@@ -117,6 +117,7 @@
 - HEAD指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令 git reset --hard commit_id
 - 穿梭前，用git log可以查看提交历史，以便确定要回退到哪个版本。
 - 要重返未来，用git reflog查看命令历史，以便确定要回到未来的哪个版本。
+- 当提交到远程分支后，先git reset --hard Head^,后git push -f 强推到远程可实现远程回滚
 
 ### 删除文件
 - 工作区删除demo.js后，使用git rm demo.js 从版本库中删除demo.js,并且git commit,文件就从版本库中被删除了
