@@ -122,10 +122,11 @@
     
  - git revert (Revert some existing commits)
  
-        用法：git revert [--[no-]edit] [-n] [-m parent-number] [-s] [-S[<keyid>]] <commit>…​
-        git revert --continue
-        git revert --quit
-        git revert --abort
+       用法：git revert [--[no-]edit] [-n] [-m parent-number] [-s] [-S[<keyid>]] <commit>…​
+             git revert --continue
+             git revert --quit
+             git revert --abort
+       比如：git revert commit_id (要删除的)
    
         
     
