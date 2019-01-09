@@ -112,8 +112,7 @@
  - git status 查看修改后工作区的状态
  
  ### 版本回退
- - git reset
-    -  Reset current HEAD to the specified state
+ - git reset (Reset current HEAD to the specified state)
  
             用法：git reset  [--soft | --mixed [-N] | --hard | --merge | --keep] [-q] [<commit>]
             比如：git reset --hard commit_id
@@ -121,7 +120,13 @@
     - --hard是指完全重设，会把回退到某版本之后的修改全部删除
     - --soft这是个回退解体，让版本库回退到某个版本，这个版本之后的修改全部存在缓存区，这个时候在commit的话，又会把会退的部分重新加载到最新版本中
     
- - git revert
+ - git revert (Revert some existing commits)
+ 
+        用法：git revert [--[no-]edit] [-n] [-m parent-number] [-s] [-S[<keyid>]] <commit>…​
+        git revert --continue
+        git revert --quit
+        git revert --abort
+   
         
     
 
