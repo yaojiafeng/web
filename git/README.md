@@ -112,12 +112,13 @@
  - git status 查看修改后工作区的状态
  
  ### 版本回退
-    git reset --hard commit_id
-在Git中，用HEAD表示当前版本，也就是最新的提交commit_id，上一个版本就是HEAD^，上上一个版本就是HEAD^^，当然往上100个版本写100个^比较容易数不过来，所以写成HEAD~100。
-- HEAD指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令 git reset --hard commit_id
-- 穿梭前，用git log可以查看提交历史，以便确定要回退到哪个版本。
-- 要重返未来，用git reflog查看命令历史，以便确定要回到未来的哪个版本。
-- 当提交到远程分支后，先git reset --hard Head^,后git push -f 强推到远程可实现远程回滚
+     git reset  [--soft | --mixed [-N] | --hard | --merge | --keep] [-q] [<commit>]
+    
+ 如：git reset --hard commit_id ,重设为commit_id的版本
+    
+ - --hard是指完全重设，会把回退到某版本之后的修改全部删除
+ - --soft这是个回退解体，让版本库回退到某个版本，这个版本之后的修改全部存在缓存区，这个时候在commit的话，又会把会退的部分重新加载到最新版本中
+
 
 ### 删除文件
 - 工作区删除demo.js后，使用git rm demo.js 从版本库中删除demo.js,并且git commit,文件就从版本库中被删除了
