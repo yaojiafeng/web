@@ -126,7 +126,7 @@
              git revert --continue
              git revert --quit
              git revert --abort
-       比如：git revert commit_id (要删除的)
+       比如：git revert commit_id (要删除的commit_id)
    
         
     
