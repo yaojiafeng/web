@@ -6,11 +6,13 @@
 
 ### 基本类型
 
-- Number
-- String
-- Boolean
+- number
+- string
+- boolean
 - Array
 ```ts
+let list: number[] = [1, 2, 3];
+  or
 let list: Array<number> = [1, 2, 3];
 ```
 - Tuple
@@ -32,6 +34,7 @@ let c: Color = Color.Green;//1
 - void
 - never
 - 类型断言
+
 ```ts
 let someValue: any = "this is a string";
 let strLength: number = (<string>someValue).length;
