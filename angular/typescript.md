@@ -32,6 +32,9 @@ let c: Color = Color.Green;//1
 ```
 - any
 - void
+- null
+- undefined
+- object
 - never
 - 类型断言
 
