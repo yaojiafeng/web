@@ -1,5 +1,7 @@
 # 目录
 - [对mvvm的理解](#对mvvm的理解)
+- [vue如何实现响应式](#vue如何实现响应式)
+- [vue如何解析模板](#vue如何解析模板)
 
 ### 对mvvm的理解
 - vm为viewModel,连接view和model
@@ -8,7 +10,7 @@
   - 模版引擎
   - 渲染 （再渲染）
 
-### 3.vue如何实现响应式？
+### vue如何实现响应式
 - 实现响应式监听
 - data代理到vm
   - Object.defineProperty()
@@ -32,7 +34,7 @@ for(key in data){
             
 ```
 
-### 4.vue如何解析模板？
+### vue如何解析模板
 
 ![compile](./images/compile.jpg)
 
