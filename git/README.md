@@ -36,23 +36,20 @@
 > 当只git clone 到主分支到本地时，又想git clone dev分支到本地，可以 git checkout -b dev origin/dev 
 
 ### 分支管理
-    Git鼓励大量使用分支：
 
-    查看所有分支：git branch （当前分支有个*在前面）
-    
+    查看分支：git branch
+
     查看远程分支：git branch -a （红色标记）
 
     创建分支：git branch <name>
 
-    切换分支：git checkout <name>
+    切换分支：git checkout <name>或者git switch <name>
 
-    创建+切换分支：git checkout -b <name>
+    创建+切换分支：git checkout -b <name>或者git switch -c <name>
 
     合并某分支到当前分支：git merge <name>
 
     删除分支：git branch -d <name>
-    
-    git rebase
     
  ### 远程仓库的使用
  
