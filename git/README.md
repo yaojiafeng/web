@@ -33,7 +33,7 @@
 - clone 某个分支：
   - git clone -b  dev  https://github.com/yaojiafeng/web.git
 
-> 当只git clone 到主分支到本地时，又想git clone dev分支到本地，可以 git checkout -b dev origin/dev 
+> 当只git clone 到主分支到本地时，又想git clone dev分支到本地，可以 git checkout -b dev origin/dev 不行就先 git checkout -b dev 创建并切换到本地分支dev，再git pull origin dev
 
 ### 分支管理
 
