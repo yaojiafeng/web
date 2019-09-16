@@ -33,17 +33,21 @@ someEle.onclick = callback;
 - 规定时间内只能执行一次函数
 - 当上一次函数执行完了才能重新计算执行下一次
 ```js
-function throttle(fn,wait){
-    var canRun = true;
-    return function(){
-        if(!canRun){
-            return;
+/**
+ * 节流
+ * @param fn
+ * @param wait
+ * @returns {function}
+ */
+function throttle(fn, wait) {
+    var timer;
+    return function (params) {
+        if (!timer) {
+            timer = setTimeout(function () {
+                timer = null;
+            }, wait);
+            fn.call(this, params);
         }
-        canRun = false;
-        setTimeout(()=>{
-            console.log('throttle');
-            canRun = true;
-            fn();},wait)
     }
 }
 ```
