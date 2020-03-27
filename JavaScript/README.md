@@ -173,50 +173,29 @@ target.fire({type:'message',message:'hello world'})
     
 ### promise实现
 ```js
-function MyPromise(fn) {
-  this.value;
-  this.resolveFunc = function() {};
-  this.rejectFunc = function() {};
-  fn(this.resolve.bind(this), this.reject.bind(this));
+function promise () {
+  this.msg = '' // 存放value和error
+  this.status = 'pending'
+  var that = this
+  var process = arguments[0]
+
+  process (function () {
+    that.status = 'fulfilled'
+    that.msg = arguments[0]
+  }, function () {
+    that.status = 'rejected'
+    that.msg = arguments[0]
+  })
+  return this
 }
 
-MyPromise.prototype.resolve = function(val) {
-  var self = this;
-  self.value=val;
-  setTimeout(function() {
-    self.resolveFunc(self.value);
-  }, 0);
-}
-
-MyPromise.prototype.reject = function(val) {
-  var self=this;
-  self.value=val;
-  setTimeout(function() {
-    self.rejectFunc(self.value);
-  }, 0);
-}
-
-MyPromise.prototype.then = function(resolveFunc, rejectFunc) {
-  this.resolveFunc = resolveFunc;
-  this.rejectFunc = rejectFunc;
-}
-
-var fn=function(resolve, reject){
-  console.log('begin to execute!');
-  var number=Math.random();
-  if(number<=0.5){
-    resolve('less than 0.5');
-  }else{
-    reject('greater than 0.5');
+promise.prototype.then = function () {
+  if (this.status === 'fulfilled') {
+    arguments[0](this.msg)
+  } else if (this.status === 'rejected' && arguments[1]) {
+    arguments[1](this.msg)
   }
 }
-
-var p = new MyPromise(fn);
-p.then(function(data) {
-  console.log('resolve: ', data);
-}, function(data) {
-  console.log('reject: ', data);
-});
 ```
 ### 关于setInterval和setTImeout中的this指向问题
 
