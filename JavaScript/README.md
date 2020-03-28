@@ -5,7 +5,7 @@
 - [自定义事件](#自定义事件)
 - [promise实现](#promise实现)
 - [关于setInterval和setTImeout中的this指向问题](#关于setInterval和setTImeout中的this指向问题)
-- [bind实现](# bind实现)
+- [bind实现](#bind实现)
 
 ### 防抖
 - 函数执行过一次后，在等待某时间段内不能再次执行。
@@ -277,17 +277,14 @@ obj.getNumLater()//1　　打印的是obj.num，值为1
 ```
 ### bind实现
 ```js
-Function.prototype.bind = function () {
+Function.prototype.bind = function (...v) {
    // 保存原函数
-  var self = this
-  // 取出第一个参数作为上下文, 相当于[].shift.call(arguments)
-  var context = Array.prototype.shift.call(arguments)
-  // 取剩余的参数作为arg; 因为arguments是伪数组, 所以要转化为数组才能使用数组方法
-  var arg = Array.prototype.slice.call(arguments)
+  let self = this;
+  let [context,arg] = v;
   // 返回一个新函数
   return function () {
     // 绑定上下文并传参
-    self.apply(context, Array.prototype.concat.call(arg, Array.prototype.slice.call(arguments)))
+    self.apply(context, arg)
   }
 }
 ```
