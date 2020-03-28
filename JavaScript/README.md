@@ -6,7 +6,7 @@
 - [promise实现](#promise实现)
 - [关于setInterval和setTImeout中的this指向问题](#关于setInterval和setTImeout中的this指向问题)
 - [bind实现](#bind实现)
-- [map实现] (#map实现)
+- [map实现](#map实现)
 
 ### 防抖
 - 函数执行过一次后，在等待某时间段内不能再次执行。
