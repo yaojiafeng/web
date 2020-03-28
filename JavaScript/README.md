@@ -5,7 +5,7 @@
 - [自定义事件](#自定义事件)
 - [promise实现](#promise实现)
 - [关于setInterval和setTImeout中的this指向问题](#关于setInterval和setTImeout中的this指向问题)
-- [bind实现]（#bind实现）
+- [bind实现](# bind实现)
 
 ### 防抖
 - 函数执行过一次后，在等待某时间段内不能再次执行。
@@ -174,27 +174,25 @@ target.fire({type:'message',message:'hello world'})
     
 ### promise实现
 ```js
-function promise () {
-  this.msg = '' // 存放value和error
+function MyPromise(fn) {
+  this.msg = ''
   this.status = 'pending'
   var that = this
-  var process = arguments[0]
-
-  process (function () {
-    that.status = 'fulfilled'
-    that.msg = arguments[0]
-  }, function () {
-    that.status = 'rejected'
-    that.msg = arguments[0]
+  fn(function (msg) {
+    that.status = 'fulfilled' //resolve
+    that.msg = msg
+  }, function (msg) {
+    that.status = 'rejected' // rejected
+    that.msg = msg
   })
   return this
 }
 
-promise.prototype.then = function () {
+MyPromise.prototype.then = function (resolve, rejected) {
   if (this.status === 'fulfilled') {
-    arguments[0](this.msg)
-  } else if (this.status === 'rejected' && arguments[1]) {
-    arguments[1](this.msg)
+    resolve(this.msg)
+  } else if (this.status === 'rejected' && rejected) {
+    rejected(this.msg)
   }
 }
 ```
