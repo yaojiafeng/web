@@ -136,44 +136,6 @@ function throttle(fn, wait) {
 
 ### 自定义事件
 ```js
-function EventTarget(){
-    this.handlers={};
-}
-
-EventTarget.prototype = {
-    constructor:EventTarget,
-    addHandler:function(type,handler){
-        if(typeof this.handlers[type]=='undefined'){
-            this.handlers[type]=[];
-        }
-        this.handlers[type].push(handler);
-    },
-    fire:function(event){
-        if(!event.target){
-            event.target=this;
-        }
-        if(this.handlers[event.type] instanceof Array){
-            var handlers = this.handlers[event.type];
-            for(var i = 0 ,len = handlers.length;i<len;i++){
-                handlers[i](event);
-            }
-        }
-    },
-}
-
-function handleMessage(event){
-    console.log('message received:'+event.message);
-}
-
-var target =new EventTarget();
-
-target.addHandler('message',handleMessage)
-
-target.fire({type:'message',message:'hello world'})
-
-
-
-
 /**
 * EVENTBUS通信
 * @yaojiafeng
