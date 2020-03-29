@@ -170,6 +170,90 @@ var target =new EventTarget();
 target.addHandler('message',handleMessage)
 
 target.fire({type:'message',message:'hello world'})
+
+
+
+
+/**
+* EVENTBUS通信
+* @yaojiafeng
+*/
+/**
+* 校验msgName是否合法
+*/
+function validateMsgScope(msgName) {
+    var returnval = false
+    if (/^(page|comp):\S+:\S+[^:]$/.test(msgName) === true) {
+        returnval = true
+    }
+    return returnval
+}
+
+class EBClass {
+    constructor() {
+        this.eventQueues = {}
+    }
+    //on 监听消息队列
+    on(msgName = null, func) {
+        // 校验
+        if (typeof func !== 'function') {
+            // console.log('warning error in on')
+            return
+        }
+        if (validateMsgScope(msgName) === false) {
+            return
+        }
+        // 已经存在监听回调
+        if (this.eventQueues.hasOwnProperty(msgName)) {
+            this.eventQueues[msgName].push(func)
+            return
+        }
+        this.eventQueues[msgName] = []
+        this.eventQueues[msgName].push(func)
+    }
+    //one触发一次覆盖式
+    one(msgName = null, func) {
+        // 校验
+        if (typeof func !== 'function') {
+            // console.log('warning error in on')
+            return
+        }
+        if (validateMsgScope(msgName) === false) {
+            return
+        }
+        this.eventQueues[msgName] = []
+        this.eventQueues[msgName].push(func)
+    }
+    // 移除消息
+    off(msgName = null, func) {
+        if (!this.eventQueues.hasOwnProperty(msgName)) {
+            return
+        }
+        if (!func) {
+            delete this.eventQueues[msgName]
+            return
+        }
+        this.eventQueues[msgName] = this.eventQueues[msgName].filter((id) => {
+            return id !== func
+        })
+    }
+    // emit分发
+    emit(msgName = null, ...msgData) {
+        if (!msgName || 
+            !this.eventQueues.hasOwnProperty(msgName)) {
+            return
+        }
+        this.eventQueues[msgName].forEach((fn) => {
+            fn(...msgData)
+        })
+    }
+}
+
+// const EVENTBUS = window.___EVENTBUS ? window.___EVENTBUS : new EBClass()
+// //private
+// window.___EVENTBUS = EVENTBUS
+const EVENTBUS = new EBClass()
+export default EVENTBUS
 ```
     如果输入的值是一个对象，则会首先会调用 ToPrimitive(obj, String) 将该对象转换为原始值， 然后再调用 ToString() 将这个原始值转换为字符串。
     
