@@ -43,12 +43,12 @@ someEle.onclick = callback;
  */
 function throttle(fn, wait) {
     var timer;
-    return function (params) {
+    return function (...v) {
         if (!timer) {
             timer = setTimeout(function () {
                 timer = null;
             }, wait);
-            fn.call(this, params);
+            fn.apply(this, v);
         }
     }
 }
