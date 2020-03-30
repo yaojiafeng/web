@@ -384,6 +384,18 @@ p.push(a());
 p[1]().then(console.log);
 p[3]();
 
+//输出
+async 3
+promise 3
+async 4
+async -1
+promise 9
+async -2
+timeout 0
+
+// await awaitFn()
+// console.log('awaitFn后面的代码')
+// await执行完，后面的代码相当于 awaitFn.then(()=> console.log('awaitFn后面的代码'))
 ```
 
 
