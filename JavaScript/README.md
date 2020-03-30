@@ -7,6 +7,7 @@
 - [关于setInterval和setTImeout中的this指向问题](#关于setInterval和setTImeout中的this指向问题)
 - [bind实现](#bind实现)
 - [map实现](#map实现)
+- [异步执行顺序](#异步执行顺序)
 
 ### 防抖
 - 函数执行过一次后，在等待某时间段内不能再次执行。
@@ -347,6 +348,42 @@ Array.prototype.myMap = function (fn, context) {
 }
 var arr0 = [1, 2, 3]
 console.log(arr0.myMap(v => v + 1)
+```
+### 异步执行顺序
+```js
+// 写出下面代码的输出结果
+let p = [];
+(function() {
+  setTimeout(() => {
+    console.log('timeout 0');
+  }, 0);
+  let i = 0;
+  for (; i < 3; i++) {
+    p[i] = function() {
+      return new Promise(function(resolve) {
+        console.log(`promise ${i}`);
+        resolve(`promise ${i * i}`);
+      })
+    }
+  }
+})();
+
+async function b() {
+  console.log('async -1');
+}
+function a() {
+  console.log(`async ${p.length}`);
+  return async function() {
+    console.log(`async ${p.length}`);
+    await b();
+    console.log('async -2')
+  };
+}
+p.push(a());
+
+p[1]().then(console.log);
+p[3]();
+
 ```
 
 
