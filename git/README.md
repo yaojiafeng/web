@@ -10,7 +10,7 @@
 - [status](#status)
 - [版本回退](#版本回退)
 - [删除文件](#删除文件)
-
+- [重命名](#重命名)
 ### 创建版库
 
     初始化一个Git仓库，使用git init命令。
@@ -125,12 +125,18 @@
              git revert --abort
        比如：git revert commit_id (要删除的commit_id)
    
-        
-    
-
-  
 
 ### 删除文件
 - 工作区删除demo.js后，使用git rm demo.js 从版本库中删除demo.js,并且git commit,文件就从版本库中被删除了
   - git rm demo.js
   - git commit -m 'rm demo.js'
+
+### 重命名
+- 重命名本地分支
+   git branch -m oldbranch newbranch
+- 删除远程分支
+   git push origin :oldbranch
+- 重推到远程
+   git push origin newbranch
+   
+
