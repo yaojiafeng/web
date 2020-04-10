@@ -573,19 +573,44 @@ arr.toString()
 ```
 ### 11深拷贝
 ```js
-function copy(arr){
-    var obj=arr.constructor==Array?[]:{};
-　　//第二种方法 var obj=arr instanceof Array?[]:{}
-    for(var item in arr){
-        if(typeof arr[item]==="object"){
-            obj[item]=copy(arr[item]);
-        }else{
-            obj[item]=arr[item];
-        }
+function deepCopy(obj) {
+  let result = Array.isArray(obj) ? [] : {}
+  for (let key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      if (typeof obj[key] === "object" && obj[key] !== null) {
+        result[key] = deepCopy(obj[key]);
+      } else {
+        result[key] = obj[key]
+      }
     }
-    return obj;
+  }
+  return result
 }
 ```
+
+function isHuiwen(num) {
+  num = num + ''
+  let arr = num.split('');
+  let len = arr.length;
+  for (let i = 0; i < len; i++) {
+    if (len % 2 === 0) {
+      if (i !== len) {
+        if (arr[i] !== arr[len - 1]) {
+          return false
+        }
+      }
+    } else {
+      if (i !== len - 1) {
+        if (arr[i] !== arr[len - 1]) {
+          return false
+        }
+      }
+    }
+    len--
+  }
+  return true
+}
+
 
 
 
