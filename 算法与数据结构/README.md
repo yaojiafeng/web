@@ -111,6 +111,7 @@
   
   - 删除：O(1)
 ```js
+// 两个队列实现栈
 function Queue(){
     this.arr=[];
     this.push = function (e){
@@ -154,6 +155,27 @@ function Stack(){
         return this.q1.size()!=0?this.q1.size():this.q2.size();
     }
 }
+
+// 两个栈实现队列
+
+      function Stack() {
+        this.arr = []
+        this.push = function(e) {
+          this.arr.push(e)
+        }
+        this.pop = function() {
+          return this.arr.pop()
+        }
+        this.size = function() {
+          return this.arr.length
+        }
+      }
+      
+      
+
+
+
+
 ```
   
 ### 树
