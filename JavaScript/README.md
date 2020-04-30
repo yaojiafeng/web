@@ -325,14 +325,13 @@ obj.getNumLater()//1　　打印的是obj.num，值为1
 ```
 ### bind实现
 ```js
-Function.prototype.bind = function (...v) {
+Function.prototype.bind = function (context,...v) {
    // 保存原函数
   let self = this;
-  let [context,arg] = v;
   // 返回一个新函数
   return function () {
     // 绑定上下文并传参
-    self.apply(context, arg)
+    self.apply(context, v)
   }
 }
 ```
