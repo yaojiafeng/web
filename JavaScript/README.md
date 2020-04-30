@@ -134,6 +134,8 @@ function throttle(fn, wait) {
         <td>"123"</td>
     </tr>
 </table>
+        
+        如果输入的值是一个对象，则会首先会调用 ToPrimitive(obj, String) 将该对象转换为原始值， 然后再调用 ToString() 将这个原始值转换为字符串。
 
 ### 自定义事件
 ```js
@@ -218,7 +220,6 @@ class EBClass {
 const EVENTBUS = new EBClass()
 export default EVENTBUS
 ```
-    如果输入的值是一个对象，则会首先会调用 ToPrimitive(obj, String) 将该对象转换为原始值， 然后再调用 ToString() 将这个原始值转换为字符串。
     
 ### promise实现
 ```js
