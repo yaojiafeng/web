@@ -8,7 +8,7 @@
 - [bind实现](#bind实现)
 - [map实现](#map实现)
 - [异步执行顺序](#异步执行顺序)
-
+- [正则实现千分位](#正则实现千分位)
 ### 防抖
 - 函数执行过一次后，在等待某时间段内不能再次执行。
 - 在等待时间内触发此函数，则重新计算等待时间
@@ -397,7 +397,14 @@ timeout 0
 // console.log('awaitFn后面的代码')
 // await执行完，后面的代码相当于 awaitFn.then(()=> console.log('awaitFn后面的代码'))
 ```
-
+### 正则实现千分位
+```js
+      function format(num) {
+        var reg = /\d{1,3}(?=(\d{3})+$)/g
+        return (num + '').replace(reg, '$&,')
+      }
+      // $& 与 regexp 相匹配的子串
+```
 
 ### 1. 转化为boolean值后为fasle的：'',0,null,undefined,false和NaN
       
