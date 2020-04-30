@@ -173,11 +173,30 @@ function Stack(){
           return this.arr.length
         }
       }
-      
-      
-
-
-
+      function Queue() {
+        this.stack1 = new Stack()
+        this.stack2 = new Stack()
+        this.push = function(e) {
+          this.stack1.push(e)
+        }
+        this.pop = function() {
+          if (this.stack1.size() === 0 && this.stack2.size() === 0) {
+            return
+          }
+          if (this.stack2.size() !== 0) {
+            return this.stack2.pop()
+          } else {
+            let size = this.stack1.size()
+            for (let i = 0; i < size; i++) {
+              this.stack2.push(this.stack1.pop())
+            }
+            return this.stack2.pop()
+          }
+        }
+        this.size = function() {
+          return this.stack1.size() + this.stack2.size()
+        }
+      }
 
 ```
   
