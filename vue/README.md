@@ -7,6 +7,7 @@
 - [组件设计原则](#组件设计原则)
 - [diff算法](#diff算法)
 
+
 ### 对mvvm的理解
 - vm为viewModel,连接view和model
 - mvvm的三要素
