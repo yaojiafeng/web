@@ -1,8 +1,7 @@
-
 # 问题列表
+- [为什么选择webpack](#为什么选择webpack)
 - [1. webpack与grunt、gulp的不同？](#1.webpack与grunt、gulp的不同？)
 - [2.什么是bundle,什么是chunk，什么是module?](#2.什么是bundle,什么是chunk，什么是module?)
-- [3.与webpack类似的工具还有哪些？谈谈你为什么最终选择（或放弃）使用webpack](#3.与webpack类似的工具还有哪些？谈谈你为什么最终选择（或放弃)
 - [4.有哪些常见的Loader?他们是解决什么问题的？](#4.有哪些常见的Loader?他们是解决什么问题的？)
 - [5.有哪些常见的Plugin？他们是解决什么问题的？](#5.有哪些常见的Plugin？他们是解决什么问题的？)
 - [6.Loader和Plugin的不同？](#6.Loader和Plugin的不同)
@@ -17,3 +16,6 @@
 - [15.什么是长缓存？在webpack中如何做到长缓存优化？](#15.什么是长缓存？在webpack中如何做到长缓存优化？)
 - [16.什么是Tree-shaking?CSS可以Tree-shaking吗](#16.什么是Tree-shaking?CSS可以Tree-shaking吗)
 - [17.webpack-dev-server和http服务器如nginx有什么区别?](#17.webpack-dev-server和http服务器如nginx有什么区别?)
+
+
+为什么选择webpack
