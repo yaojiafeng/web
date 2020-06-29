@@ -412,6 +412,13 @@ timeout 0
 
 
 
+
+
+
+
+
+
+
 ### 1. 转化为boolean值后为fasle的：'',0,null,undefined,false和NaN
       
 ```js
