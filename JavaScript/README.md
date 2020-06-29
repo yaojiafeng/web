@@ -407,6 +407,18 @@ timeout 0
       // $& 与 regexp 相匹配的子串
 ```
 ### EventLoop
+    1.浏览器
+      1）Task(macroTask): setTimeout, setInterval, setImmediate,I/O, UI rendering
+      2）microTask: Promise, process.nextTick, Object.observe, MutationObserver, MutaionObserver
+    
+    执行顺序：
+      （1）event-loop start
+      （2）microTasks 队列开始清空（执行）
+      （3）检查 Tasks 是否清空，有则跳到 （4），无则跳到 （6）
+      （4）从 Tasks 队列抽取一个任务，执行
+      （5）检查 microTasks 是否清空，若有则跳到 （2），无则跳到 （3）
+      （6）结束 event-loop
+
 
 
 
