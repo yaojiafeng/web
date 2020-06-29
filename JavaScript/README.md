@@ -9,6 +9,7 @@
 - [map实现](#map实现)
 - [异步执行顺序](#异步执行顺序)
 - [正则实现千分位](#正则实现千分位)
+- [Event loop 浏览器环境vs node.js](#Event loop 浏览器环境vs node.js)
 ### 防抖
 - 函数执行过一次后，在等待某时间段内不能再次执行。
 - 在等待时间内触发此函数，则重新计算等待时间
@@ -405,6 +406,13 @@ timeout 0
       }
       // $& 与 regexp 相匹配的子串
 ```
+### Event loop 浏览器环境vs node.js
+
+
+
+
+
+
 
 ### 1. 转化为boolean值后为fasle的：'',0,null,undefined,false和NaN
       
