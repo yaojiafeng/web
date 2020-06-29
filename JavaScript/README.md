@@ -408,18 +408,31 @@ timeout 0
 ```
 ### EventLoop
     1.浏览器
-      1）Task(macroTask): setTimeout, setInterval, setImmediate,I/O, UI rendering
-      2）microTask: Promise, process.nextTick, Object.observe, MutationObserver, MutaionObserver
-    
-    执行顺序：
-      （1）event-loop start
-      （2）microTasks 队列开始清空（执行）
-      （3）检查 Tasks 是否清空，有则跳到 （4），无则跳到 （6）
-      （4）从 Tasks 队列抽取一个任务，执行
+     （1）Task(macroTask): setTimeout, setInterval, setImmediate,I/O, UI rendering
+     （2）microTask: Promise, process.nextTick, Object.observe, MutationObserver, MutaionObserver
+      执行顺序：
+       (1) event-loop start
+      （2) microTasks 队列开始清空（执行）
+      （3) 检查 Tasks 是否清空，有则跳到 （4），无则跳到 （6）
+      （4) 从 Tasks 队列抽取一个任务，执行
       （5）检查 microTasks 是否清空，若有则跳到 （2），无则跳到 （3）
       （6）结束 event-loop
-
-
+    2.node.js
+      6个阶段
+        (1) timers: 这个阶段执行setTimeout()和setInterval()设定的回调。
+        (2) I/O callbacks: 是否有已完成的I/O操作的回调函数，来自上一轮的poll残留。执行几乎所有的回调，除了close回调，timer的回调，和setImmediate()的回调
+        (3) idle, prepare: 仅内部使用。
+        (4) poll: 获取新的I/O事件；node会在适当条件下阻塞在这里。阻塞等待监听的事件来临，然后执行对应的callback
+          1）执行下限时间已经达到的timers的回调
+          2）处理 poll 队列里的事件。
+            a.队列不空=>执行清空或者执行的回调数到达系统上限
+            b.队列空
+              1.如果代码已经被setImmediate()设定了回调, event loop将结束 poll 阶段进入 check 阶段来执行 check 队列（里的回调）。
+              2.如果代码没有被setImmediate()设定回调，event loop将阻塞在该阶段等待回调被加入 poll 队列，并立即执行。
+        (5) check: 执行setImmediate()设定的回调。
+        (6) close callbacks: 执行比如socket.on('close', ...)的回调。
+      每个阶段结束后都执行process.nextTick()
+     
 
 
 
