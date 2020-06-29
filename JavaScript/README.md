@@ -9,7 +9,7 @@
 - [map实现](#map实现)
 - [异步执行顺序](#异步执行顺序)
 - [正则实现千分位](#正则实现千分位)
-- [EventLoop浏览器环境vs Node.js](#EventLoop浏览器环境vsNode.js)
+- [EventLoop](#EventLoop)
 ### 防抖
 - 函数执行过一次后，在等待某时间段内不能再次执行。
 - 在等待时间内触发此函数，则重新计算等待时间
@@ -406,7 +406,7 @@ timeout 0
       }
       // $& 与 regexp 相匹配的子串
 ```
-### EventLoop浏览器环境vsNode.js
+### EventLoop
 
 
 
