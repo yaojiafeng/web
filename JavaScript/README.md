@@ -348,7 +348,7 @@ Array.prototype.myMap = function (fn, context) {
   return result
 }
 var arr0 = [1, 2, 3]
-console.log(arr0.myMap(v => v + 1)
+console.log(arr0.myMap(v => v + 1))
 ```
 ### 异步执行顺序
 ```js
