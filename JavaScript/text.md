@@ -9,7 +9,6 @@
     * _static_
         * [.props](#module_compAirshipSeat.props)
     * _inner_
-        * [~lingoBusAvatar](#module_compAirshipSeat..lingoBusAvatar)
         * [~init(groupInfo, studentInfo)](#module_compAirshipSeat..init)
         * [~shipEnter()](#module_compAirshipSeat..shipEnter)
         * [~cbReadyGo()](#module_compAirshipSeat..cbReadyGo)
@@ -28,12 +27,6 @@
 | locale | <code>String</code> | <p>语言,默认cn</p> |
 | isDowngrade | <code>Boolean</code> | <p>是否降级,默认false</p> |
 
-<a name="module_compAirshipSeat..lingoBusAvatar"></a>
-
-### compAirshipSeat~lingoBusAvatar
-<p>默认头像</p>
-
-**Kind**: inner constant of [<code>compAirshipSeat</code>](#module_compAirshipSeat)  
 <a name="module_compAirshipSeat..init"></a>
 
 ### compAirshipSeat~init(groupInfo, studentInfo)
