@@ -519,11 +519,8 @@ console.log(a);
   - 最优：O(nlog(n))
   - 最差：O(nlog(n))  
   - 平均：O(nlog(n)) 
-  
-- 例子
-    - 下面通过一个例子来看看归并排序是怎么工作的，原数组如下。
      
-- javascript实现
+- javascript实现(递归)
   
 ```js
 function　merge(left, right){
