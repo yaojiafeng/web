@@ -61,22 +61,26 @@ function throttle(fn, wait) {
 ### 类型转换
 在操作符中，==，排序运算符，加减乘除，在对非原始值进行操作时，都会调用内部的toPrimitive()方法
 - 1.通过 ToPrimitive() 转换为原始值
+  - Date 类型的对象会被设置为 String
+  - 其它类型的值会被设置为 Number
   - 如果 input 是个原始值，则直接返回它。
   - 否则，如果 input 是一个对象。则调用 obj.valueOf() 方法。 如果返回值是一个原始值，则返回这个原始值。
   - 否则，调用 obj.toString() 方法。 如果返回值是一个原始值，则返回这个原始值。
   - 否则，抛出 TypeError 异常。
   
-        如果 PreferredType 被标志为 String，则转换操作的第二步和第三步的顺序会调换。 如果没有 PreferredType 这个参数，则 PreferredType 的值会按照这样的规则来自动设置：
-
-  - Date 类型的对象会被设置为 String
-  - 其它类型的值会被设置为 Number
+        如果 PreferredType 被标志为 String，则转换操作的第二步和第三步的顺序会调换。
 ```js
-    1+{} // "1[object Object]"
-    1+[] // "1"
+    1 + {} // "1[object Object]"
+    1 + [] // "1"
     /*
-        1) 调用 obj.valueOf() 方法 //{}
-        2) obj.toString() // "[object Object]"
-        3) 1+"[object Object]"// "1[object Object]"
+        1) 调用 obj.valueOf() 方法 // {} || []
+        2) obj.toString() // "[object Object]" || ""
+        3) 1 + "[object Object]"// "1[object Object]" || "1"
+    */
+    {} + [] // 0
+    /*
+    javascript有这样的特性，如果{}既可以被认为是代码块，又可以被认为是对象字面量，那么js会把他当做代码块来看待。
+     所以{}被当做了代码块，只有+[]，根据加法的定义，被转换为0。
     */
 ```
 - 2.通过ToNumber() 将值转换为数字
