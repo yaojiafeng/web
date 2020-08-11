@@ -148,10 +148,6 @@ function throttle(fn, wait) {
 ### 自定义事件
 ```js
 /**
-* EVENTBUS通信
-* @yaojiafeng
-*/
-/**
 * 校验msgName是否合法
 */
 function validateMsgScope(msgName) {
