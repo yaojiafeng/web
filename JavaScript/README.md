@@ -17,7 +17,7 @@
 function debounce(fn,wait){
     var timer = null;
     return function(){
-        clearTimeout(timer);
+        timer && clearTimeout(timer);
         timer = setTimeout(fn,wait);
     }
 }
