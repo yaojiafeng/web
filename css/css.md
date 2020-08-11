@@ -482,7 +482,7 @@
     border-right: 20px solid transparent;
     border-left: 20px solid transparent;
 }
- /*向左三角形*/
+ /*向右三角形*/
 .triangle-left {
     width: 0;
     height: 0;
@@ -490,7 +490,7 @@
     border-bottom: 20px solid transparent;
     border-left: 40px solid #7CFC00;
 }
-/*向右三角形*/ 
+/*向左三角形*/ 
 .triangle-right {
     width: 0;
     height: 0;
