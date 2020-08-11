@@ -436,6 +436,41 @@
 - align-content
   - align-content: flex-start | flex-end | center | space-between | space-around | stretch;align-content属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用
   
+  <table>
+        <tr>
+            <th>元素</th>
+            <th>创建其包含块的元素</th>
+        </tr>
+        <tr>
+            <th>html</th>
+            <th>initial C.B.(UA-dependent)</th>
+        </tr>
+        <tr>
+            <th>body</th>
+            <th>html</th>
+        </tr>
+        <tr>
+            <th>div1</th>
+            <th>body</th>
+        </tr>
+	<tr>
+            <th>p1</th>
+            <th>div1</th>
+        </tr>
+	<tr>
+            <th>p2</th>
+            <th>div1</th>
+        </tr>
+	<tr>
+            <th>em1</th>
+            <th>p2</th>
+        </tr>
+	<tr>
+            <th>strong1</th>
+            <th>p2</th>
+        </tr>
+    </table>
+  
 ***(3)项目的属性***
 
 - flex-grow
