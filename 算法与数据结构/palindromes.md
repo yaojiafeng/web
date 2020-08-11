@@ -22,4 +22,4 @@ function isPalindromes(num) {
   }
   return true
 }
-`
+```
