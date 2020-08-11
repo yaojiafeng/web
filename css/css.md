@@ -435,6 +435,7 @@
   - align-items: flex-start | flex-end | center | baseline | stretch;align-items属性定义项目在交叉轴上如何对齐
 - align-content
   - align-content: flex-start | flex-end | center | space-between | space-around | stretch;align-content属性定义了多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用
+  ![align-content生效结论图](/images/align-content.png)
   
 ***(3)项目的属性***
 
