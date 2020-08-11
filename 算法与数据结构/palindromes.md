@@ -1,5 +1,5 @@
 
-`js
+```js
 function isPalindromes(num) {
   num = num + ''
   let arr = num.split('');
