@@ -125,6 +125,54 @@ function b() {
 const a = () => {
     b().then(() => c());
 };
+
+
+
+async function getLessionJson() {
+    // ...
+    for (let i = 0; i < lessonjsonUrls.length; i++) {
+        try {
+            let response = await myRequest(lessonjsonUrls[i].url)
+            lessonjson.push(response.lesson ? response.lesson : response)
+            errN = 0;
+        } catch (errData) {
+            errN++;
+            if (errN < N) {
+                i--
+            } else {
+                errN = 0;
+                console.log('请求lessonjson失败', errData)
+                lessonjson.push(errData)
+            }
+        }
+    }
+    // ...
+}
+
+
+async function getLessionJson() {
+    // ...
+    for (let i = 0; i < api.length; i++) {
+        try {
+            promises[i] = myRequest(api[i], false)
+            errN = 0
+        } catch (err) {
+            errN++
+            if (errN < N) {
+                i--
+            } else {
+                errN = 0
+                console.log('请求lessonjsonUrls失败', errData)
+            }
+        }
+
+    }
+    let results = await Promise.all(promises)
+    results.forEach(item => {
+        lessonjson.push(item.lesson ? item.lesson : item)
+    })
+    // ...
+}
 ```
 防抖的使用场景
 - 每次 resize/scroll 触发统计事件
