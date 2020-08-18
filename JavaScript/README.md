@@ -26,6 +26,105 @@ function doSomeThing(){
 }
 var callback = debounce(doSomeThing,5000);
 someEle.onclick = callback;
+async function a() {
+    let p = await new Promise(resolve => setTimeout(() => {
+        console.log(1)
+        resolve(2)
+    }, 0))
+    console.log(p)
+}
+a()
+
+
+
+function p() {
+    return new Promise(function (resolve) {
+        console.log(`promise 1`)
+        resolve(`promise 2`)
+    })
+}
+async function a() {
+    console.log(`async 1`)
+    await b()
+    console.log('async 3')
+    return 'async 4'
+}
+async function b() {
+    console.log('async 2')
+}
+p().then(console.log)
+a().then(console.log)
+
+
+async function asyncReadFile(args) {
+    const f1 = await readFile('/etc/fstab')
+    console.log(f1.toString());
+}
+
+// 等同于
+
+function asyncReadFile(args) {
+    return spawn(function* () {
+        const f1 = yield readFile('/etc/fstab')
+        console.log(f1.toString());
+    })
+}
+
+asyncReadFile()
+
+function spawn(genF) {
+    return new Promise(function (resolve, reject) {
+        const gen = genF()
+
+        function step(nextF) {
+            let next
+            try {
+                next = nextF()
+            } catch (e) {
+                return reject(e)
+            }
+            if (next.done) {
+                return resolve(next.value)
+            }
+            Promise.resolve(next.value).then(function (v) {
+                step(function () {
+                    return gen.next(v)
+                })
+            }, function (e) {
+                step(function () {
+                    return gen.throw(e)
+                })
+            })
+        }
+        step(function () {
+            return gen.next(undefined)
+        })
+    })
+}
+
+function* helloWorldGenerator() {
+    yield 'hello'
+    yield 'world'
+    return 'ending'
+}
+var hw = helloWorldGenerator()
+hw.next()
+// { value: 'hello', done: false }
+hw.next()
+// { value: 'world', done: false }
+hw.next()
+// { value: 'ending', done: true }
+hw.next()
+// { value: undefined, done: true }
+
+function b() {
+    return new Promise((resolve, reject) => {
+        throw new Error('b error')
+    })
+}
+const a = () => {
+    b().then(() => c());
+};
 ```
 防抖的使用场景
 - 每次 resize/scroll 触发统计事件
