@@ -152,20 +152,20 @@ async function getLessionJson() {
 
 async function getLessionJson() {
     // ...
-    for (let i = 0; i < api.length; i++) {
+    for (let i = 0; i < lessonjsonUrls.length; i++) {
         try {
-            promises[i] = myRequest(api[i], false)
-            errN = 0
-        } catch (err) {
-            errN++
+            promise[i] = myRequest(lessonjsonUrls[i].url)
+            errN = 0;
+        } catch (errData) {
+            errN++;
             if (errN < N) {
                 i--
             } else {
-                errN = 0
-                console.log('请求lessonjsonUrls失败', errData)
+                errN = 0;
+                console.log('请求lessonjson失败', errData)
+                promise[i] = errData
             }
         }
-
     }
     let results = await Promise.all(promises)
     results.forEach(item => {
