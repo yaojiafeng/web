@@ -221,6 +221,39 @@ xiaoming.sendFlower( B );
 
 
 
+// 花的实例
+var Flower = function(){};
+var xiaoming = {
+    sendFlower: function( target ){
+        var flower = new Flower();
+        target.receiveFlower( flower );
+    }
+};
+// 女神闺蜜
+var B = {
+    receiveFlower: function( flower ){
+       A.listenGoodMood(function(){ // 监听A的好心情
+            A.receiveFlower( flower );
+        });
+    }
+};
+// 女神
+var A = {
+    receiveFlower: function( flower ){
+        console.log( '收到花 ' + flower );
+    },
+    // 女神心情好了
+    listenGoodMood: function( fn ){
+        setTimeout(function(){ // 假设10秒之后A的心情变好
+            fn();
+        }, 10000 );
+    }
+};
+// 小明开始送花
+xiaoming.sendFlower( B );
+
+
+
 
 
 
