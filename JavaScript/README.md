@@ -233,6 +233,7 @@ var xiaoming = {
 var B = {
     receiveFlower: function( flower ){
        A.listenGoodMood(function(){ // 监听A的好心情
+            var flower = new Flower(); // 延迟创建flower对象
             A.receiveFlower( flower );
         });
     }
