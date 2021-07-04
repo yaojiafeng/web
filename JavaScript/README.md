@@ -256,6 +256,20 @@ xiaoming.sendFlower( B );
 
 
 
+var myImage = (function(){
+    var imgNode = document.createElement( 'img' );
+    document.body.appendChild( imgNode );
+    return {
+        setSrc: function( src ){
+        i   mgNode.src = src;
+        }
+    }
+})();
+myImage.setSrc( 'https://imgcache.qq.com/music/photo/k/000GGDys0yA0Nk.jpg')
+
+
+
+
 
 
 
