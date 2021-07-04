@@ -194,6 +194,34 @@ xiaoming.sendFlower( A );
 
 
 
+// 花的实例
+var Flower = function(){};
+var xiaoming = {
+    sendFlower: function( target ){
+        var flower = new Flower();
+        target.receiveFlower( flower );
+    }
+};
+// 女神闺蜜
+var B = {
+    // 小明把花送给了女神闺蜜，由她转送
+    receiveFlower: function( flower ){
+        // 女神闺蜜把花送给了女神
+        A.receiveFlower(flower)
+    }
+};
+// 女神
+var A = {
+    receiveFlower: function( flower ){
+        console.log( '收到花 ' + flower );
+    }
+};
+// 小明开始送花
+xiaoming.sendFlower( B );
+
+
+
+
 
 
 
