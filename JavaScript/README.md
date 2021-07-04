@@ -149,17 +149,6 @@ async function getLessionJson() {
     // ...
 }
 
-
-
-
-
-
-
-
-
-
-
-
 async function getLessionJson() {
     // ...
     for (let i = 0; i < lessonjsonUrls.length; i++) {
@@ -184,7 +173,26 @@ async function getLessionJson() {
     // ...
 }
 
-var Flower = function (){}
+// 首先的有花的实例
+var Flower = function(){};
+var xiaoming = {
+    // 送花的方法，参数为送花目标
+    sendFlower: function( target ){
+        // 创建一个花的实例
+        var flower = new Flower();
+        // 送给目标
+        target.receiveFlower( flower );
+    }
+};
+// 女神
+var A = {
+    // 女神接收到了花
+    receiveFlower: function( flower ){
+        console.log( '收到花 ' + flower );
+    }
+};
+// 小明开始送花
+xiaoming.sendFlower( A );
 
 
 
