@@ -292,7 +292,20 @@ var proxyImage = (function(){
 proxyImage.setSrc( 'https://imgcache.qq.com/music/photo/k/000GGDys0yA0Nk.jpg' );
 
 
+// 不用代理
+var myImage = (function(){
+    var imgNode = document.createElement( 'img' );
+    document.body.appendChild( imgNode );
+    var img = new Imgae;
+    return {
+        setSrc: function( src ){
+            imgNode.src = 'file:// /C:/Users/svenzeng/Desktop/loading.gif';
+            img.src = src
+        }
+    }
+})();
 
+myImage.setSrc( 'https://imgcache.qq.com/music/photo/k/000GGDys0yA0Nk.jpg' );
 
 
 
