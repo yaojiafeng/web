@@ -297,6 +297,9 @@ var myImage = (function(){
     var imgNode = document.createElement( 'img' );
     document.body.appendChild( imgNode );
     var img = new Imgae;
+    img.onload = function(){
+        imgNode.src = img.src;
+    }
     return {
         setSrc: function( src ){
             imgNode.src = 'file:// /C:/Users/svenzeng/Desktop/loading.gif';
