@@ -10,7 +10,7 @@
 - [异步执行顺序](#异步执行顺序)
 - [正则实现千分位](#正则实现千分位)
 - [EventLoop](#EventLoop)
-- [js实现new](#js实现new)
+- [js实现new](#实现new)
 ### 防抖
 - 函数执行过一次后，在等待某时间段内不能再次执行。
 - 在等待时间内触发此函数，则重新计算等待时间
@@ -1076,7 +1076,7 @@ let newMethod = function (Parent, ...rest) {
     // 2.将this和调用参数传给构造器执行
     let result = Parent.apply(child, rest);
     // 3.如果构造器没有手动返回对象，则返回第一步的对象
-    return typeof result  === 'object' ? result : child;
+    return typeof result  === 'object' && result !== null ? result : child;
 };
 //创建实例，将构造函数Parent与形参作为参数传入
 const child = newMethod(Parent, 'echo', 26);
