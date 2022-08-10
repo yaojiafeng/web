@@ -375,6 +375,102 @@ function throttle(fn, wait) {
     javascript有这样的特性，如果{}既可以被认为是代码块，又可以被认为是对象字面量，那么js会把他当做代码块来看待。
      所以{}被当做了代码块，只有+[]，根据加法的定义，被转换为0。
     */
+    例子：
+        true + false
+    => 1 + 0
+    => 1
+    
+    +号右边是个字符串，所以最后要转化为字符串
+    true + "1"
+    => 'true1'
+    
+    true + 1 
+    => 1 + 1
+    => 2
+    
+    +号右边是个引用类型对象，所以先把对象转化为基础类型(hint为default)
+    true + {}
+    => true + {}.valueOf()
+    => true + {}.toString()
+    => true + '[object Object]'
+    => 'true[object Object]'
+   
+   +号右边是个引用类型数组，所以先把数组转化为基础类型(hint为default)
+    true + [] 
+    => true + [].valueOf()
+    => true + [].toString()
+    => true + ""
+    => "true"
+    
+    2/"1"
+    => 2/1
+    => 2
+    
+    "string" + 1 + 2
+    => "string1" + 2
+    => "string12"
+    
+    1 + 2 + "string"
+    => 3 + "string"
+    => "3string"
+    
+    [1]是个引用类型数组，所以先把[1]转化为基础类型，由于>是个比较运算符，所以我们期望转化成一个number类型(hint为number)
+    [1] > null
+    => [1].valueOf() > null
+    => [1].toString() > null
+    => "1" > null
+    => 1 > 0
+    
+    由于++是一元运算符，优先级比较高，所以这里先进行number的隐式转换
+    "foo" + + "bar"
+    => "foo" + "NaN"
+    => "fooNaN"
+    
+    由于==是相等操作符，所以这里进行number的隐式转换
+    "true" == true
+    => NaN == 1
+    => false
+    
+    同上
+    false == "false"
+    => 0 == NaN
+    => false
+    
+    ["x"]是个引用类型数组，所以先把["x"]转化为基础类型，==的右边是string类型，所以我们期望转化成一个string类型(hint为string)
+    ["x"] == "x"
+    => ["x"].toString() == "x"
+    => "x" == "x"
+    => true
+   
+   当运算符两边类型相同时，不会执行类型转换，两个数组的内存地址不一样，所以返回 false
+   [1,2,3] == [1,2,3]
+   => fasle
+   
+   {}如果前置，那么表示的是对象字面量声明
+   {} + [] + {} + [1]
+   => +[] + {} + [1]
+   => 0 + {} + [1]
+   => 0 + "[object Object]" + [1]
+   => "0[object Object]" + [1]
+   => "0[object Object]1"
+   
+   同上
+   {} + []
+   => + []
+   => + ""
+   => 0
+   
+   {} + {}
+   => "[object Object]" + "[object Object]"
+   => "[object Object][object Object]"
+  
+   [] + {}
+   => "" + "[object Object]"
+   => "[object Object]"
+   
+   [] + []
+   => "" + ""
+   => ""
 ```
 - 2.通过ToNumber() 将值转换为数字
 
