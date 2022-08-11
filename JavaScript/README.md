@@ -11,6 +11,7 @@
 - [正则实现千分位](#正则实现千分位)
 - [EventLoop](#EventLoop)
 - [js实现new](#js实现new)
+- [实现compose](#实现compose)
 ### 防抖
 - 函数执行过一次后，在等待某时间段内不能再次执行。
 - 在等待时间内触发此函数，则重新计算等待时间
@@ -1185,6 +1186,27 @@ child.hasOwnProperty('name')//true
 child.hasOwnProperty('age')//true
 child.hasOwnProperty('sayName')//false
  ```
+ ### 实现compose
+ ```js
+ function compose(...fn) {
+	if (fn.length === 0) {
+		return args => args;
+	}
+	if (fn.length === 1) {
+		return fn[0];
+	}
+	return fn.reduce((pre, cur) => (...args) => {
+		return pre(cur(...args))
+	})
+}
+
+const add1 = (x) => x + 1;
+const mul3 = (x) => x * 3;
+const div2 = (x) => x / 2;
+const operate = compose(div2, mul3, add1, add1)
+operate(0) //=>相当于div2(mul3(add1(add1(0)))) 
+operate(2) //=>相当于div2(mul3(add1(add1(2))))
+ ```
      
 
 
@@ -1385,30 +1407,6 @@ function deepCopy(obj) {
   return result
 }
 ```
-
-function isHuiwen(num) {
-  num = num + ''
-  let arr = num.split('');
-  let len = arr.length;
-  for (let i = 0; i < len; i++) {
-    if (len % 2 === 0) {
-      if (i !== len) {
-        if (arr[i] !== arr[len - 1]) {
-          return false
-        }
-      }
-    } else {
-      if (i !== len - 1) {
-        if (arr[i] !== arr[len - 1]) {
-          return false
-        }
-      }
-    }
-    len--
-  }
-  return true
-}
-
 
 
 
