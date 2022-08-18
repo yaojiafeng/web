@@ -72,11 +72,20 @@ function throttle(fn, wait) {
 - 对象在转换类型的时候，会调用内置的 [[ToPrimitive]] 函数
 - 如果hint是"default/string",先执行toString,如果没有返回原始值继续执行valueOf方法 
 - 如果hint是"number",先执行valueOf,如果没有返回原始值继续执行toString方法
-
-* 加法
+加法
 - 有一方为String，那么另一方也会被转为String
 - 一方为Number,另一方为原始值类型，则将原始值类型转换为Number
 - 一方为Number,另一方为引用类型，双方都转为String
+其他
+- 除了加法的运算符来说（-，*，/，>），会将非Number类型转换为Number类型
+== 中的类型转换
+- NaN不等于任何其它类型
+- Boolean 与其它类型进行比较,Boolean转换为Number
+- String 与 Number进行比较,String 转化为Number
+- null 与 undefined进行比较结果为true
+- null,undefined与其它任何类型进行比较结果都为false
+- 引用类型与值类型进行比较,引用类型先转换为值类型(调用[ToPrimitive])
+- 引用类型与引用类型，直接判断是否指向同一对象
 ```js
     1 + {} // "1[object Object]"
     1 + [] // "1"
