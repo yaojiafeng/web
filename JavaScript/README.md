@@ -12,6 +12,7 @@
 - [EventLoop](#EventLoop)
 - [js实现new](#js实现new)
 - [实现compose](#实现compose)
+- [this指向问题](#this指向问题)
 ### 防抖
 - 函数执行过一次后，在等待某时间段内不能再次执行。
 - 在等待时间内触发此函数，则重新计算等待时间
