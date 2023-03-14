@@ -19,9 +19,14 @@
 ```js
 function debounce(fn,wait){
     var timer = null;
-    return function(){
-        timer && clearTimeout(timer);
-        timer = setTimeout(fn,wait);
+    return function(...v){
+    	if (timer) {
+	    clearTimeout(timer);
+	    timer = null;
+	}
+        timer = setTimeout(() => {
+	    fn.apply(this, v)
+	}, wait);
     }
 }
 function doSomeThing(){
