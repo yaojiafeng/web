@@ -43,3 +43,42 @@ module.exports = {
   },
 };
 ```
+- DllPlugin
+Webpack已经内置了对动态链接库的支持，主要是通过两个内置插件接入，DllPlugin插件（用于打包出一个个单独的动态链接库文件）和DllReferencePlugin插件（用于在主要配置文件中去引入DllPlugin插件打包好的动态链接库文件）
+
+优点：可以大大提升构建速度，因为，大量复用模块的动态链接库只需要编译一次，在之后的构建过程中被动态链接库包含的模块将不会在重新编译，而是直接使用动态链接库中的代码。
+
+场景：常用的第三方模块，如：vue/react这种三方框架，只要不升级版本，动态链接库就不需要编译
+```js
+// ddl基础配置
+const path = require('path');
+const DllPlugin = require('webpack/lib/DllPlugin');
+const LIBRARY_NAME = '__[name]_[chunkhash]';
+const tempPath = resolve(rootPath, '.temp');
+const [isDevelopment, isProduction] = [NODE_ENV === 'development', NODE_ENV === 'production'];
+const dllEntry = {
+		__vendor: ['fetch-detector', 'fetch-ie8', 'es5-shim', '@babel/polyfill', 'query-string', 'moment', 'vue', 'element-ui']
+};
+const pathConfig = {
+	dll: resolve(tempPath, 'dll'),
+}
+
+module.exports = {
+  // JS 执行入口文件
+  entry: dllEntry,
+  output: {
+    filename: `static/js/[name]${isDevelopment ? '' : '.[chunkhash]'}.js`,
+    path: pathConfig.dll,
+    library: LIBRARY_NAME,
+  },
+  plugins: [
+    new DllPlugin({
+      // 动态链接库的全局变量名称，需要和 output.library 中保持一致
+      // 该字段的值也就是输出的 manifest.json 文件 中 name 字段的值
+      name: LIBRARY_NAME,
+      // 描述动态链接库的 manifest.json 文件输出时的文件名称
+      path: `${pathConfig.dll}/[name].json`,
+    }),
+  ],
+};
+```
