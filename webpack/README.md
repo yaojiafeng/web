@@ -83,3 +83,10 @@ module.exports = {
   ],
 };
 ```
+```js
+// ddl使用
+new webpack.DllReferencePlugin({
+  context: __dirname,
+  manifest: require(`${pathConfig.dll}/${v}.json`)
+});
+```
