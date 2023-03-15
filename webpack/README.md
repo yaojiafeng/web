@@ -1,7 +1,7 @@
 # 问题列表
 - [为什么选择webpack](#为什么选择webpack)
 - [1. webpack与grunt、gulp的不同？](#1.webpack与grunt、gulp的不同？)
-- [2. webpack优化]（#2.webpack优化）
+- [2. webpack优化](#2.webpack优化)
 - [2.什么是bundle,什么是chunk，什么是module?](#2.什么是bundle,什么是chunk，什么是module?)
 - [4.有哪些常见的Loader?他们是解决什么问题的？](#4.有哪些常见的Loader?他们是解决什么问题的？)
 - [5.有哪些常见的Plugin？他们是解决什么问题的？](#5.有哪些常见的Plugin？他们是解决什么问题的？)
@@ -28,7 +28,7 @@
 - 4）Webpack拥有庞大的社区支持。除了Webpack核心库以外，还有无数开发者来为它编写周边插件和工具，绝大多数的需求你都可以直接找到已有解决方案，甚至会有多个解决方案供你挑选。
 ## webpack优化
 - 优化resolve配置
-`javascript
+```js
 module.exports = {
   resolve: {
     modules: [path.resolve(__dirname, 'node_modules')], // 使用绝对路径指明第三方模块存放的位置，以减少搜索步骤
@@ -40,4 +40,4 @@ module.exports = {
     noParse: [/vue\.min\.js$/], // 忽略没采用模块化的文件的递归解析处理
   },
 };
-`
+```
