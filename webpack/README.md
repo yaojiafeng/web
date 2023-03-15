@@ -1,7 +1,7 @@
 # 问题列表
 - [为什么选择webpack](#为什么选择webpack)
 - [1. webpack与grunt、gulp的不同？](#1.webpack与grunt、gulp的不同？)
-- [2. webpack优化](#2.webpack优化)
+- [2. webpack优化](#webpack优化)
 - [2.什么是bundle,什么是chunk，什么是module?](#2.什么是bundle,什么是chunk，什么是module?)
 - [4.有哪些常见的Loader?他们是解决什么问题的？](#4.有哪些常见的Loader?他们是解决什么问题的？)
 - [5.有哪些常见的Plugin？他们是解决什么问题的？](#5.有哪些常见的Plugin？他们是解决什么问题的？)
