@@ -1,6 +1,7 @@
 # 问题列表
 - [为什么选择webpack](#为什么选择webpack)
 - [1. webpack与grunt、gulp的不同？](#1.webpack与grunt、gulp的不同？)
+- [2. webpack优化]（#2.webpack优化）
 - [2.什么是bundle,什么是chunk，什么是module?](#2.什么是bundle,什么是chunk，什么是module?)
 - [4.有哪些常见的Loader?他们是解决什么问题的？](#4.有哪些常见的Loader?他们是解决什么问题的？)
 - [5.有哪些常见的Plugin？他们是解决什么问题的？](#5.有哪些常见的Plugin？他们是解决什么问题的？)
@@ -25,3 +26,18 @@
 - 2）Webpack有完备的代码分割（code splitting）解决方案。从字面意思去理解，它可以分割打包后的资源，首屏只加载必要的部分，不太重要的功能放到后面动态地加载。这对于资源体积较大的应用来说尤为重要，可以有效地减小资源体积，提升首页渲染速度。
 - 3）Webpack可以处理各种类型的资源。除了JavaScript以外，Webpack还可以处理样式、模板，甚至图片等，而开发者需要做的仅仅是导入它们。比如你可以从JavaScript文件导入一个CSS或者PNG，而这一切最终都可以由第4章讲到的loader来处理。
 - 4）Webpack拥有庞大的社区支持。除了Webpack核心库以外，还有无数开发者来为它编写周边插件和工具，绝大多数的需求你都可以直接找到已有解决方案，甚至会有多个解决方案供你挑选。
+## webpack优化
+- 优化resolve配置
+`javascript
+module.exports = {
+  resolve: {
+    modules: [path.resolve(__dirname, 'node_modules')], // 使用绝对路径指明第三方模块存放的位置，以减少搜索步骤
+    mainFields: ['main'], // 只采用 main 字段作为入口文件描述字段，以减少搜索步骤
+    alias: {
+    	'vue': path.resolve(__dirname, './node_modules/vue/dist/vue.min.js'), // 使用 alias 把导入语句换成直接使用单独完整的打包文件，减少耗时的递归解析操作
+    },
+    extensions: ['.js'], // 尽可能的减少后缀尝试的可能性，因为当require一个无后缀文件时，会自动机遇extensions进行匹配，默认为['.js', '.json']
+    noParse: [/vue\.min\.js$/], // 忽略没采用模块化的文件的递归解析处理
+  },
+};
+`
