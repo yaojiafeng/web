@@ -6,6 +6,7 @@
 - [promise实现](#promise实现)
 - [关于setInterval和setTImeout中的this指向问题](#关于setInterval和setTImeout中的this指向问题)
 - [bind实现](#bind实现)
+- [apply实现](#apply实现)
 - [map实现](#map实现)
 - [异步执行顺序](#异步执行顺序)
 - [正则实现千分位](#正则实现千分位)
@@ -432,6 +433,19 @@ function Obj (){
 var obj = new Obj(); 
 obj.getNum();//1　　打印的是obj.num，值为1
 obj.getNumLater()//1　　打印的是obj.num，值为1
+```
+### apply实现
+```js
+Function.prototype.apply = function (context = window, args) {
+    if (typeof this !== 'function') {
+    	throw new TypeError('Type Error');
+    }
+  const fn = Symbol('fn');
+  context[fn] = this;
+  const res = context[fn](...args);
+  delete context[fn];
+  return res;
+}
 ```
 ### bind实现
 ```js
