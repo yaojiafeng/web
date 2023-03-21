@@ -593,6 +593,22 @@ child.hasOwnProperty('sayName')//false
 	})
 }
 
+function compose(...fn) {
+    let len = fn.length;
+    return (...args) => {
+        let res = args;
+        for (let i = 0; i < len; i++) {
+            if (i === 0) {
+                res = fn[i](...args)
+            } else {
+                res = fn[i](res)
+            }
+            
+        }
+        return res; 
+    }
+}
+
 const add1 = (x) => x + 1;
 const mul3 = (x) => x * 3;
 const div2 = (x) => x / 2;
